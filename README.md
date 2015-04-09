@@ -14,8 +14,8 @@ Assignments testing project for the course Introduction to programming with Java
 Enter the link (https://michiel_noback@bitbucket.org/michiel_noback/javaintroprogrammingassignments.git) into the repository URL field, leave user and password blank, click Next and select Master branch. Finish.
 * Download most recent versions of JUnit and Hamcrest core from [JUnit](https://github.com/junit-team/junit/wiki/Download-and-Install) to a lib folder your local computer. (e.g. <my_home>/libs/java/). Make sure have at least
 
-1. junit-4.12.jar
-2. hamcrest-core-1.3.jar
+..1. junit-4.12.jar
+..2. hamcrest-core-1.3.jar
 
 But these can come in handy later on as well:
 

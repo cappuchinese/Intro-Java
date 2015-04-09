@@ -38,7 +38,8 @@ Make sure the test Packages folder of the project does not show error symbols an
 * Start working on the assignments, as specified in the per-week java, per-assignment packages under "Source Packages".  
 Make sure you read the contents of each Readme.md Markdown file located within each package, since they outline the details of that particular assignment.  
 There is a plugin that supports Markdown in Netbeans [Markdown Support for NetBeans](https://github.com/madflow/flow-netbeans-markdown).  
-It is very handy if you want to read your assignments nicely formatted from within NetBeans. Alternatively, you can read it on bitbucket.  
+It is very handy if you want to read your assignments nicely formatted from within NetBeans.  
+Alternatively, you can read it on Bitbucket -- this has the advantage that the Java syntax highlighting does work correctly!.  
 
 * To start testing a single class: Select single source file and select "Test File" from context menu (right click)
 

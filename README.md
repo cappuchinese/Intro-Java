@@ -27,9 +27,12 @@ Enter the link (https://bitbucket.org/michiel_noback/javaintroprogrammingassignm
  
 * In the cloned NetBeans project, right-click on Test Libraries, select "Add Library". In wizard, click "Create". Name it JUnit4.XX (depending on your version) and add jars to ClassPath (and optionally Sources jars and Javadoc jars to respective tabs). Make sure the test Packages folder of the project does not show error symbols anymore!
 
-* Start working on the assignments, as specified in the per-week java
+* Start working on the assignments, as specified in the per-week java, per-assignment packages under "Source Packages"
 
 * To start testing a single class: Select single source file and select "Test File" from context menu (right click)
+
 * To test all your work so far: Select project and select "Test" from context menu
+
 * Of course you better use keyboard shortcuts! (or create a custom Toolbar)
+
 * The test view will open and all selected tests will run. The red bars indicate failures while the green bars indicate you solved the assignment correctly!

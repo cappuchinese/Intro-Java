@@ -11,7 +11,8 @@ Assignments testing project for the course Introduction to programming with Java
 ### How do I get set up? ###
 
 * Make sure you have the JUnit plugin installed in NetBeans!
-* Download most recent versions of JUnit and Hamcrest core from [JUnit](https://github.com/junit-team/junit/wiki/Download-and-Install) to a lib folder your local computer. (e.g. <my_home>/libs/java/). Make sure have at least
+* Download the most recent versions of JUnit and Hamcrest core from [JUnit](https://github.com/junit-team/junit/wiki/Download-and-Install) to a lib folder your local computer (e.g. <my_home>/libs/java/).  
+Make sure have at least
 
     1. junit-4.12.jar
     2. hamcrest-core-1.3.jar

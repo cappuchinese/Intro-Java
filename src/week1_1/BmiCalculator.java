@@ -76,6 +76,10 @@ public class BmiCalculator {
      * provided for weight and/or length
      */
     public double calculateBMI(double weight, double height) {
+        if (weight <= 0 || height <= 0) {
+            throw new IllegalArgumentException("Error: both weight and height should be above 0. Given: weight=" 
+                    + weight + ", height=" + height);
+        }
         //Gewicht in kilogram / (Lengte in meter * Lengte in meter)
         return 0;
     }

@@ -39,4 +39,8 @@ System.out.println("INPUT=" + input);
 ```
 One of the methods (fetching user input) is already implemented for you.
 
+Of course, you also do not have the Java Exception mechanism dealt with in the course. 
+Therefore, an example of its use is given in the method calculateBMI(), already providing you with two passed tests!
+You can use this example to create the implementation of method getMessage().
+
 **Please note that is it absolutely essential that you use the given method stubs to complete the assignment!**

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package week1_1;
+package week1;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -13,7 +13,7 @@ import org.junit.runners.Suite;
  * @author michiel
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({week1_1.BmiCalculatorTest.class})
+@Suite.SuiteClasses({week1_1.BmiCalculatorTest.class, week1_2.AllSubstringsPrinter.class})
 public class Week1Suite {
     
 }

@@ -16,7 +16,7 @@ public class AllSubstringsPrinter {
      */
     public static void main(String[] args) {
         AllSubstringsPrinter asp = new AllSubstringsPrinter();
-        asp.printAllSubstrings("GATCG", true, true);
+        asp.printAllSubstrings("GATCG", true, true); //should print left truncated, left aligned
     }
     
     /**

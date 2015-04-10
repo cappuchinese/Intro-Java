@@ -6,7 +6,6 @@
 package week1_1;
 
 
-import week1_1.BmiCalculator;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.FixMethodOrder;

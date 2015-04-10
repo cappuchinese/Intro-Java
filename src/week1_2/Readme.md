@@ -63,3 +63,11 @@ GAT
 GA
 G
 ```
+As a reminder, this is the code you use for Java looping over a String object:
+
+```Java
+for(int i = 0; i < string.length(); i++) {
+    //do something
+}
+```
+

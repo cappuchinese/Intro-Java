@@ -19,10 +19,14 @@ Make sure have at least
 
     But these can come in handy later on as well:
 
-    3. junit-4.12-javadoc.jar
-    4. junit-4.12-sources.jar
-    5. hamcrest-core-1.3-javadoc.jar
-    6. hamcrest-core-1.3-sources.jar
+    4. junit-4.12-javadoc.jar
+    5. junit-4.12-sources.jar
+    6. hamcrest-core-1.3-javadoc.jar
+    7. hamcrest-core-1.3-sources.jar
+
+    For your convenience, I have made a downloadable zip archive holding all these testing-related jars (and some more but you can ignore these). 
+You can find it in the [downloads section](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads/) of this repo. 
+Here is a direct link to the [test archive](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads/test_archive.zip)
 
 * Clone this repository to your local computer using NetBeans: Team -- git -- clone.  
 Enter the link [https://bitbucket.org/michiel_noback/javaintroprogrammingassignments.git](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments.git)

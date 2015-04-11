@@ -33,7 +33,7 @@ consensus = csc.createConsensus(sequences, false);
 //consensus should equal "GA[A/T][A/C/T]"
 ``` 
 
-**NOTE: this problem can be solved in many ways, some hard and some easy -- so think before syou start!**
+**NOTE: this problem can be solved in many ways, some hard and some easy -- so think before you start!**
 
-*Tip: use String.join("+", sequences) to join array elements into a single string (if you might need this feature*
+*Tip: use String.join("+", sequences) to join array elements into a single string (if you think you need this feature)*
 

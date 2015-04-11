@@ -4,7 +4,7 @@
 * getting to know Java syntax and types
 * working with user input
 * getting to know Java String class
-* getting to know the Java for loop
+* getting to know the Java *for* loop
 
 
 ## Assignment details ##

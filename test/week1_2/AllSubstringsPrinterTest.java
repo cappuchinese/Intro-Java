@@ -12,8 +12,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
-import org.junit.Rule;
-import org.junit.contrib.java.lang.system.StandardOutputStreamLog;
 import org.junit.runners.MethodSorters;
 
 /**

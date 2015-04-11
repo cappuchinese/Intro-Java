@@ -20,9 +20,6 @@ public class BmiCalculatorTest {
     public BmiCalculatorTest() {
     }
 
-    /**
-     * Test of calculateBMI method, of class BmiCalculator.
-     */
     @Test
     public void testCalculateBMI_A() {
         //System.out.println("Testing calculateBMI case 1");
@@ -35,9 +32,6 @@ public class BmiCalculatorTest {
         assertEquals(expResult, result, 0.001);
     }
 
-    /**
-     * Test of calculateBMI method, of class BmiCalculator.
-     */
     @Test
     public void testCalculateBMI_B() {
         //System.out.println("Testing calculateBMI case 2");

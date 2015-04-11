@@ -19,7 +19,8 @@ The given method stub takes as arguments
 For example, this method call:
 
 ```Java
-asp.printAllSubstrings("GATCG", true, true);
+AllSubstringsPrinter asp = new AllSubstringsPrinter();
+asp.printAllSubstrings("GATCG", true, true); //should print left truncated, left aligned
 ``` 
 
 will generate the following output to console

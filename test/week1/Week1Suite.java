@@ -13,7 +13,7 @@ import org.junit.runners.Suite;
  * @author michiel
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({week1_1.BmiCalculatorTest.class, week1_2.AllSubstringsPrinter.class})
+@Suite.SuiteClasses({week1_1.BmiCalculatorTest.class, week1_2.AllSubstringsPrinter.class, week1_3.WeightUnitsSolverTest.class})
 public class Week1Suite {
     
 }

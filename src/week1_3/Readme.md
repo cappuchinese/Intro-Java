@@ -25,7 +25,7 @@ WeightUnitsSolver wus = new WeightUnitsSolver();
 wus.convertFromGrams(1000);
 ``` 
 
-will create a BritishWeightUnits holding 2 pounds, 3 ounces and 8 grams.
+will create a BritishWeightUnits object (instance) holding 2 pounds, 3 ounces and 8 grams.
 When you print this object this you will see
 
 ```

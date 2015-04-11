@@ -15,10 +15,7 @@ import org.junit.runners.MethodSorters;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class WeightUnitsSolverTest {
-    
-    /**
-     * Test of convertFromGrams method, of class WeightUnitsSolver.
-     */
+
     @Test
     public void testConvertFromGrams_A() {
         int grams = 1;
@@ -30,9 +27,6 @@ public class WeightUnitsSolverTest {
         assertEquals(expResult.getGrams(), result.getGrams());
     }
 
-    /**
-     * Test of convertFromGrams method, of class WeightUnitsSolver.
-     */
     @Test
     public void testConvertFromGrams_B() {
         int grams = 1000;
@@ -44,9 +38,6 @@ public class WeightUnitsSolverTest {
         assertEquals(expResult.getGrams(), result.getGrams());
     }
 
-    /**
-     * Test of convertFromGrams method, of class WeightUnitsSolver.
-     */
     @Test
     public void testConvertFromGrams_C() {
         int grams = 25369;

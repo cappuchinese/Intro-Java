@@ -54,7 +54,7 @@ public class Protein implements Comparable<Protein> {
      * @param type
      * @return proteinSorter
      */
-    public Comparator<Protein> getSorter(SortingType type) {
+    public static Comparator<Protein> getSorter(SortingType type) {
         return null;
     }
 

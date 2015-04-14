@@ -141,9 +141,9 @@ proteins.stream().forEach(System.out::println);
 Outputs:
 
 ```
-Protein{name=synovial apoptosis inhibitor 1, synoviolin, accession=Syvn1, aminoAcidSequence=MTYIILLVCDERT} //GOannotation(13259, "cytoplasmatic", "synoviolin-related", "cell-cycle regulation")
-Protein{name=tumor suppressor candidate 3, accession=Tusc3, aminoAcidSequence=MQSVNKLI} //GOannotation(18269, "mitochondrial", "dolichyl-diphosphooligosaccharide--protein glycosyltransferase", "cell-cycle regulation")
-Protein{name=mannosidase alpha, accession=man1b1a, aminoAcidSequence=MRTVALL} //GOannotation(15923, "cytoplasmatic", "beta-6-sulfate-N-acetylglucosaminidase activity", "sugar metabolism")
-Protein{name=fucosyltransferase 8 (alpha (1,6) fucosyltransferase), accession=Fut8, aminoAcidSequence=MGTHIILVLM} //GOannotation(342989, "cytoplasmatic", "fucosyltransferase activity", "sugar metabolism")
-Protein{name=60s ribosomal protein l35 pthr13872, accession=Stt3a, aminoAcidSequence=MTDDLVLAW} //GOannotation(18279, "membrane inserted", "protein N-linked glycosylation via asparagine", "sugar metabolism")
+Protein{name=synovial apoptosis inhibitor 1, synoviolin, accession=Syvn1, ...} //GOannotation(13259, "cytoplasmatic", "synoviolin-related", "cell-cycle regulation")
+Protein{name=tumor suppressor candidate 3, accession=Tusc3, ...} //GOannotation(18269, "mitochondrial", "dolichyl-diphosphooligosaccharide--protein glycosyltransferase", "cell-cycle regulation")
+Protein{name=mannosidase alpha, accession=man1b1a, ...} //GOannotation(15923, "cytoplasmatic", "beta-6-sulfate-N-acetylglucosaminidase activity", "sugar metabolism")
+Protein{name=fucosyltransferase 8 (alpha (1,6) fucosyltransferase), accession=Fut8, ...} //GOannotation(342989, "cytoplasmatic", "fucosyltransferase activity", "sugar metabolism")
+Protein{name=60s ribosomal protein l35 pthr13872, accession=Stt3a, ...} //GOannotation(18279, "membrane inserted", "protein N-linked glycosylation via asparagine", "sugar metabolism")
 ```

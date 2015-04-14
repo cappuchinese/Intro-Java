@@ -28,7 +28,9 @@ Make sure have at least
 You can find it in the [downloads section](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads/) of this repo. 
 Here is a direct link to the [test archive](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads/test_archive.zip)
 
-* Clone this repository to your local computer using NetBeans: Team -- git -- clone.  
+* Fork this repository into your own Bitbucket account (You can find this in the Actions submenu of the Bitbucket repo: the three dots in the left menu left)  
+
+* Clone the forked repository to your local computer using NetBeans: Team -- git -- clone.  
 Enter the link [https://bitbucket.org/michiel_noback/javaintroprogrammingassignments.git](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments.git)
  into the repository URL field, leave user and password blank, click Next and select "Master branch".  
 Finish.  
@@ -44,6 +46,8 @@ Make sure you read the contents of each Readme.md Markdown file located within e
 There is a plugin that supports Markdown in Netbeans [Markdown Support for NetBeans](https://github.com/madflow/flow-netbeans-markdown).  
 It is very handy if you want to read your assignments nicely formatted from within NetBeans.  
 Alternatively, you can read it on Bitbucket -- this has the advantage that the Java syntax highlighting does work correctly!.  
+
+* Commit your own code to your Forked repo on Bitbucket  
 
 * To start testing a single class: Select single source file and select "Test File" from context menu (right click)
 

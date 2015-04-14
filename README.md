@@ -30,8 +30,8 @@ Here is a direct link to the [test archive](https://bitbucket.org/michiel_noback
 
 * Fork this repository into your own Bitbucket account (You can find this in the Actions submenu of the Bitbucket repo: the three dots in the left menu left)  
 
-* Clone the forked repository to your local computer using NetBeans: Team -- git -- clone.  
-Enter the link [https://bitbucket.org/michiel_noback/javaintroprogrammingassignments.git](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments.git)
+* Clone the forked repository from **your** bitbucket account to your local computer using NetBeans: Team -- git -- clone.  
+Enter the link https://bitbucket.org/<YOUR_BITBUCKET_ACCOUNT_NAME>/javaintroprogrammingassignments.git
  into the repository URL field, leave user and password blank, click Next and select "Master branch".  
 Finish.  
 Close warning message ("Unresolved...").

@@ -33,9 +33,6 @@ public class AllSubstringsPrinterTest {
         System.setOut(null);
     }
 
-    /**
-     * Test of printAllSubstrings method, of class AllSubstringsPrinter.
-     */
     @Test
     public void testPrintAllSubstrings_A() {
         String stringToSubstring = "CGATCC";
@@ -48,12 +45,9 @@ public class AllSubstringsPrinterTest {
                 "CG" + System.lineSeparator() + 
                 "G" + System.lineSeparator();
         asp.printAllSubstrings(stringToSubstring, leftTruncated, leftAligned);
-        assertEquals(expectedPrint, outContent.toString());
+        assertEquals(String.format("Testing substring printing with %s; leftTruncated=%b; leftAligned=%b ... ", stringToSubstring, leftTruncated, leftAligned), expectedPrint, outContent.toString());
     }
-    
-    /**
-     * Test of printAllSubstrings method, of class AllSubstringsPrinter.
-     */
+
     @Test
     public void testPrintAllSubstrings_B() {
         String stringToSubstring = "CGATCC";
@@ -66,12 +60,9 @@ public class AllSubstringsPrinterTest {
                 "GA" + System.lineSeparator() + 
                 "G" + System.lineSeparator();
         asp.printAllSubstrings(stringToSubstring, leftTruncated, leftAligned);
-        assertEquals(expectedPrint, outContent.toString());
+        assertEquals(String.format("Testing substring printing with %s; leftTruncated=%b; leftAligned=%b ... ", stringToSubstring, leftTruncated, leftAligned), expectedPrint, outContent.toString());
     }
     
-    /**
-     * Test of printAllSubstrings method, of class AllSubstringsPrinter.
-     */
     @Test
     public void testPrintAllSubstrings_C() {
         String stringToSubstring = "AGCGCT";
@@ -85,12 +76,9 @@ public class AllSubstringsPrinterTest {
                 "    AG" + System.lineSeparator() + 
                 "     A" + System.lineSeparator();
         asp.printAllSubstrings(stringToSubstring, leftTruncated, leftAligned);
-        assertEquals(expectedPrint, outContent.toString());
+        assertEquals(String.format("Testing substring printing with %s; leftTruncated=%b; leftAligned=%b ... ", stringToSubstring, leftTruncated, leftAligned), expectedPrint, outContent.toString());
     }
 
-    /**
-     * Test of printAllSubstrings method, of class AllSubstringsPrinter.
-     */
     @Test
     public void testPrintAllSubstrings_D() {
         String stringToSubstring = "AGCGCT";
@@ -104,7 +92,6 @@ public class AllSubstringsPrinterTest {
                 "    CT" + System.lineSeparator() + 
                 "     T" + System.lineSeparator();
         asp.printAllSubstrings(stringToSubstring, leftTruncated, leftAligned);
-        assertEquals(expectedPrint, outContent.toString());
+        assertEquals(String.format("Testing substring printing with %s; leftTruncated=%b; leftAligned=%b ... ", stringToSubstring, leftTruncated, leftAligned), expectedPrint, outContent.toString());
     }
-    
 }

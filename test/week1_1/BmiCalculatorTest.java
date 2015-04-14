@@ -28,7 +28,7 @@ public class BmiCalculatorTest {
         double expResult = (weight / (lenght * lenght));
         double result = instance.calculateBMI(weight, lenght);
         //System.out.println(String.format("...calculating BMI from weight=%.3f & heigth=%.3f: expected BMI=%.3f; given BMI=%.3f", weight, lenght, expResult, result));
-        assertEquals(expResult, result, 0.001);
+        assertEquals(String.format("Testing BMI calculation for weight=%.1f kg and length=%.2fmeter ... ", weight, lenght), expResult, result, 0.001);
     }
 
     @Test
@@ -40,25 +40,35 @@ public class BmiCalculatorTest {
         double expResult = (weight / (lenght * lenght));
         double result = instance.calculateBMI(weight, lenght);
         //System.out.println(String.format("...calculating BMI from weight=%.3f & heigth=%.3f: expected BMI=%.3f; given BMI=%.3f", weight, lenght, expResult, result));
-        assertEquals(expResult, result, 0.001);
+        assertEquals(String.format("Testing BMI calculation for weight=%.1f kg and length=%.2fmeter ... ", weight, lenght), expResult, result, 0.001);
     }
     
-    @Test(expected=IllegalArgumentException.class)    
+    @Test//(expected=IllegalArgumentException.class)    
     public void testCalculateBMI_C() {
         //System.out.println("Testing calculateBMI case 3");
         BmiCalculator instance = new BmiCalculator();
         double weight = 80.0;
         double lenght = 0.0;
-        instance.calculateBMI(weight, lenght);
+        try {
+            instance.calculateBMI(weight, lenght);
+            fail(String.format("Testing BMI calculation for weight=%.1f kg and length=%.2fmeter ... expected %s", weight, lenght, IllegalArgumentException.class.getName()));
+        } catch (IllegalArgumentException ex) {
+            assertTrue(true);
+        }
     }
 
-    @Test(expected=IllegalArgumentException.class)    
+    @Test//(expected=IllegalArgumentException.class)    
     public void testCalculateBMI_D() {
         //System.out.println("Testing calculateBMI case 4");
         BmiCalculator instance = new BmiCalculator();
         double weight = -10.0;
         double lenght = 1.75;
-        instance.calculateBMI(weight, lenght);
+        try {
+            instance.calculateBMI(weight, lenght);
+            fail(String.format("Testing BMI calculation for weight=%.1f kg and length=%.2fmeter ... expected %s", weight, lenght, IllegalArgumentException.class.getName()));
+        } catch (IllegalArgumentException ex) {
+            assertTrue(true);
+        }
     }
     
     @Test
@@ -68,8 +78,9 @@ public class BmiCalculatorTest {
         BmiCalculator instance = new BmiCalculator();
         String expResult = "Ondergewicht";
         String result = instance.getMessage(bmi);
-        assertEquals(expResult, result);
+        assertEquals(String.format("Testing BMI message for BMI=%.2f ... ", bmi), expResult, result);
     }
+    
     @Test
     public void testGetMessage_B() {
         //System.out.println("getMessage");
@@ -77,13 +88,49 @@ public class BmiCalculatorTest {
         BmiCalculator instance = new BmiCalculator();
         String expResult = "Morbide Obesitas";
         String result = instance.getMessage(bmi);
-        assertEquals(expResult, result);
+        assertEquals(String.format("Testing BMI message for BMI=%.2f ... ", bmi), expResult, result);
     }
-    @Test(expected=IllegalArgumentException.class)
+
+    @Test
     public void testGetMessage_C() {
+        //System.out.println("getMessage");
+        double bmi = 20.50;
+        BmiCalculator instance = new BmiCalculator();
+        String expResult = "Gezond gewicht";
+        String result = instance.getMessage(bmi);
+        assertEquals(String.format("Testing BMI message for BMI=%.2f ... ", bmi), expResult, result);
+    }
+
+    @Test
+    public void testGetMessage_D() {
+        //System.out.println("getMessage");
+        double bmi = 28.10;
+        BmiCalculator instance = new BmiCalculator();
+        String expResult = "Overgewicht";
+        String result = instance.getMessage(bmi);
+        assertEquals(String.format("Testing BMI message for BMI=%.2f ... ", bmi), expResult, result);
+    }
+
+    @Test
+    public void testGetMessage_E() {
+        //System.out.println("getMessage");
+        double bmi = 39.99;
+        BmiCalculator instance = new BmiCalculator();
+        String expResult = "Obesitas";
+        String result = instance.getMessage(bmi);
+        assertEquals(String.format("Testing BMI message for BMI=%.2f ... ", bmi), expResult, result);
+    }
+
+    @Test//(expected=IllegalArgumentException.class)
+    public void testGetMessage_F() {
         //System.out.println("getMessage");
         double bmi = -1.0;
         BmiCalculator instance = new BmiCalculator();
-        instance.getMessage(bmi);
+        try {
+            instance.getMessage(bmi);
+            fail(String.format("Testing BMI message for BMI=%.2f ... expected %s", bmi, IllegalArgumentException.class.getName()));
+        } catch (IllegalArgumentException ex) {
+            assertTrue(true);
+        }
     }
 }

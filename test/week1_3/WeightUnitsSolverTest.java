@@ -55,5 +55,11 @@ public class WeightUnitsSolverTest {
         WeightUnitsSolver instance = new WeightUnitsSolver();
         instance.convertFromGrams(grams);
     }
+//            try {
+//            instance.calculateBMI(weight, lenght);
+//            fail(String.format("Testing BMI calculation for weight=%.1f kg and length=%.2fmeter ... expected %s", weight, lenght, IllegalArgumentException.class.getName()));
+//        } catch (IllegalArgumentException ex) {
+//            assertTrue(true);
+//        }
 
 }

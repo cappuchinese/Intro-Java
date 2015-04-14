@@ -12,7 +12,7 @@ public enum SortingType {
     PROTEIN_NAME("simple namesort"),
     ACCESSION_NUMBER("accession number sort"),
     GO_ANNOTATION("GO annotation"),
-    PROTEN_WEIGHT("protein molecular weight");
+    PROTEIN_WEIGHT("protein molecular weight");
     
     private String type;
     

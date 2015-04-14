@@ -20,8 +20,10 @@ public class Week4Tester {
      * @param args 
      */
     public static void main(String[] args) {
-        
-        
+        String o = "mannosidase alpha";
+        String instance = "60s ribosomal protein l35 pthr13872";
+        System.out.println(instance.compareTo(o));
+        System.exit(0);
         
         ArrayList<Protein> proteins = new ArrayList<>();
         Protein p1 = new Protein("mannosidase alpha", "man1b1a", "MRTVALL", 
@@ -36,7 +38,7 @@ public class Week4Tester {
                 new GOannotation(18269, "mitochondrial", "dolichyl-diphosphooligosaccharide--protein glycosyltransferase", "cell-cycle regulation"));
         proteins.add(p3);
 
-        Protein p4 = new Protein("synovial apoptosis inhibitor 1, synoviolin", "Syvn1", "MGTHIILVLM", 
+        Protein p4 = new Protein("synovial apoptosis inhibitor 1, synoviolin", "Syvn1", "MTYIILLVCDERT", 
                 new GOannotation(13259, "cytoplasmatic", "synoviolin-related", "cell-cycle regulation"));
         proteins.add(p4);
         
@@ -44,12 +46,8 @@ public class Week4Tester {
                 new GOannotation(342989, "cytoplasmatic", "fucosyltransferase activity", "sugar metabolism"));
         proteins.add(p5);
         
-        Collections.sort(proteins, Protein.getSorter(SortingType.PROTEN_WEIGHT));
+        Collections.sort(proteins, Protein.getSorter(SortingType.PROTEIN_WEIGHT));
         
         proteins.stream().forEach(System.out::println);
-        
-        
     }
-    
-
 }

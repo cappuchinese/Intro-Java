@@ -89,4 +89,10 @@ public class Protein implements Comparable<Protein> {
     public GOannotation getGoAnnotation() {
         return goAnnotation;
     }
+
+    @Override
+    public String toString() {
+        return "Protein{" + "name=" + name + ", accession=" + accession + ", aminoAcidSequence=" + aminoAcidSequence + '}';
+    }
+
 }

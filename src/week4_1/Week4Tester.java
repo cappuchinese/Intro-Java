@@ -20,6 +20,9 @@ public class Week4Tester {
      * @param args 
      */
     public static void main(String[] args) {
+        
+        
+        
         ArrayList<Protein> proteins = new ArrayList<>();
         Protein p1 = new Protein("mannosidase alpha", "man1b1a", "MRTVALL", 
                 new GOannotation(15923, "cytoplasmatic", "beta-6-sulfate-N-acetylglucosaminidase activity", "sugar metabolism"));
@@ -41,8 +44,12 @@ public class Week4Tester {
                 new GOannotation(342989, "cytoplasmatic", "fucosyltransferase activity", "sugar metabolism"));
         proteins.add(p5);
         
-        Collections.sort(proteins);
+        Collections.sort(proteins, Protein.getSorter(SortingType.PROTEN_WEIGHT));
         
         proteins.stream().forEach(System.out::println);
+        
+        
     }
+    
+
 }

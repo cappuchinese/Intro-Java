@@ -22,9 +22,9 @@ public class WeightUnitsSolverTest {
         WeightUnitsSolver instance = new WeightUnitsSolver();
         BritishWeightUnits expResult = new BritishWeightUnits(0, 0, 1);
         BritishWeightUnits result = instance.convertFromGrams(grams);
-        assertEquals(expResult.getPounds(), result.getPounds());
-        assertEquals(expResult.getOunces(), result.getOunces());
-        assertEquals(expResult.getGrams(), result.getGrams());
+        assertEquals(String.format("Testing unit conversion pounds part %d; grams ... ", grams), expResult.getPounds(), result.getPounds());
+        assertEquals(String.format("Testing unit conversion ounces part %d; grams ... ", grams), expResult.getOunces(), result.getOunces());
+        assertEquals(String.format("Testing unit conversion remaining grams part %d; grams ... ", grams), expResult.getGrams(), result.getGrams());
     }
 
     @Test
@@ -33,9 +33,9 @@ public class WeightUnitsSolverTest {
         WeightUnitsSolver instance = new WeightUnitsSolver();
         BritishWeightUnits expResult = new BritishWeightUnits(2, 3, 8);
         BritishWeightUnits result = instance.convertFromGrams(grams);
-        assertEquals(expResult.getPounds(), result.getPounds());
-        assertEquals(expResult.getOunces(), result.getOunces());
-        assertEquals(expResult.getGrams(), result.getGrams());
+        assertEquals(String.format("Testing unit conversion pounds part %d; grams ... ", grams), expResult.getPounds(), result.getPounds());
+        assertEquals(String.format("Testing unit conversion ounces part %d; grams ... ", grams), expResult.getOunces(), result.getOunces());
+        assertEquals(String.format("Testing unit conversion remaining grams part %d; grams ... ", grams), expResult.getGrams(), result.getGrams());
     }
 
     @Test
@@ -44,22 +44,21 @@ public class WeightUnitsSolverTest {
         WeightUnitsSolver instance = new WeightUnitsSolver();
         BritishWeightUnits expResult = new BritishWeightUnits(55, 14, 7);
         BritishWeightUnits result = instance.convertFromGrams(grams);
-        assertEquals(expResult.getPounds(), result.getPounds());
-        assertEquals(expResult.getOunces(), result.getOunces());
-        assertEquals(expResult.getGrams(), result.getGrams());
+        assertEquals(String.format("Testing unit conversion pounds part %d; grams ... ", grams), expResult.getPounds(), result.getPounds());
+        assertEquals(String.format("Testing unit conversion ounces part %d; grams ... ", grams), expResult.getOunces(), result.getOunces());
+        assertEquals(String.format("Testing unit conversion remaining grams part %d; grams ... ", grams), expResult.getGrams(), result.getGrams());
     }
     
-    @Test(expected=IllegalArgumentException.class)    
+    @Test//(expected=IllegalArgumentException.class)    
     public void testConvertFromGrams_D() {
         int grams = -1;
         WeightUnitsSolver instance = new WeightUnitsSolver();
-        instance.convertFromGrams(grams);
+        try {
+            instance.convertFromGrams(grams);
+            fail(String.format("Testing unit conversion with %d; grams ... expected %s", grams, IllegalArgumentException.class.getName()));
+        } catch (IllegalArgumentException ex) {
+            assertTrue(true);
+        }
     }
-//            try {
-//            instance.calculateBMI(weight, lenght);
-//            fail(String.format("Testing BMI calculation for weight=%.1f kg and length=%.2fmeter ... expected %s", weight, lenght, IllegalArgumentException.class.getName()));
-//        } catch (IllegalArgumentException ex) {
-//            assertTrue(true);
-//        }
 
 }

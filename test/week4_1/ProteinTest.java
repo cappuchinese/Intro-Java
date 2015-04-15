@@ -5,6 +5,7 @@
 package week4_1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import org.junit.After;
@@ -60,7 +61,7 @@ public class ProteinTest {
         Protein o = new Protein("mannosidase alpha", "man1b1a", "MRTVALL", null);
         Protein instance = new Protein("60s ribosomal protein l35 pthr13872", "Stt3a", "MTDDLVLAW", null);
         int result = instance.compareTo(o);
-        assertTrue(result < 0);
+        assertTrue(String.format("Testing default comparing with \"%s\" and \"%s\"", o.getName(), instance.getName()), result < 0);
     }
 
     @Test
@@ -68,7 +69,7 @@ public class ProteinTest {
         Protein instance = new Protein("mannosidase alpha", "man1b1a", "MRTVALL", null);
         Protein o = new Protein("60s ribosomal protein l35 pthr13872", "Stt3a", "MTDDLVLAW", null);
         int result = instance.compareTo(o);
-        assertTrue(result > 0);
+        assertTrue(String.format("Testing default comparing with \"%s\" and \"%s\"", o.getName(), instance.getName()), result > 0);
     }
 
     @Test
@@ -77,13 +78,18 @@ public class ProteinTest {
         Protein instance = new Protein("mannosidase alpha", "Stt3a", "MTDDLVLAW", null);
         int expResult = 0;
         int result = instance.compareTo(o);
-        assertEquals(expResult, result);
+        assertEquals(String.format("Testing default comparing with \"%s\" and \"%s\"", o.getName(), instance.getName()), expResult, result);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test//(expected = IllegalArgumentException.class)
     public void testGetSorter_A() {
         SortingType type = null;
-        Protein.getSorter(type);
+        try {
+            Protein.getSorter(type);
+            fail(String.format("Testing fetching sorter with type %s ... expected %s", type, IllegalArgumentException.class.getName()));
+        } catch (IllegalArgumentException ex) {
+            assertTrue(true);
+        }
     }
 
     @Test
@@ -103,7 +109,8 @@ public class ProteinTest {
             String obsName = this.proteins.get(i).getName();
             //System.out.println("comparing obsName = " + obsName + " with expName = " + expName);
             if (!expName.equals(obsName)) {
-                fail("Failed on " + type);
+                fail(String.format("Testing sorting with \"%s\" failed", type.name()));
+                //fail("Failed on " + type);
             }
         }
 
@@ -131,7 +138,7 @@ public class ProteinTest {
             String obsAccno = this.proteins.get(i).getAccession();
             //System.out.println("comparing obsName = " + obsName + " with expName = " + expName);
             if (!expAccno.equals(obsAccno)) {
-                fail("Failed on " + type);
+                fail(String.format("Testing sorting with \"%s\" failed", type.name()));
             }
         }
 
@@ -160,7 +167,7 @@ public class ProteinTest {
             String obsAccno = this.proteins.get(i).getAccession();
             //System.out.println("comparing obsName = " + obsName + " with expName = " + expName);
             if (!expAccno.equals(obsAccno)) {
-                fail("Failed on " + type);
+                fail(String.format("Testing sorting with \"%s\" failed", type.name()));
             }
         }
 
@@ -191,7 +198,7 @@ public class ProteinTest {
             String obsAccno = this.proteins.get(i).getAccession();
             //System.out.println("comparing obsName = " + obsName + " with expName = " + expName);
             if (!expAccno.equals(obsAccno)) {
-                fail("Failed on " + type);
+                fail(String.format("Testing sorting with \"%s\" failed", type.name()));
             }
         }
 

@@ -4,6 +4,7 @@
  */
 package week2_1;
 
+import java.util.Arrays;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.FixMethodOrder;
@@ -26,7 +27,7 @@ public class ConsensusSequenceCreatorTest {
         String expResult = "GAWH";
         ConsensusSequenceCreator csc = new ConsensusSequenceCreator();
         String result = csc.createConsensus(sequences, true);
-        assertEquals(expResult, result);
+        assertEquals(String.format("Testing consensus sequence creation with %s; ... ", Arrays.toString(sequences)), expResult, result);
     }
     
     @Test
@@ -39,7 +40,7 @@ public class ConsensusSequenceCreatorTest {
         String expResult = "GA[A/T][A/C/T]";
         ConsensusSequenceCreator csc = new ConsensusSequenceCreator();
         String result = csc.createConsensus(sequences, false);
-        assertEquals(expResult, result);
+        assertEquals(String.format("Testing consensus sequence creation with %s; ... ", Arrays.toString(sequences)), expResult, result);
     }
 
     @Test
@@ -49,11 +50,11 @@ public class ConsensusSequenceCreatorTest {
         sequences[1] = "CGAAAA";
         sequences[2] = "GGATTA";
         sequences[3] = "GGAACA";
-        sequences[3] = "TGAACA";
+        sequences[4] = "TGAACA";
         String expResult = "[C/G/T]GA[A/T][A/C/T]A";
         ConsensusSequenceCreator csc = new ConsensusSequenceCreator();
         String result = csc.createConsensus(sequences, false);
-        assertEquals(expResult, result);
+        assertEquals(String.format("Testing consensus sequence creation with %s; ... ", Arrays.toString(sequences)), expResult, result);
     }
 
     @Test
@@ -63,10 +64,10 @@ public class ConsensusSequenceCreatorTest {
         sequences[1] = "CGAAAA";
         sequences[2] = "GGACTA";
         sequences[3] = "GGAACA";
-        sequences[3] = "TGAACA";
+        sequences[4] = "TGAACA";
         String expResult = "BGAMHA";
         ConsensusSequenceCreator csc = new ConsensusSequenceCreator();
         String result = csc.createConsensus(sequences, true);
-        assertEquals(expResult, result);
+        assertEquals(String.format("Testing consensus sequence creation with %s; ... ", Arrays.toString(sequences)), expResult, result);
     }
 }

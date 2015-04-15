@@ -21,7 +21,7 @@ import org.junit.runners.MethodSorters;
 public class AllSubstringsPrinterTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private AllSubstringsPrinter asp = new AllSubstringsPrinter();
+    private final AllSubstringsPrinter asp = new AllSubstringsPrinter();
 
     @Before
     public void setUpStreams() {

@@ -25,7 +25,11 @@ Of course, you will have to do some checking here: ages can never exceed the spe
 
 These are the animal species you will have to support in your application:
 1. Horse
+
+
 First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
 Content Cell  | Content Cell
+
+

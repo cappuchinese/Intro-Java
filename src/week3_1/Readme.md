@@ -24,12 +24,16 @@ speed = max_speed * (0.5 + (0.5 * ((max_age-age)/max_age)))
 Of course, you will have to do some checking here: ages can never exceed the species maximum speed and age can never be negative.  
 
 These are the animal species you will have to support in your application:
-1. Horse
 
 
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+Species       | Maximum speed  | Maximum age  | Moving type
+------------- | -------------- | ------------ | ------------
+House mouse   | 21             | 13           | scurry
+Horse         | 88             | 62           | gallop
+Elephant      | 40             | 86           | thunder
+Tortoise      | 0.3            | 190          | crawl
 
+Given these animal species, implement the subclasses in the correct way.
+
+Here is some example usage
 

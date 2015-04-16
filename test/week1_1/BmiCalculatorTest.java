@@ -16,9 +16,6 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BmiCalculatorTest {
     
-    public BmiCalculatorTest() {
-    }
-
     @Test
     public void testCalculateBMI_A() {
         //System.out.println("Testing calculateBMI case 1");

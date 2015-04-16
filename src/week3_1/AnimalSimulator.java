@@ -11,5 +11,13 @@ package week3_1;
  * @version 0.0.1
  */
 public class AnimalSimulator {
+    public static void main(String[] args) {
+        AnimalSimulator anSim = new AnimalSimulator();
+        anSim.start(args);
+    }
 
+    
+    private void start(String[] args) {
+        
+    }
 }

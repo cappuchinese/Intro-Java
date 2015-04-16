@@ -1,7 +1,7 @@
 # Processing input from different sources #
 
 ## Learning outcomes ##
-* processing external data (but not files)
+* processing command-line arguments
 * being able to create and implement a simple OO design
 
 ## Assignment details ##
@@ -18,7 +18,7 @@ The mathematical equation that has been determined (after years and years of exp
  to approximate animal moving speed relative to the species' maximum speed is:  
 
 ```
-speed = max_speed * (0.5 + (0.5 * ((max_age-age)/max_age)))
+speed = max_speed * (0.5 + (0.5 * ((max_age - age) / max_age)))
 ```
 
 Of course, you will have to do some checking here: ages can never exceed the species maximum speed and age can never be negative.  
@@ -33,7 +33,8 @@ Horse         | 88             | 62           | gallop
 Elephant      | 40             | 86           | thunder
 Tortoise      | 0.3            | 190          | crawl
 
-Given these animal species, implement the subclasses in the correct way.
+Given these animal species, implement the subclasses in the correct way, 
+so that all objects behave correctly in this simulation system.
 
 Here is some example usage
 

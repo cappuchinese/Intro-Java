@@ -28,7 +28,7 @@ These are the animal species you will have to support in your application:
 
 Species       | Maximum speed  | Maximum age  | Moving type
 ------------- | -------------- | ------------ | ------------
-House mouse   | 21             | 13           | scurry
+Mouse         | 21             | 13           | scurry
 Horse         | 88             | 62           | gallop
 Elephant      | 40             | 86           | thunder
 Tortoise      | 0.3            | 190          | crawl
@@ -39,14 +39,36 @@ Given these animal species, implement the subclasses in the correct way,
 so that all objects behave correctly in this simulation system.
 
 The tool should be given arguments at the command-line indicating which species to create and what age it is.  
-The application should then let the animal in question demonstrate its core business.  
+Multiple animals should be accepted by the application.  
+The application should then let the animals in question demonstrate their core business.  
 
 Here is some example command-line usage and output
 
 ```
-user_x@bin200$ java AnimalSimulator "Horse 20 Elephant 2"
-A horse moving in gallop at 
-
+user_x@bin200$ java AnimalSimulator Horse 21 Elephant 2
+A Horse of age 21 moving in gallop at 73.1 km/h
+An Elephant of age 2 moving in thunder at 39.5 km/h
 ```
 
+Two details should be pointed out here: 
+1. When the name of the species starts with a consonant, the first word is simply "A", with vowels it is "An"
+2. The animal speed is rounded to one decimal, and the desimal is a dot, not a comma!
+
+Just to remind you, when user input is processed, you should ALWAYS check this and give nice error messages.
+
+This is expected output when an illegal data is provided, or when help is requested:
+
+```
+user_x@bin200$ java AnimalSimulator Tortoise 199
+Error: maximum age of Tortoise is 190 years. Please give new values
+user_x@bin200$ java AnimalSimulator "Porpoise 58"
+Error: animal species Portoise is not known. run with single parameter "help" to get a listing of available species. Please give new values
+user_x@bin200$ java AnimalSimulator help
+Usage: java AnimalSimulator <Species age Species age ...>
+Supported species (in alphabetical order):
+1: Elephant
+2: Horse
+3: Mouse
+4: Tortoise
+```
 

@@ -5,6 +5,8 @@
 
 package week3_1;
 
+import java.util.List;
+
 /**
  *
  * @author Michiel Noback [michiel.noback@gmail.com]
@@ -18,6 +20,14 @@ public class AnimalSimulator {
 
     
     private void start(String[] args) {
-        //
+        //start processing command line arguments
+    }
+    
+    /**
+     * returns all supported animals as List, alhabetically ordered
+     * @return supportedAnimals the supported animals
+     */
+    public List<String> getSupportedAnimals() {
+        return null;
     }
 }

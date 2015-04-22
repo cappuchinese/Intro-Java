@@ -18,6 +18,6 @@ public class AnimalSimulator {
 
     
     private void start(String[] args) {
-        
+        //
     }
 }

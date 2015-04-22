@@ -33,8 +33,20 @@ Horse         | 88             | 62           | gallop
 Elephant      | 40             | 86           | thunder
 Tortoise      | 0.3            | 190          | crawl
 
+Of course, speeds are in km and ages in years!  
+
 Given these animal species, implement the subclasses in the correct way, 
 so that all objects behave correctly in this simulation system.
 
-Here is some example usage
+The tool should be given arguments at the command-line indicating which species to create and what age it is.  
+The application should then let the animal in question demonstrate its core business.  
+
+Here is some example command-line usage and output
+
+```
+user_x@bin200$ java AnimalSimulator "Horse 20 Elephant 2"
+A horse moving in gallop at 
+
+```
+
 

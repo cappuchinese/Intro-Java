@@ -1,4 +1,4 @@
-# Processing input from different sources #
+# Processing input from the command line & applying inheritance #
 
 ## Learning outcomes ##
 * processing command-line arguments

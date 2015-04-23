@@ -33,7 +33,7 @@ Therefore, keep thinking for yourself and do not be blinded by the red or green 
  If any duplicated code is found, you will BOTH fail this course and will be reported to the dean for cheating 
 (this is a very serious offence at the Hanze University of Applied Science!).
 
-Here is an example of a comment block with a minimal licence header; you should have one of these at the top of each source file.  
+Here is an example of a comment block with a minimal licence header; you should have one of these at the top of each source file:
 **Note: you can easily change licence text templates and class templates in NetBeans**
 
 ```Java
@@ -68,7 +68,7 @@ This is how you should annotate methods, with purpose of the method, the author 
      * Returns all supported animals as List, alhabetically ordered, with the given substring to search for.
      * If the search string is null, all supported animals are returned, else only the animals whose name matches
      * the given search string (anywhere in the name).
-     * @param searchString the search string
+     * @param searchString the search string. 
      * @return supportedAnimals the supported animals
      * @throws IllegalArgumentException ex for an empty search string
      */

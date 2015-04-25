@@ -59,7 +59,7 @@ public class AnimalSimulator {
 ```  
 
 This is how you should annotate methods, with purpose of the method, the author (if other than the class) and annotations for
-parameters (@param), return types (@return) and thrown exceptions (@throws -- also the unchecked exceptions if explicitly thrown):
+parameters (&#64;param), return types (&#64;return) and thrown exceptions (&#64;throws -- also the unchecked exceptions if explicitly thrown):
 
 ```Java
     

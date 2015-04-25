@@ -1,27 +1,54 @@
 # Final assignment 1: Developing a GenBank reader #
 
-## Learning outcomes ##
-* Using apache CLI to parse command-line arguments
-* Creating and implementing a class design for a real-life problem
-
-
 ## Assignment details ##
-This is one of the 
+Given the GenBank sequence format (assume only one DNA sequence resides in a single file 
+– if there are more, ignore these and report this to the user).  
+You can find some example files in the [downloads](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads) 
+section of this repo [example_genbank_files.zip](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads/example_genbank_files.zip)
+Create a parser for files of this type extracting of all Features only these fields:  
+
+  1. Source/organism
+  2. CDS/coordinates
+  3. CDS/product
+  4. CDS/db_xref
+  5. CDS/translation
+  6. Gene/coordinates
+  7. Gene/gene
+  8. Sequence
+
+Create an appropriate data model that extends the code you find in this package. 
+Create an executable that can be used for the listed use cases. 
+For all JUnit-tested use cases, example output is shown below.  
+The use cases:  
+
+  1. java -jar GenBankReader --help  
+    shows informative help/usage information 
+  2. java -jar GenBankReader.jar --infile &lt;INFILE&gt; --summary  
+    Creates a textual summary of the parsed file: parsed file, length of the sequence,
+    for genes: count and forward/reverse balance and for CDS features: count only. 
+    **NB: the F/R balance is the number on the forward strand divided by the total number**
+  3. java -jar GenBankReader.jar --infile &lt;INFILE&gt; --fetch_gene &lt;GENE NAME (-PATTERN)&gt;  
+    Returns nucleotide sequences of the genes that match the gene name pattern, in Fasta format
+  4. java -jar GenBankReader.jar --infile  &lt;INFILE&gt;--fetch_cds &lt;PRODUCT NAME (-PATTERN)&gt;
+    Returns the amino acid sequences of the CDSs that match the product name pattern, in Fasta format  
+  5. java -jar GenBankReader.jar --infile &lt;INFILE&gt; --fetch_features &lt;COORDINATES&gt;  
+    Returns all features between the given coordinates  
+  6. java -jar GenBankReader.jar --infile &lt;INFILE&gt; --find_sites &lt;DNA SEQ WITH IUPAC CODES&gt;
+    Lists the locations of all the sites where the DNA pattern is found: 
+    position and actual sequence and (if relevant) the element in which it resides
+
+Use case 2 example:  
+ 
+```
+michiel@bin206: java -jar GenBankReader.jar --infile example_genbank_file.gb --summary  
+file              example_genbank_file.gb  
+sequence length   5028 bp  
+number of genes   2  
+gene F/R balance  0.5
+number of CDSs    3      
+```
 
 
-
-
-1. By name (SortingType.PROTEIN_NAME) -- a simple alphabetical sort, ascending
-2. By accession number (ACCESSION_NUMBER) -- a simple alphabetical sort, ascending, but **case insensitive**
-3. By GO annotation (GO_ANNOTATION) -- a multi-step sort. 
-Sorting on GO annotation should be first on biological process, then on cellular component and last on molecular function. 
-All alphabetically ascending
-4. By Protein molecular weight (PROTEN_WEIGHT) -- this sorts on the summed molecular weight of all amino acids, descending.
-For amino acid weights you should use the weights listed on [WebQC](http://www.webqc.org/aminoacids.php). It is essential you use these exact weights!
-
-The first sorting type should be the default implementation for protein objects. 
-Provide this sorting in the correct place.
-The others should be provided/supported by implementation of the static method getSorter():
 
 ```Java
 /**
@@ -33,117 +60,3 @@ public static Comparator<Protein> getSorter(SortingType type) {
     //for you to implement
 }
 ```  
-For this assignment, you may **NOT** assume all amino acid sequence strings provided to the constructor are legal
-amino acid DNA sequences containing only regular amino acid characters. Also, do **NOT** assume only uppercase characters!
-When constructing Protein objects, perform the necessary checks on the given arguments and throw 
-an IllegalArgumentException if there is anything dodgy going on.  
-For this purpose, you can apply these rules:  
-
-1. Amino acid sequence should contain only one of the twenty regular amino acid characters
-2. These characters: "*" or ".", when at the last position, denote the end of a sequence and should simply be removed.
-
-You will probably want to implement the method gerMolecularWeight() in class Protein,
-and you should think carefully about the way to couple SortingType to the actual Comparator implementation 
--- there are several ways but they are not all equally nice.  
-Ask yourself this: who (which class) should be responsible for creating and serving a Comparator object?
-
-See these snippets for an example usage and result
-(**NB these examples should be viewed on Bitbucket, not within NetBeans!**):
-
-```Java
-ArrayList<Protein> proteins = new ArrayList<>();
-Protein p1 = new Protein("mannosidase alpha", "man1b1a", "MRTVALL", 
-        new GOannotation(15923, "cytoplasmatic", "beta-6-sulfate-N-acetylglucosaminidase activity", "sugar metabolism"));
-proteins.add(p1);
-
-Protein p2 = new Protein("60s ribosomal protein l35 pthr13872", "Stt3a", "MTDDLVLAW", 
-        new GOannotation(18279, "membrane inserted", "protein N-linked glycosylation via asparagine", "sugar metabolism"));
-proteins.add(p2);
-
-Protein p3 = new Protein("tumor suppressor candidate 3", "Tusc3", "MQSVNKLI", 
-        new GOannotation(18269, "mitochondrial", "dolichyl-diphosphooligosaccharide--protein glycosyltransferase", "cell-cycle regulation"));
-proteins.add(p3);
-
-Protein p4 = new Protein("synovial apoptosis inhibitor 1, synoviolin", "Syvn1", "MTYIILLVCDERT", 
-        new GOannotation(13259, "cytoplasmatic", "synoviolin-related", "cell-cycle regulation"));
-proteins.add(p4);
-
-Protein p5 = new Protein("fucosyltransferase 8 (alpha (1,6) fucosyltransferase)", "Fut8", "MGTHIILVLM", 
-        new GOannotation(342989, "cytoplasmatic", "fucosyltransferase activity", "sugar metabolism"));
-proteins.add(p5);
-
-//sort in Protein-standard manner
-Collections.sort(proteins);
-
-//print the Java 8 way
-proteins.stream().forEach(System.out::println);
-```
-Outputs:
-
-```
-Protein{name=60s ribosomal protein l35 pthr13872, accession=Stt3a, aminoAcidSequence=MTDDLVLAW}
-Protein{name=fucosyltransferase 8 (alpha (1,6) fucosyltransferase), accession=Fut8, aminoAcidSequence=MGTHIILVLM}
-Protein{name=mannosidase alpha, accession=man1b1a, aminoAcidSequence=MRTVALL}
-Protein{name=synovial apoptosis inhibitor 1, synoviolin, accession=Syvn1, aminoAcidSequence=MTYIILLVCDERT}
-Protein{name=tumor suppressor candidate 3, accession=Tusc3, aminoAcidSequence=MQSVNKLI}
-```
-
-and this
-
-```Java
-/*list construction omitted*/
-
-//sort on accession number
-Collections.sort(proteins, Protein.getSorter(SortingType.ACCESSION_NUMBER));
-
-proteins.stream().forEach(System.out::println);
-```
-Outputs:
-
-```
-Protein{name=fucosyltransferase 8 (alpha (1,6) fucosyltransferase), accession=Fut8, aminoAcidSequence=MGTHIILVLM}
-Protein{name=mannosidase alpha, accession=man1b1a, aminoAcidSequence=MRTVALL}
-Protein{name=60s ribosomal protein l35 pthr13872, accession=Stt3a, aminoAcidSequence=MTDDLVLAW}
-Protein{name=synovial apoptosis inhibitor 1, synoviolin, accession=Syvn1, aminoAcidSequence=MTYIILLVCDERT}
-Protein{name=tumor suppressor candidate 3, accession=Tusc3, aminoAcidSequence=MQSVNKLI}
-```
-
-and this
-
-```Java
-/*list construction omitted*/
-
-//sort on accession number
-Collections.sort(proteins, Protein.getSorter(SortingType.PROTEIN_WEIGHT));
-
-proteins.stream().forEach(System.out::println);
-```
-Outputs:
-
-```
-Protein{name=synovial apoptosis inhibitor 1, synoviolin, accession=Syvn1, aminoAcidSequence=MTYIILLVCDERT} //1569.89 
-Protein{name=fucosyltransferase 8 (alpha (1,6) fucosyltransferase), accession=Fut8, aminoAcidSequence=MGTHIILVLM} //1127.47
-Protein{name=60s ribosomal protein l35 pthr13872, accession=Stt3a, aminoAcidSequence=MTDDLVLAW} //1063.23 
-Protein{name=tumor suppressor candidate 3, accession=Tusc3, aminoAcidSequence=MQSVNKLI} //932.15
-Protein{name=mannosidase alpha, accession=man1b1a, aminoAcidSequence=MRTVALL} //803.03
-```
-
-and lastly, this
-
-```Java
-/*list construction omitted*/
-
-//sort on accession number
-Collections.sort(proteins, Protein.getSorter(SortingType.GO_ANNOTATION));
-//first on biological process (3), then on cellular component (1) and last on molecular function (2)
-proteins.stream().forEach(System.out::println);
-```
-Outputs:
-
-```
-Protein{name=synovial apoptosis inhibitor 1, synoviolin, accession=Syvn1, ...} //GOannotation(13259, "cytoplasmatic", "synoviolin-related", "cell-cycle regulation")
-Protein{name=tumor suppressor candidate 3, accession=Tusc3, ...} //GOannotation(18269, "mitochondrial", "dolichyl-diphosphooligosaccharide--protein glycosyltransferase", "cell-cycle regulation")
-Protein{name=mannosidase alpha, accession=man1b1a, ...} //GOannotation(15923, "cytoplasmatic", "beta-6-sulfate-N-acetylglucosaminidase activity", "sugar metabolism")
-Protein{name=fucosyltransferase 8 (alpha (1,6) fucosyltransferase), accession=Fut8, ...} //GOannotation(342989, "cytoplasmatic", "fucosyltransferase activity", "sugar metabolism")
-Protein{name=60s ribosomal protein l35 pthr13872, accession=Stt3a, ...} //GOannotation(18279, "membrane inserted", "protein N-linked glycosylation via asparagine", "sugar metabolism")
-```

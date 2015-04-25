@@ -32,10 +32,11 @@ The use cases:
   4. java -jar GenBankReader.jar --infile  &lt;INFILE&gt;--fetch_cds &lt;PRODUCT NAME (-PATTERN)&gt;
     Returns the amino acid sequences of the CDSs that match the product name pattern, in Fasta format  
   5. java -jar GenBankReader.jar --infile &lt;INFILE&gt; --fetch_features &lt;COORDINATES&gt;  
-    Returns all features between the given coordinates  
+    Returns all features with name, type, start, stop and orientation between the given coordinates.
+    Coordinates are given from..to. Only features that are completely covered on the given region should be listed.  
   6. java -jar GenBankReader.jar --infile &lt;INFILE&gt; --find_sites &lt;DNA SEQ WITH IUPAC CODES&gt;
     Lists the locations of all the sites where the DNA pattern is found: 
-    position and actual sequence and (if relevant) the element in which it resides
+    position and actual sequence and (if relevant) the gene in which it resides
 
 Use case 2 example:  
  
@@ -45,18 +46,90 @@ file              example_genbank_file.gb
 sequence length   5028 bp  
 number of genes   2  
 gene F/R balance  0.5
-number of CDSs    3      
+number of CDSs    3  
+```
+
+Use case 3 example:  
+ 
+```
+java -jar GenBankReader.jar --infile example_genbank_file.gb --fetch_gene AXL2  
+>gene AXL2 sequence  
+atgacacagcttcagatttcattattgctgacagctactatatcactactccatctagtagtggccacgccctatgaggc  
+atatcctatcggaaaacaataccccccagtggcaagagtcaatgaatcgtttacatttcaaatttccaatgatacctata  
+aatcgtctgtagacaagacagctcaaataacatacaattgcttcgacttaccgagctggctttcgtttgactctagttct  
+agaacgttctcaggtgaaccttcttctgacttactatctgatgcgaacaccacgttgtatttcaatgtaatactcgaggg  
+tacggactctgccgacagcacgtctttgaacaatacataccaatttgttgttacaaaccgtccatccatctcgctatcgt  
+cagatttcaatctattggcgttgttaaaaaactatggttatactaacggcaaaaacgctctgaaactagatcctaatgaa  
+gtcttcaacgtgacttttgaccgttcaatgttcactaacgaagaatccattgtgtcgtattacggacgttctcagttgta  
+taatgcgccgttacccaattggctgttcttcgattctggcgagttgaagtttactgggacggcaccggtgataaactcgg  
+cgattgctccagaaacaagctacagttttgtcatcatcgctacagacattgaaggattttctgccgttgaggtagaattc  
+gaattagtcatcggggctcaccagttaactacctctattcaaaatagtttgataatcaacgttactgacacaggtaacgt  
+ttcatatgacttacctctaaactatgtttatctcgatgacgatcctatttcttctgataaattgggttctataaacttat  
+tggatgctccagactgggtggcattagataatgctaccatttccgggtctgtcccagatgaattactcggtaagaactcc  
+aatcctgccaatttttctgtgtccatttatgatacttatggtgatgtgatttatttcaacttcgaagttgtctccacaac  
+ggatttgtttgccattagttctcttcccaatattaacgctacaaggggtgaatggttctcctactattttttgccttctc  
+agtttacagactacgtgaatacaaacgtttcattagagtttactaattcaagccaagaccatgactgggtgaaattccaa  
+tcatctaatttaacattagctggagaagtgcccaagaatttcgacaagctttcattaggtttgaaagcgaaccaaggttc  
+acaatctcaagagctatattttaacatcattggcatggattcaaagataactcactcaaaccacagtgcgaatgcaacgt  
+ccacaagaagttctcaccactccacctcaacaagttcttacacatcttctacttacactgcaaaaatttcttctacctcc  
+gctgctgctacttcttctgctccagcagcgctgccagcagccaataaaacttcatctcacaataaaaaagcagtagcaat  
+tgcgtgcggtgttgctatcccattaggcgttatcctagtagctctcatttgcttcctaatattctggagacgcagaaggg  
+aaaatccagacgatgaaaacttaccgcatgctattagtggacctgatttgaataatcctgcaaataaaccaaatcaagaa  
+aacgctacacctttgaacaacccctttgatgatgatgcttcctcgtacgatgatacttcaatagcaagaagattggctgc  
+tttgaacactttgaaattggataaccactctgccactgaatctgatatttccagcgtggatgaaaagagagattctctat  
+caggtatgaatacatacaatgatcagttccaatcccaaagtaaagaagaattattagcaaaacccccagtacagcctcca  
+gagagcccgttctttgacccacagaataggtcttcttctgtgtatatggatagtgaaccagcagtaaataaatcctggcg  
+atatactggcaacctgtcaccagtctctgatattgtcagagacagttacggatcacaaaaaactgttgatacagaaaaac  
+ttttcgatttagaagcaccagagaaggaaaaacgtacgtcaagggatgtcactatgtcttcactggacccttggaacagc  
+aatattagcccttctcccgtaagaaaatcagtaacaccatcaccatataacgtaacgaagcatcgtaaccgccacttaca  
+aaatattcaagactctcaaagcggtaaaaacggaatcactcccacaacaatgtcaacttcatcttctgacgattttgttc  
+cggttaaagatggtgaaaatttttgctgggtccatagcatggaaccagacagaagaccaagtaagaaaaggttagtagat  
+ttttcaaataagagtaatgtcaatgttggtcaagttaaggacattcacggacgcatcccagaaatgctgtga  
+```
+**NB: note that in GenBank format, "human" num,bering is employed: position 1 is
+ array position 0, and sequence end position x means "including x"!  **
+
+**NB2: for all use cases with patterns as search string, you should list all matches
+ after each other, orderd by their position in the sequence and with no empty lines in between **  
+
+**NB3: always list sequences in 80-character lines**  
+
+**NB4: of there is no /gene annotation on gene or CDS elements, you should take the /locus_tag annotation**  
+
+Use case 4 example:  
+ 
+```
+michiel@bin206: java -jar GenBankReader.jar --infile example_genbank_file.gb --fetch_cds REV7
+> CDS REV7 sequence  
+MNRWVEKWLRVYLKCYINLILFYRNVYPPQSFDYTTYQSFNLPQFVPINRHPALIDYIEELILDVLSKLTHVYRFSICII  
+NKKNDLCIEKYVLDFSELQHVDKDDQIITETEVFDEFRSSLNSLIMHLEKLPKVNDDTITFEAVINAIELELGHKLDRNR  
+RVDSLEEKAEIERDSNWVKCQEDENLPDNNGFQPPKIKLTSLVGSDVGPLIIHQFSEKLISGDDKILNGVYSQYEEGESI  
+FGSLF  
+```
+
+Use case 5 example:  
+ 
+```
+michiel@bin206: java -jar GenBankReader.jar --infile Haloarcula_marismortui_genome.gb --fetch_features 5000..10000  
+FEATURE;TYPE;START;STOP;ORIENTATION  
+rrnB0003;gene;6187;6450;F  
+rrnB0003;CDS;6187;6450;F  
+cdc6b;gene;6826;8064;R  
+cdc6b;CDS;6826;8064;R  
+rrnB0005;gene;9123;9221;F  
+rrnB0005;CDS;9123;9221;F  
 ```
 
 
+Use case 6 example:  
+ 
+```
+michiel@bin206: java -jar GenBankReader.jar --infile example_genbank_file.gb --find_sites AAARTTT 
+site search: AAARTTT (regex: AAA[AG]TTT)
+POSITION;SEQUENCE;GENE  
+2108;AAAATTT;AXL2  
+3021;AAAATTT;AXL2  
+3357;AAAATTT;REV7  
+4137;AAAGTTT;INTERGENIC  
+```
 
-```Java
-/**
- * provides a range of possible sorters, based on the type that is requested.
- * @param type
- * @return proteinSorter
- */
-public static Comparator<Protein> getSorter(SortingType type) {
-    //for you to implement
-}
-```  

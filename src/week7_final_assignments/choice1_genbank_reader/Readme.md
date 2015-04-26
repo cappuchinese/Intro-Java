@@ -3,18 +3,23 @@
 ## Assignment details ##
 Given the GenBank sequence format (assume only one DNA sequence resides in a single file 
 – if there are more, ignore these and report this to the user).  
-You can find some example files in the [downloads](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads) 
+You can find some example files in the "data" folder of this NetBeans project.  
+Do not remove the data from this folder -- this is where the test environment needs the test files!  
+It is howeber also available from the download
 section of this repo [example_genbank_files.zip](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads/example_genbank_files.zip)
-Create a parser for files of this type extracting of all Features only these fields:  
 
-  1. Source/organism
-  2. CDS/coordinates
-  3. CDS/product
-  4. CDS/db_xref
-  5. CDS/translation
-  6. Gene/coordinates
-  7. Gene/gene
-  8. Sequence
+Create a parser for files in GenBank format, extracting of all Features only these fields:  
+
+  1. DEFINITION
+  2. ACCESSION
+  3. Source/organism
+  4. CDS/coordinates
+  5. CDS/product
+  6. CDS/protein_id
+  7. CDS/translation
+  8. Gene/coordinates
+  9. Gene/gene (preferred) or Gene/locus_tag (if /gene is absent)
+  10. ORIGIN (nucleotide sequence)
 
 Create an appropriate data model that extends the code you find in this package. 
 Create an executable that can be used for the listed use cases. 
@@ -43,9 +48,11 @@ Use case 2 example:
 ```
 michiel@bin206: java -jar GenBankReader.jar --infile example_genbank_file.gb --summary  
 file              example_genbank_file.gb  
+organism          Saccharomyces cerevisiae  
+accession         U49845  
 sequence length   5028 bp  
 number of genes   2  
-gene F/R balance  0.5
+gene F/R balance  0.5  
 number of CDSs    3  
 ```
 
@@ -86,38 +93,38 @@ aaatattcaagactctcaaagcggtaaaaacggaatcactcccacaacaatgtcaacttcatcttctgacgattttgttc
 cggttaaagatggtgaaaatttttgctgggtccatagcatggaaccagacagaagaccaagtaagaaaaggttagtagat  
 ttttcaaataagagtaatgtcaatgttggtcaagttaaggacattcacggacgcatcccagaaatgctgtga  
 ```
-**NB: note that in GenBank format, "human" num,bering is employed: position 1 is
+**NB: note that in GenBank format, "human" numbering is employed: position 1 is
  array position 0, and sequence end position x means "including x"!  **
 
 **NB2: for all use cases with patterns as search string, you should list all matches
  after each other, orderd by their position in the sequence and with no empty lines in between **  
 
-**NB3: always list sequences in 80-character lines**  
+**NB3: always list sequences in 80-character lines, ending with a return and no trailing spaces**  
 
 **NB4: of there is no /gene annotation on gene or CDS elements, you should take the /locus_tag annotation**  
 
 Use case 4 example:  
  
 ```
-michiel@bin206: java -jar GenBankReader.jar --infile example_genbank_file.gb --fetch_cds REV7
-> CDS REV7 sequence  
+michiel@bin206: java -jar GenBankReader.jar --infile example_genbank_file.gb --fetch_cds Rev7p
+>CDS REV7 sequence  
 MNRWVEKWLRVYLKCYINLILFYRNVYPPQSFDYTTYQSFNLPQFVPINRHPALIDYIEELILDVLSKLTHVYRFSICII  
 NKKNDLCIEKYVLDFSELQHVDKDDQIITETEVFDEFRSSLNSLIMHLEKLPKVNDDTITFEAVINAIELELGHKLDRNR  
 RVDSLEEKAEIERDSNWVKCQEDENLPDNNGFQPPKIKLTSLVGSDVGPLIIHQFSEKLISGDDKILNGVYSQYEEGESI  
 FGSLF  
 ```
 
-Use case 5 example:  
+Use case 5 example (note that for genes, the /gene tag is listed and for CDSs the /product tag):  
  
 ```
 michiel@bin206: java -jar GenBankReader.jar --infile Haloarcula_marismortui_genome.gb --fetch_features 5000..10000  
 FEATURE;TYPE;START;STOP;ORIENTATION  
 rrnB0003;gene;6187;6450;F  
-rrnB0003;CDS;6187;6450;F  
+hypothetical protein;CDS;6187;6450;F  
 cdc6b;gene;6826;8064;R  
-cdc6b;CDS;6826;8064;R  
+cell division control protein 6 homolog 1;CDS;6826;8064;R  
 rrnB0005;gene;9123;9221;F  
-rrnB0005;CDS;9123;9221;F  
+hypothetical protein;CDS;9123;9221;F  
 ```
 
 
@@ -127,9 +134,9 @@ Use case 6 example:
 michiel@bin206: java -jar GenBankReader.jar --infile example_genbank_file.gb --find_sites AAARTTT 
 site search: AAARTTT (regex: AAA[AG]TTT)
 POSITION;SEQUENCE;GENE  
-2108;AAAATTT;AXL2  
-3021;AAAATTT;AXL2  
-3357;AAAATTT;REV7  
-4137;AAAGTTT;INTERGENIC  
+2109;AAAATTT;AXL2  
+3022;AAAATTT;AXL2  
+3358;AAAATTT;REV7  
+4138;AAAGTTT;INTERGENIC  
 ```
 

@@ -5,7 +5,7 @@ Given the GenBank sequence format (assume only one DNA sequence resides in a sin
 – if there are more, ignore these and report this to the user).  
 You can find some example files in the "data" folder of this NetBeans project.  
 Do not remove the data from this folder -- this is where the test environment needs the test files!  
-It is howeber also available from the download
+It is however also available from the download
 section of this repo [example_genbank_files.zip](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads/example_genbank_files.zip)
 
 Create a parser for files in GenBank format, extracting of all Features only these fields:  

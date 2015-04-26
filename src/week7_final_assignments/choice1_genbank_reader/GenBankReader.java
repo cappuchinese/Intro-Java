@@ -5,14 +5,6 @@
 
 package week7_final_assignments.choice1_genbank_reader;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Michiel Noback [michiel.noback@gmail.com]

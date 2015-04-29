@@ -1,5 +1,7 @@
 # Final assignment 1: Developing a GenBank reader #
 
+## Special challenge of this assignment: parsing complex content ##
+
 ## Assignment details ##
 Given the GenBank sequence format (assume only one DNA sequence resides in a single file 
 – if there are more, ignore these and report this to the user).  
@@ -34,7 +36,7 @@ The use cases:
     **NB: the F/R balance is the number on the forward strand divided by the total number**
   3. java -jar GenBankReader.jar --infile <INFILE> --fetch_gene <GENE NAME (-PATTERN)>  
     Returns nucleotide sequences of the genes that match the gene name pattern, in Fasta format
-  4. java -jar GenBankReader.jar --infile  <INFILE>--fetch_cds <PRODUCT NAME (-PATTERN)>
+  4. java -jar GenBankReader.jar --infile <INFILE> --fetch_cds <PRODUCT NAME (-PATTERN)>
     Returns the amino acid sequences of the CDSs that match the product name pattern, in Fasta format  
   5. java -jar GenBankReader.jar --infile <INFILE> --fetch_features <COORDINATES>  
     Returns all features with name, type, start, stop and orientation between the given coordinates.

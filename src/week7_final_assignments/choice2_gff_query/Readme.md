@@ -1,5 +1,7 @@
 # Final assignment 2: Developing a GFF file query app #
 
+## Special challenge of this assignment: applying and combining filters ##
+
 ## Assignment details ##
 The GFF3 file format is a data format used to communicate the presence and location of feature on a sequence.  
 GFF3 stands for Generic Feature Format version three.  
@@ -27,8 +29,38 @@ The fields are these:
 For this assignment you will work on parsing this file type and reporting information from its contents.  
 You can find some example files in the "data" folder of this NetBeans project (they all have the extension ".gff3".  
 Do not remove the data from this folder -- this is where the test environment needs the test files!  
-Create a parser for files in GFF3 format, extracting all annotations, and implement the following use cases
-(for all JUnit-tested use cases, example output is shown below):
+Create a filter/parser for files in GFF3 format, and implement the given use cases.
+You may notice that this assignment is all about filtering data in different filter combinations. 
+This is the aspect of this assignment that will weight extra heavily!
+All these selectors and filters should be supported **in any combination**:  
+
+  * --fetch_type <TYPE>     Will fetch a certain type of feature (e.g. gene, CDS)
+  * --fetch_region <COORDINATES>    Will select all features that are included completely within the given coordinates
+  * --filter <SOURCE, SCORE, ORIENTATION MAXIMUM AND/OR MINIMUM LENGTH> Will filter on any of these data fields, in any combination:
+       * SOURCE should filter on source attribute   
+       * SCORE should filter on score attribute   
+       * ORIENTATION should be defined using a "+", "-" or "." character  
+       * MINIMUM LENGTH should be defined using an integer
+       * MAXIMUM LENGTH should be defined using an integer
+    The filter should be specified using the format "source|score|orientation|maximum_length|minimum_length", 
+    where suppression of an individual filter is indicated using an asterisk (*).  
+
+    For instance, this will select all genes of over 10000 nucleotides long:
+    ```
+    java -jar GffQuery.jar --infile potato_pseudomolecule_sample.gff3 --fetch_type gene --filter "*|*|*|10000|*"  
+    ```
+
+    And this will select all features on the + strand with unspecified score:
+    ```
+    java -jar GffQuery.jar --infile potato_pseudomolecule_sample.gff3 --filter "*|.|+|*|*"  
+    ```
+
+    One last example, this will select all CDS features defined by the program BestORF on the minus strand, of at least 250 and at most 1000 nucleotides:
+    ```
+    java -jar GffQuery.jar --infile potato_pseudomolecule_sample.gff3 --fetch_type CDS --filter "BestORF|*|-|250|1000"  
+    ```
+
+Some of the possible use cases are listed below and in the example section (for most JUnit-tested use cases, example output is shown below):
 
   1. java -jar GffQuery --help  
      shows informative help/usage information  
@@ -36,18 +68,16 @@ Create a parser for files in GFF3 format, extracting all annotations, and implem
      Creates a textual summary of the parsed file: names of molecules with annotations, types and counts of features.  
   3. java -jar GffQuery.jar --infile  <INFILE> --fetch_type <TYPE>  
      Returns a GFF3-type listing of all features of this type  
-  4. java -jar GffQuery.jar --infile <INFILE> --fetch_type  <TYPE> --filter <SCORE, ORIENTATION OR MINIMUM LENGTH>  
-     Returns a GFF3-type listing of all features of this type, but filtered according to the filter. 
-     If the fetch_type argument has the value "ALL", all feature types should be included.  
-       * SCORE should be defined as a double (always with at leat one decimal place)  
-       * ORIENTATION should be defined using a "+", "-" or "." character  
-       * MINIMUM LENGTH should be defined using an integer
+  4. java -jar GffQuery.jar --infile <INFILE> --fetch_type  <TYPE> --filter <FILTER>  
+     Returns a GFF3-type listing of all features of this type, but filtered according to the filter (see above). 
   5. java -jar GffQuery.jar --infile <INFILE> --fetch_children <PARENT ID>  
-     Lists all children RECURSIVELY as GFF3-type listing that have the given Parent ID as ancestor (parent or parents parent!).  
+     Returns a GFF3-type listing RECURSIVELY as GFF3-type listing that have the given Parent ID as ancestor (parent or parents parent!).  
   6. java -jar GffQuery.jar --infile <INFILE> --fetch_region <COORDINATES>  
-     Returns all features that lie completely between the given coordinates, as shown below  
-  7. java -jar GffQuery.jar --infile <INFILE> --find_wildcard <WILDCARD STRING>  
-     Lists all features that have the given wildrcard string in the Name attribute (part of field 9)
+     Returns a GFF3-type listing of all features that lie completely between the given coordinates
+  7. java -jar GffQuery.jar --infile <INFILE> --fetch_region <COORDINATES> --filter <FILTER> 
+     Returns a GFF3-type listing of all features that lie completely between the given coordinates, but with the given filter applied.
+  8. java -jar GffQuery.jar --infile <INFILE> --find_wildcard <WILDCARD STRING>  
+     Lists all features that have the given wildrcard string (a regex string) in the Name attribute (part of field 9)
 
 
 Use case 2 example:  
@@ -87,7 +117,7 @@ PGSC0003DMB000000010	Cufflinks	mRNA	1243971	1245448	.	+	.	ID=PGSC0003DMT40000000
 Use case 4 example (B). Selects all introns over 500 nucleotides long.
 
 ```
-michiel@bin206: java -jar GffQuery.jar --infile data/gene_sample.gff3 --fetch_type intron --filter 500  
+michiel@bin206: java -jar GffQuery.jar --infile data/gene_sample.gff3 --fetch_type intron --filter "*|*|*|500|*"  
 PGSC0003DMB000000010	Cufflinks	intron	1243737	1244205	.	+	.	ID=PGSC0003DMI400000002;Parent=PGSC0003DMT400000001,PGSC0003DMT400000002;
 PGSC0003DMB000000155	Cufflinks	intron	1100470	1102032	.	-	.	ID=PGSC0003DMI400001469;Parent=PGSC0003DMT400000757,PGSC0003DMT400000756,PGSC0003DMT400000758;
 PGSC0003DMB000000155	Cufflinks	intron	1098704	1100195	.	-	.	ID=PGSC0003DMI400001470;Parent=PGSC0003DMT400000757,PGSC0003DMT400000756,PGSC0003DMT400000758;
@@ -108,9 +138,45 @@ human15.1 . CDS             215641  215766 . +   . Parent=HsT20206
 human15.1 . three_prime_UT  215767  215771 . +   . Parent=HsT20206
 ```
 
-Use case 6 example.  
+Use case 6 example. Selects all feature between 250000 and 260000  
 
 ```
-michiel@bin206: java -jar GffQuery.jar --infile data/gene_sample.gff3 --fetch_region "1100000.."  
+michiel@bin206: java -jar GffQuery.jar --infile data/potato_pseudomolecule_sample.gff3 --fetch_region "250000..260000"
+ST4.03ch01	Cufflinks	mRNA	250845	265748	.	-	.	ID=PGSC0003DMT400058653;Parent=PGSC0003DMG400022786;Source_id=RNASEQ39.8879.0;Mapping_depth=160.298817;Class=2;name="Plasmalemma Na+/H+ antiporter"
+ST4.03ch01	Cufflinks	exon	250845	251443	.	-	.	ID=PGSC0003DME400154360;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks	exon	251929	252233	.	-	.	ID=PGSC0003DME400154362;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks	exon	252918	253185	.	-	.	ID=PGSC0003DME400154365;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks/GLEAN	exon	253806	254012	.	-	.	ID=PGSC0003DME400154366;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks/GLEAN	exon	254096	254314	.	-	.	ID=PGSC0003DME400154367;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks/GLEAN	exon	254408	254539	.	-	.	ID=PGSC0003DME400154368;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks/GLEAN	exon	254827	254924	.	-	.	ID=PGSC0003DME400154369;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks/GLEAN	exon	255808	256110	.	-	.	ID=PGSC0003DME400154370;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks/GLEAN	exon	256427	256658	.	-	.	ID=PGSC0003DME400154371;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks/GLEAN	exon	257433	257540	.	-	.	ID=PGSC0003DME400154372;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks/GLEAN	exon	257653	257700	.	-	.	ID=PGSC0003DME400154373;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks/GLEAN	exon	257815	257999	.	-	.	ID=PGSC0003DME400154374;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks/GLEAN	exon	259062	259117	.	-	.	ID=PGSC0003DME400154375;Parent=PGSC0003DMT400058653
+ST4.03ch01	Cufflinks/GLEAN	exon	259678	259722	.	-	.	ID=PGSC0003DME400154376;Parent=PGSC0003DMT400058653 
+```
+
+Use case example. Selects all gene features between 250000 and 300000  
+
+```
+michiel@bin206: java -jar GffQuery.jar --infile data/potato_pseudomolecule_sample.gff3 --fetch_type gene --fetch_region "250000..300000" --filter "*|*|*|500|*"
+ST4.03ch01	BGI	gene	250845	265748	.	.	.	ID=PGSC0003DMG400022786;name="Plasmalemma Na+/H+ antiporter"
+ST4.03ch01	BGI	gene	266476	273873	.	.	.	ID=PGSC0003DMG400022766;name="Protein kinase"
+ST4.03ch01	BGI	gene	276814	280162	.	.	.	ID=PGSC0003DMG400022767;name="Transmembrane transporter"
+ST4.03ch01	BGI	gene	283995	286543	.	.	.	ID=PGSC0003DMG400022768;name="UPF0497 membrane protein PIMP1"
+```
+
+Use case example. Selects all mRNA features with "kinase" or "Kinase" in the name between 250000 and 300000
+
+```
+michiel@bin206: java -jar GffQuery.jar --infile data/potato_pseudomolecule_sample.gff3 --fetch_type mRNA --fetch_region "250000..300000" --find_wildcard "[Kk]inase"
+ST4.03ch01	Cufflinks	mRNA	266476	273873	.	+	.	ID=PGSC0003DMT400058597;Parent=PGSC0003DMG400022766;Source_id=RNASEQ39.8890.0;Mapping_depth=14.047011;Class=1;name="Protein kinase"
+ST4.03ch01	Cufflinks	mRNA	266476	273873	.	+	.	ID=PGSC0003DMT400058598;Parent=PGSC0003DMG400022766;Source_id=RNASEQ39.8890.1;Mapping_depth=420.967308;Class=1;name="Protein kinase"
+ST4.03ch01	Cufflinks	mRNA	267315	273858	.	+	.	ID=PGSC0003DMT400058600;Parent=PGSC0003DMG400022766;Source_id=RNASEQ39.8890.3;Mapping_depth=21.280509;Class=1;name="Protein kinase"
+ST4.03ch01	Cufflinks	mRNA	268805	273858	.	+	.	ID=PGSC0003DMT400058601;Parent=PGSC0003DMG400022766;Source_id=RNASEQ39.8890.4;Mapping_depth=21.328241;Class=1;name="Protein kinase"
+ST4.03ch01	Cufflinks	mRNA	272577	273858	.	+	.	ID=PGSC0003DMT400058602;Parent=PGSC0003DMG400022766;Source_id=RNASEQ39.8890.5;Mapping_depth=9.797389;Class=1;name="Protein kinase"
 ```
 

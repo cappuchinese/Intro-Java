@@ -45,17 +45,20 @@ All these selectors and filters should be supported **in any combination**:
     The filter should be specified using the format "source|score|orientation|maximum_length|minimum_length", 
     where suppression of an individual filter is indicated using an asterisk (*).  
 
-    For instance, this will select all genes of over 10000 nucleotides long:
+    For instance, this will select all genes of over 10000 nucleotides long:  
+
     ```
     java -jar GffQuery.jar --infile potato_pseudomolecule_sample.gff3 --fetch_type gene --filter "*|*|*|10000|*"  
     ```
 
-    And this will select all features on the + strand with unspecified score:
+    And this will select all features on the + strand with unspecified score:  
+
     ```
     java -jar GffQuery.jar --infile potato_pseudomolecule_sample.gff3 --filter "*|.|+|*|*"  
     ```
 
-    One last example, this will select all CDS features defined by the program BestORF on the minus strand, of at least 250 and at most 1000 nucleotides:
+    One last example, this will select all CDS features defined by the program BestORF on the minus strand, of at least 250 and at most 1000 nucleotides:  
+
     ```
     java -jar GffQuery.jar --infile potato_pseudomolecule_sample.gff3 --fetch_type CDS --filter "BestORF|*|-|250|1000"  
     ```

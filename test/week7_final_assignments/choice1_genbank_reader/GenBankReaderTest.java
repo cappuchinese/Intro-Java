@@ -45,7 +45,7 @@ public class GenBankReaderTest {
                 "gene F/R balance  0.5" + System.lineSeparator() +
                 "number of CDSs    3" + System.lineSeparator();
         GenBankReader.main(args);
-        assertEquals("Testing command line \"java -jar GenBankReader.jar --infile example_genbank_file.gb --summary\"", expectedPrint, outContent.toString());
+        assertEquals("Testing command line \"java -jar GenBankReader.jar --infile data/example_genbank_file.gb --summary\"", expectedPrint, outContent.toString());
     }
 
     @Test
@@ -61,8 +61,8 @@ public class GenBankReaderTest {
                 "ttttcaaataagagtaatgtcaatgttggtcaagttaaggacattcacggacgcatcccagaaatgctgtga";
         
         GenBankReader.main(args);
-        assertTrue("Testing command line \"java -jar GenBankReader.jar --infile example_genbank_file.gb --fetch_gene AXL2\"", outContent.toString().startsWith(expectedPrintStart));
-        assertTrue("Testing command line \"java -jar GenBankReader.jar --infile example_genbank_file.gb --fetch_gene AXL2\"", outContent.toString().endsWith(expectedPrintEnd));
+        assertTrue("Testing command line \"java -jar GenBankReader.jar --infile data/example_genbank_file.gb --fetch_gene AXL2\"", outContent.toString().startsWith(expectedPrintStart));
+        assertTrue("Testing command line \"java -jar GenBankReader.jar --infile data/example_genbank_file.gb --fetch_gene AXL2\"", outContent.toString().endsWith(expectedPrintEnd));
     }
 
     @Test
@@ -76,7 +76,7 @@ public class GenBankReaderTest {
                 "FGSLF";
         
         GenBankReader.main(args);
-        assertEquals("Testing command line \"java -jar GenBankReader.jar --infile example_genbank_file.gb --fetch_cds Rev7p\"", expectedPrint, outContent.toString());
+        assertEquals("Testing command line \"java -jar GenBankReader.jar --infile data/example_genbank_file.gb --fetch_cds Rev7p\"", expectedPrint, outContent.toString());
     }
 
     @Test
@@ -92,7 +92,7 @@ public class GenBankReaderTest {
                 "hypothetical protein;CDS;9123;9221;F";
         
         GenBankReader.main(args);
-        assertEquals("Testing command line \"java -jar GenBankReader.jar --infile Haloarcula_marismortui_genome.gb --fetch_features 5000..10000\"", expectedPrint, outContent.toString());
+        assertEquals("Testing command line \"java -jar GenBankReader.jar --infile data/Haloarcula_marismortui_genome.gb --fetch_features 5000..10000\"", expectedPrint, outContent.toString());
     }
 
     @Test
@@ -106,9 +106,6 @@ public class GenBankReaderTest {
                 "4138;AAAGTTT;INTERGENIC" + System.lineSeparator();
         
         GenBankReader.main(args);
-        assertEquals("Testing command line \"java -jar GenBankReader.jar --infile example_genbank_file.gb --find_sites AAARTTT\"", expectedPrint, outContent.toString());
+        assertEquals("Testing command line \"java -jar GenBankReader.jar --infile data/example_genbank_file.gb --find_sites AAARTTT\"", expectedPrint, outContent.toString());
     }
-
-
-    
 }

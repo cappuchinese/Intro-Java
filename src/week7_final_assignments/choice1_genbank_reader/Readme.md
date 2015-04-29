@@ -28,25 +28,25 @@ The use cases:
 
   1. java -jar GenBankReader --help  
     shows informative help/usage information 
-  2. java -jar GenBankReader.jar --infile &lt;INFILE&gt; --summary  
+  2. java -jar GenBankReader.jar --infile <INFILE> --summary  
     Creates a textual summary of the parsed file: parsed file, length of the sequence,
     for genes: count and forward/reverse balance and for CDS features: count only. 
     **NB: the F/R balance is the number on the forward strand divided by the total number**
-  3. java -jar GenBankReader.jar --infile &lt;INFILE&gt; --fetch_gene &lt;GENE NAME (-PATTERN)&gt;  
+  3. java -jar GenBankReader.jar --infile <INFILE> --fetch_gene <GENE NAME (-PATTERN)>  
     Returns nucleotide sequences of the genes that match the gene name pattern, in Fasta format
-  4. java -jar GenBankReader.jar --infile  &lt;INFILE&gt;--fetch_cds &lt;PRODUCT NAME (-PATTERN)&gt;
+  4. java -jar GenBankReader.jar --infile  <INFILE>--fetch_cds <PRODUCT NAME (-PATTERN)>
     Returns the amino acid sequences of the CDSs that match the product name pattern, in Fasta format  
-  5. java -jar GenBankReader.jar --infile &lt;INFILE&gt; --fetch_features &lt;COORDINATES&gt;  
+  5. java -jar GenBankReader.jar --infile <INFILE> --fetch_features <COORDINATES>  
     Returns all features with name, type, start, stop and orientation between the given coordinates.
     Coordinates are given from..to. Only features that are completely covered on the given region should be listed.  
-  6. java -jar GenBankReader.jar --infile &lt;INFILE&gt; --find_sites &lt;DNA SEQ WITH IUPAC CODES&gt;
+  6. java -jar GenBankReader.jar --infile <INFILE> --find_sites <DNA SEQ WITH IUPAC CODES>
     Lists the locations of all the sites where the DNA pattern is found: 
     position and actual sequence and (if relevant) the gene in which it resides
 
 Use case 2 example:  
  
 ```
-michiel@bin206: java -jar GenBankReader.jar --infile example_genbank_file.gb --summary  
+michiel@bin206: java -jar GenBankReader.jar --infile data/example_genbank_file.gb --summary  
 file              example_genbank_file.gb  
 organism          Saccharomyces cerevisiae  
 accession         U49845  
@@ -59,7 +59,7 @@ number of CDSs    3
 Use case 3 example:  
  
 ```
-java -jar GenBankReader.jar --infile example_genbank_file.gb --fetch_gene AXL2  
+java -jar GenBankReader.jar --infile example_data/genbank_file.gb --fetch_gene AXL2  
 >gene AXL2 sequence  
 atgacacagcttcagatttcattattgctgacagctactatatcactactccatctagtagtggccacgccctatgaggc  
 atatcctatcggaaaacaataccccccagtggcaagagtcaatgaatcgtttacatttcaaatttccaatgatacctata  
@@ -106,7 +106,7 @@ ttttcaaataagagtaatgtcaatgttggtcaagttaaggacattcacggacgcatcccagaaatgctgtga
 Use case 4 example:  
  
 ```
-michiel@bin206: java -jar GenBankReader.jar --infile example_genbank_file.gb --fetch_cds Rev7p
+michiel@bin206: java -jar GenBankReader.jar --infile data/example_genbank_file.gb --fetch_cds Rev7p
 >CDS REV7 sequence  
 MNRWVEKWLRVYLKCYINLILFYRNVYPPQSFDYTTYQSFNLPQFVPINRHPALIDYIEELILDVLSKLTHVYRFSICII  
 NKKNDLCIEKYVLDFSELQHVDKDDQIITETEVFDEFRSSLNSLIMHLEKLPKVNDDTITFEAVINAIELELGHKLDRNR  
@@ -117,7 +117,7 @@ FGSLF
 Use case 5 example (note that for genes, the /gene tag is listed and for CDSs the /product tag):  
  
 ```
-michiel@bin206: java -jar GenBankReader.jar --infile Haloarcula_marismortui_genome.gb --fetch_features 5000..10000  
+michiel@bin206: java -jar GenBankReader.jar --infile data/Haloarcula_marismortui_genome.gb --fetch_features "5000..10000"  
 FEATURE;TYPE;START;STOP;ORIENTATION  
 rrnB0003;gene;6187;6450;F  
 hypothetical protein;CDS;6187;6450;F  
@@ -131,7 +131,7 @@ hypothetical protein;CDS;9123;9221;F
 Use case 6 example:  
  
 ```
-michiel@bin206: java -jar GenBankReader.jar --infile example_genbank_file.gb --find_sites AAARTTT 
+michiel@bin206: java -jar GenBankReader.jar --infile data/example_genbank_file.gb --find_sites AAARTTT 
 site search: AAARTTT (regex: AAA[AG]TTT)
 POSITION;SEQUENCE;GENE  
 2109;AAAATTT;AXL2  

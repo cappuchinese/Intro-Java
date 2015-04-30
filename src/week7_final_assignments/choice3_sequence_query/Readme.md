@@ -16,7 +16,7 @@ VGARKLQDILRALSDSVDIVLTLEDKRLTVKAGKSRFQLQTLPAADYPRMNLPDGDAVRFSVPQRAFKRQ
 
 The NCBI-type Fasta sequence header knows multiple elements. In general, the header elements can be defined as this:  
 
-  1. > - start of sequence header line: always at start of line and an essential part   
+  1. ">" - start of sequence header line: always at start of line and an essential part   
   2. identifiers - an optional series of identifiers as pairs of elements separated by the pipe symbol: identifier-type and identifier   
   3. sequence description or name 
   4. organism name, surrounded by square brackets 
@@ -25,55 +25,64 @@ For this assignment you will work on parsing this file type and reporting inform
 You can find some example files in the "data" folder of this NetBeans project (they all have the extension ".fa", ".fna" or ".faa".  
 Do not remove the data from this folder -- this is where the test environment needs the test files!  
 Create a filter/parser for files in Fasta format, and implement the given use cases.
-You may notice that this assignment is also about filtering data in different filter combinations. 
-This is the aspect of this assignment that will weight extra heavily!
+
 All these selectors and filters should be supported **in any combination**:  
 
+  * --fetch_prosite <PROSITE PATTERN>  Will report all sequences that contain the Prosite pattern, 
+    with the location and actual sequence found (see below for example output).
+  * find_regex <REGEX_PATTERN>   Will report all sequences that contain the Regular expression pattern, 
+    with the location and actual sequence found (see below for example output).
+  * --find_organism <(PART OF) ORGANISM_NAME>  Will report all sequences having this wildcard string (a regex pattern)
+    in the organism name
+  * --find_description <WILDCARD-STRING>  Will report all sequences having this wildcard string (a regex pattern)
+    in the description / sequence name 
 
+**Note** options find_description and find_organism should be supported in combination, 
+so that sequences are only reported when both match.
 
+Some of the possible use cases are listed below and in the example section (for most JUnit-tested use cases, example output is shown below):  
 
-  * --fetch_type <TYPE>     Will fetch a certain type of feature (e.g. gene, CDS)
-  * --fetch_region <COORDINATES>    Will select all features that are included completely within the given coordinates
-  * --filter <SOURCE, SCORE, ORIENTATION MAXIMUM AND/OR MINIMUM LENGTH> Will filter on any of these data fields, in any combination:
-       * SOURCE should filter on source attribute   
-       * SCORE should filter on score attribute   
-       * ORIENTATION should be defined using a "+", "-" or "." character  
-       * MINIMUM LENGTH should be defined using an integer
-       * MAXIMUM LENGTH should be defined using an integer
-    The filter should be specified using the format "source|score|orientation|maximum_length|minimum_length", 
-    where suppression of an individual filter is indicated using an asterisk (*).  
+  1. java -jar SeqQuery --help
+    Shows informative help/usage information  
+  2. java -jar SeqQuery --input <INFILE> --summary  
+    Creates a textual summary of the parsed file: number of sequences, sequence type, average length (see below for an example) 
+  3. java -jar SeqQuery --input <INFILE> --to_csv ";"
+    Accepts a command-line argument specifying the (multi-)sequence file.
+    Generates a nicely formatted csv listing with these columns ands the given character as separator:  
+    * ACCNO: First accession
+    * NAME: Name / descripion
+    * ORG: Organism
+    * TYPE: Type (DNA, RNA, Protein)
+    * LENGHT: Length
+    * MOL_WEIGHT: Molecular weight
+  4. java -jar SeqQuery --input <INFILE> --find_prosite <PROSITE_PATTERN>  
+    Reports which sequences have the given Prosite pattern 
+    Generates a nicely formatted csv listing with these columns and Tab as separator:  
+    * ACCNO: First accession
+    * NAME: Name / descripion
+    * ORG: Organism
+    * TYPE: Type (DNA, RNA, Protein)
+    * POSITION: Start position of match
+    * SEQ: Actual sequence of match
+  5. java -jar SeqQuery --input <INFILE> --find_regex <REGEX_PATTERN>  
+    Reports which sequences have the given regular expression pattern and where
+    Generates a nicely formatted csv listing with these columns and Tab as separator:  
+    * ACCNO: First accession
+    * NAME: Name / descripion
+    * ORG: Organism
+    * TYPE: Type (DNA, RNA, Protein)
+    * POSITION: Start position of match
+    * SEQ: Actual sequence of match
+  6. java -jar SeqQuery --input <INFILE> --find_organism <(PART OF) ORGANISM_NAME>  
+    Returns the sequences that have the given organism name (sub) string as-is (a.g. in Fasta format)  
+  7. java -jar SeqQuery --input <INFILE> --find_id <ID>  
+    Returns the sequence with the given name as-is (a.g. in Fasta format)  
+  8. java -jar SeqQuery --input <INFILE> --find_description <WILDCARD-STRING>  
+    Returns the sequences with the given pattern in the description as-is (a.g. in Fasta format)  
+    
+**NB**: aspects 2, 3, 4 and 6 should generate a well-formatted csv file (or terminal output)
+     while 6 and 7 should produce the sequences as-is in Fasta format!  
 
-    For instance, this will select all genes of over 10000 nucleotides long:
-    ```
-    java -jar GffQuery.jar --infile potato_pseudomolecule_sample.gff3 --fetch_type gene --filter "*|*|*|10000|*"  
-    ```
-
-    And this will select all features on the + strand with unspecified score:
-    ```
-    java -jar GffQuery.jar --infile potato_pseudomolecule_sample.gff3 --filter "*|.|+|*|*"  
-    ```
-
-    One last example, this will select all CDS features defined by the program BestORF on the minus strand, of at least 250 and at most 1000 nucleotides:
-    ```
-    java -jar GffQuery.jar --infile potato_pseudomolecule_sample.gff3 --fetch_type CDS --filter "BestORF|*|-|250|1000"  
-    ```
-
-Some of the possible use cases are listed below and in the example section (for most JUnit-tested use cases, example output is shown below):
-1)	java -jar SeqQuery --help
-shows informative help/usage information
-2)	java -jar SeqQuery --input <INFILE> --output <OUTFILE>
-accepts a command-line argument specifying the (multi-)sequence file and output file. Generates a nicely formatted csv file listing relevant properties (e.g. length, molecular weight,) of the sequences.
-3)	java -jar SeqQuery --input <INFILE> --find_prosite <PROSITE_PATTERN>
-Reports which sequences have the given Prosite pattern 
-4)	java -jar SeqQuery --input <INFILE> --find_regex <REGEX_PATTERN>
-Reports which sequences have the given regular expression pattern and where
-5)	java -jar SeqQuery --input <INFILE> --find_organism <(PART OF) ORGANISM_NAME>
-Reports which sequences belong to the given organism as-is (a.g. in Fasta format)
-6)	java -jar SeqQuery --input <INFILE> --find_id <ID>
-Returns the sequence with the given name as-is (a.g. in Fasta format)
-7)	java -jar SeqQuery --input <INFILE> --find_description <WILDCARD-STRING>
-Returns the sequences with the given pattern in the description as-is (a.g. in Fasta format)
-NB: aspects 2, 3, 4 and 6 should generate a well-formatted csv file (or terminal output) while 6 and 7 should produce the sequences as-is in Fasta format!
 
 
 

@@ -28,20 +28,20 @@ Create an executable that can be used for the listed use cases.
 For all JUnit-tested use cases, example output is shown below.  
 The use cases:  
 
-  1. java -jar GenBankReader --help  
+  1. ```java -jar GenBankReader --help```  
     shows informative help/usage information 
-  2. java -jar GenBankReader.jar --infile <INFILE> --summary  
+  2. ```java -jar GenBankReader.jar --infile <INFILE> --summary```  
     Creates a textual summary of the parsed file: parsed file, length of the sequence,
     for genes: count and forward/reverse balance and for CDS features: count only. 
     **NB: the F/R balance is the number on the forward strand divided by the total number**
-  3. java -jar GenBankReader.jar --infile <INFILE> --fetch_gene <GENE NAME (-PATTERN)>  
+  3. ```java -jar GenBankReader.jar --infile <INFILE> --fetch_gene <GENE NAME (-PATTERN)>```  
     Returns nucleotide sequences of the genes that match the gene name pattern, in Fasta format
-  4. java -jar GenBankReader.jar --infile <INFILE> --fetch_cds <PRODUCT NAME (-PATTERN)>
+  4. ```java -jar GenBankReader.jar --infile <INFILE> --fetch_cds <PRODUCT NAME (-PATTERN)>```  
     Returns the amino acid sequences of the CDSs that match the product name pattern, in Fasta format  
-  5. java -jar GenBankReader.jar --infile <INFILE> --fetch_features <COORDINATES>  
+  5. ```java -jar GenBankReader.jar --infile <INFILE> --fetch_features <COORDINATES>```  
     Returns all features with name, type, start, stop and orientation between the given coordinates.
     Coordinates are given from..to. Only features that are completely covered on the given region should be listed.  
-  6. java -jar GenBankReader.jar --infile <INFILE> --find_sites <DNA SEQ WITH IUPAC CODES>
+  6. ```java -jar GenBankReader.jar --infile <INFILE> --find_sites <DNA SEQ WITH IUPAC CODES>```  
     Lists the locations of all the sites where the DNA pattern is found: 
     position and actual sequence and (if relevant) the gene in which it resides
 

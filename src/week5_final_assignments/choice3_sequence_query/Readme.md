@@ -39,11 +39,11 @@ All these selectors and filters should be supported **in any combination**:
 
 Some of the possible use cases are listed below and in the example section (for most JUnit-tested use cases, example output is shown below):  
 
-  1. ```java -jar SeqQuery --help```
+  1. ```java -jar SeqQuery --help```  
     Shows informative help/usage information  
-  2. java -jar SeqQuery --input <INFILE> --summary  
+  2. ```java -jar SeqQuery --input <INFILE> --summary```  
     Creates a textual summary of the parsed file: number of sequences, sequence type, average length (see below for an example) 
-  3. java -jar SeqQuery --input <INFILE> --to_csv ";"
+  3. ```java -jar SeqQuery --input <INFILE> --to_csv ";"```  
     Accepts a command-line argument specifying the (multi-)sequence file.
     Generates a nicely formatted csv listing with these columns ands the given character as separator:  
     * ACCNO: First accession
@@ -52,7 +52,7 @@ Some of the possible use cases are listed below and in the example section (for 
     * TYPE: Type (DNA, RNA, Protein)
     * LENGHT: Length
     * MOL_WEIGHT: Molecular weight
-  4. java -jar SeqQuery --input <INFILE> --find_prosite <PROSITE_PATTERN>  
+  4. ```java -jar SeqQuery --input <INFILE> --find_prosite <PROSITE_PATTERN>```  
     Reports which sequences have the given Prosite pattern 
     Generates a nicely formatted csv listing with these columns and Tab as separator:  
     * ACCNO: First accession
@@ -61,7 +61,7 @@ Some of the possible use cases are listed below and in the example section (for 
     * TYPE: Type (DNA, RNA, Protein)
     * POSITION: Start position of match
     * SEQ: Actual sequence of match
-  5. java -jar SeqQuery --input <INFILE> --find_regex <REGEX_PATTERN>  
+  5. ```java -jar SeqQuery --input <INFILE> --find_regex <REGEX_PATTERN>```  
     Reports which sequences have the given regular expression pattern and where
     Generates a nicely formatted csv listing with these columns and Tab as separator:  
     * ACCNO: First accession
@@ -70,11 +70,11 @@ Some of the possible use cases are listed below and in the example section (for 
     * TYPE: Type (DNA, RNA, Protein)
     * POSITION: Start position of match
     * SEQ: Actual sequence of match
-  6. java -jar SeqQuery --input <INFILE> --find_organism <(PART OF) ORGANISM_NAME>  
+  6. ```java -jar SeqQuery --input <INFILE> --find_organism <(PART OF) ORGANISM_NAME>```  
     Returns the sequences that have the given organism name (sub) string as-is (a.g. in Fasta format)  
-  7. java -jar SeqQuery --input <INFILE> --find_id <ID>  
+  7. ```java -jar SeqQuery --input <INFILE> --find_id <ID>```  
     Returns the sequence with the given name as-is (a.g. in Fasta format)  
-  8. java -jar SeqQuery --input <INFILE> --find_description <WILDCARD-STRING>  
+  8. ```java -jar SeqQuery --input <INFILE> --find_description <WILDCARD-STRING>```  
     Returns the sequences with the given pattern in the description as-is (a.g. in Fasta format)  
     
 **NB**: aspects 2, 3, 4 and 6 should generate a well-formatted csv file (or terminal output)

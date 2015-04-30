@@ -65,21 +65,21 @@ All these selectors and filters should be supported **in any combination**:
 
 Some of the possible use cases are listed below and in the example section (for most JUnit-tested use cases, example output is shown below):
 
-  1. java -jar GffQuery --help  
+  1. ```java -jar GffQuery --help```  
      shows informative help/usage information  
-  2. java -jar GffQuery.jar –infile <INFILE> --summary  
+  2. ```java -jar GffQuery.jar –infile <INFILE> --summary```  
      Creates a textual summary of the parsed file: names of molecules with annotations, types and counts of features.  
-  3. java -jar GffQuery.jar --infile  <INFILE> --fetch_type <TYPE>  
+  3. ```java -jar GffQuery.jar --infile  <INFILE> --fetch_type <TYPE>```  
      Returns a GFF3-type listing of all features of this type  
-  4. java -jar GffQuery.jar --infile <INFILE> --fetch_type  <TYPE> --filter <FILTER>  
+  4. ```java -jar GffQuery.jar --infile <INFILE> --fetch_type  <TYPE> --filter <FILTER>```  
      Returns a GFF3-type listing of all features of this type, but filtered according to the filter (see above). 
-  5. java -jar GffQuery.jar --infile <INFILE> --fetch_children <PARENT ID>  
+  5. ```java -jar GffQuery.jar --infile <INFILE> --fetch_children <PARENT ID>```  
      Returns a GFF3-type listing RECURSIVELY as GFF3-type listing that have the given Parent ID as ancestor (parent or parents parent!).  
-  6. java -jar GffQuery.jar --infile <INFILE> --fetch_region <COORDINATES>  
+  6. ```java -jar GffQuery.jar --infile <INFILE> --fetch_region <COORDINATES>```  
      Returns a GFF3-type listing of all features that lie completely between the given coordinates
-  7. java -jar GffQuery.jar --infile <INFILE> --fetch_region <COORDINATES> --filter <FILTER> 
+  7. ```java -jar GffQuery.jar --infile <INFILE> --fetch_region <COORDINATES> --filter <FILTER>``` 
      Returns a GFF3-type listing of all features that lie completely between the given coordinates, but with the given filter applied.
-  8. java -jar GffQuery.jar --infile <INFILE> --find_wildcard <WILDCARD STRING>  
+  8. ```java -jar GffQuery.jar --infile <INFILE> --find_wildcard <WILDCARD STRING>```  
      Lists all features that have the given wildrcard string (a regex string) in the Name attribute (part of field 9)
 
 

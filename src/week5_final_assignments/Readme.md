@@ -6,7 +6,8 @@
 
 
 ## Final Assignments details ##
-These assignments are meant to test you complete set of Java skills aquired so far.
+These assignments are meant to test you complete set of Java skills acquired so far. 
+You will work on these assignments for the last weeks of the course.
 There are several assignments you can choose from, but all have comparable degrees of difficulty.
 Whatever your choice may be, all solutions should adhere to these general requirements. These are all considered in the grading process!
 

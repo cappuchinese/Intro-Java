@@ -30,19 +30,16 @@ All these selectors and filters should be supported **in any combination**:
 
   * --fetch_prosite <PROSITE PATTERN>  Will report all sequences that contain the Prosite pattern, 
     with the location and actual sequence found (see below for example output).
-  * find_regex <REGEX_PATTERN>   Will report all sequences that contain the Regular expression pattern, 
+  * --find_regex <REGEX_PATTERN>   Will report all sequences that contain the Regular expression pattern, 
     with the location and actual sequence found (see below for example output).
   * --find_organism <(PART OF) ORGANISM_NAME>  Will report all sequences having this wildcard string (a regex pattern)
     in the organism name
   * --find_description <WILDCARD-STRING>  Will report all sequences having this wildcard string (a regex pattern)
     in the description / sequence name 
 
-**Note** options find_description and find_organism should be supported in combination, 
-so that sequences are only reported when both match.
-
 Some of the possible use cases are listed below and in the example section (for most JUnit-tested use cases, example output is shown below):  
 
-  1. java -jar SeqQuery --help
+  1. ```java -jar SeqQuery --help```
     Shows informative help/usage information  
   2. java -jar SeqQuery --input <INFILE> --summary  
     Creates a textual summary of the parsed file: number of sequences, sequence type, average length (see below for an example) 

@@ -48,54 +48,61 @@ Some of the possible use cases are listed below and in the example section (for 
     Generates a nicely formatted csv listing with these columns ands the given character as separator:  
     * ACCNO: First accession
     * NAME: Name / descripion
-    * ORG: Organism
+    * ORGANISM: Organism
     * TYPE: Type (DNA, RNA, Protein)
     * LENGHT: Length
     * MOL_WEIGHT: Molecular weight
   4. ```java -jar SeqQuery --input <INFILE> --find_prosite <PROSITE_PATTERN>```  
-    Reports which sequences have the given Prosite pattern 
+    Reports which sequences have the given Prosite pattern.  
     Generates a nicely formatted csv listing with these columns and Tab as separator:  
     * ACCNO: First accession
     * NAME: Name / descripion
-    * ORG: Organism
+    * ORGANISM: Organism
     * TYPE: Type (DNA, RNA, Protein)
     * POSITION: Start position of match
     * SEQ: Actual sequence of match
   5. ```java -jar SeqQuery --input <INFILE> --find_regex <REGEX_PATTERN>```  
-    Reports which sequences have the given regular expression pattern and where
+    Reports which sequences have the given regular expression pattern.
     Generates a nicely formatted csv listing with these columns and Tab as separator:  
     * ACCNO: First accession
     * NAME: Name / descripion
-    * ORG: Organism
+    * ORGANISM: Organism
     * TYPE: Type (DNA, RNA, Protein)
     * POSITION: Start position of match
     * SEQ: Actual sequence of match
   6. ```java -jar SeqQuery --input <INFILE> --find_organism <(PART OF) ORGANISM_NAME>```  
-    Returns the sequences that have the given organism name (sub) string as-is (a.g. in Fasta format)  
+    Returns the sequences that have the given organism name (sub) string as-is (e.g. in Fasta format)  
   7. ```java -jar SeqQuery --input <INFILE> --find_id <ID>```  
     Returns the sequence with the given name as-is (a.g. in Fasta format)  
   8. ```java -jar SeqQuery --input <INFILE> --find_description <WILDCARD-STRING>```  
-    Returns the sequences with the given pattern in the description as-is (a.g. in Fasta format)  
+    Returns the sequences with the given pattern in the description as-is (e.g. in Fasta format)  
     
-**NB**: aspects 2, 3, 4 and 6 should generate a well-formatted csv file (or terminal output)
-     while 6 and 7 should produce the sequences as-is in Fasta format!  
-
-
-
 
 
 Use case 2 example:  
 
 ```
-michiel@bin206: java -jar GffQuery.jar --infile data/gff3_sample.gff3 --summary  
-file                     gff3_sample.gff3  
-molecules with features  human15.1  
-number of features       22  
-feature counts:
-    gene            1
-    mRNA            4
-    CDS             10
-    three_prime_UT  4
-    five_prime_UTR  3
+michiel@bin206: java -jar SeqQuery.jar --infile data/fhit.fasta --summary  
+file                     fhit.fasta  
+sequence types           PROTEIN  
+number of sequences      22  
+average sequence length  ???
 ```
 
+  3. ```java -jar SeqQuery --input <INFILE> --to_csv ";"```  
+    Accepts a command-line argument specifying the (multi-)sequence file.
+    Generates a nicely formatted csv listing with these columns ands the given character as separator:  
+    * ACCNO: First accession
+    * NAME: Name / descripion
+    * ORGANISM: Organism
+    * TYPE: Type (DNA, RNA, Protein)
+    * LENGHT: Length
+    * MOL_WEIGHT: Molecular weight
+
+Use case 3 example:  
+
+```
+michiel@bin206: java -jar SeqQuery.jar --infile data/fhit.fasta --to_csv ";"  
+ACCNO;NAME;ORGANISM;TYPE;LENGHT;MOL_WEIGHT  
+
+```

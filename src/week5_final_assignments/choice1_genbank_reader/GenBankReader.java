@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package week7_final_assignments.choice1_genbank_reader;
+package week5_final_assignments.choice1_genbank_reader;
 
 /**
  *

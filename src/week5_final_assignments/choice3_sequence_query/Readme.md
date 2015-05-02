@@ -73,36 +73,102 @@ Some of the possible use cases are listed below and in the example section (for 
   6. ```java -jar SeqQuery --input <INFILE> --find_organism <(PART OF) ORGANISM_NAME>```  
     Returns the sequences that have the given organism name (sub) string as-is (e.g. in Fasta format)  
   7. ```java -jar SeqQuery --input <INFILE> --find_id <ID>```  
-    Returns the sequence with the given name as-is (a.g. in Fasta format)  
+    Returns the sequence with the given name as-is (e.g. in Fasta format)  
   8. ```java -jar SeqQuery --input <INFILE> --find_description <WILDCARD-STRING>```  
     Returns the sequences with the given pattern in the description as-is (e.g. in Fasta format)  
     
 
 
-Use case 2 example:  
+**Use case 2 example:**  
 
 ```
 michiel@bin206: java -jar SeqQuery.jar --infile data/fhit.fasta --summary  
 file                     fhit.fasta  
 sequence types           PROTEIN  
 number of sequences      22  
-average sequence length  ???
+average sequence length  149.0  
 ```
 
-  3. ```java -jar SeqQuery --input <INFILE> --to_csv ";"```  
-    Accepts a command-line argument specifying the (multi-)sequence file.
-    Generates a nicely formatted csv listing with these columns ands the given character as separator:  
-    * ACCNO: First accession
-    * NAME: Name / descripion
-    * ORGANISM: Organism
-    * TYPE: Type (DNA, RNA, Protein)
-    * LENGHT: Length
-    * MOL_WEIGHT: Molecular weight
-
-Use case 3 example:  
+**Use case 3 example:**  
 
 ```
-michiel@bin206: java -jar SeqQuery.jar --infile data/fhit.fasta --to_csv ";"  
+michiel@bin206: java -jar SeqQuery.jar --infile data/fhit_sample.fasta --to_csv ";"  
 ACCNO;NAME;ORGANISM;TYPE;LENGHT;MOL_WEIGHT  
+gi|21595364;FHIT protein;Homo sapiens;PROTEIN;147;16829.6  
+gi|15215093;Fhit protein;Mus musculus;PROTEIN;150;17206.7  
+gi|151554847;FHIT protein;Bos taurus;PROTEIN;149;16922.6  
+gi|256665365;fragile histidine triad protein;Ovis aries;PROTEIN;149;16858.5  
+gi|11120730;bis(5'-adenosyl)-triphosphatase;Rattus norvegicus;PROTEIN;150;17318.8  
+```
 
+
+**Use case 4 example:**  
+
+```
+michiel@bin206: java -jar SeqQuery.jar --infile data/fhit_sample.faa --find_prosite "H-x-H-x-H-[VI]"    
+ACCNO;NAME;ORGANISM;TYPE;POSITION;SEQ  
+gi|21595364;FHIT protein;Homo sapiens;PROTEIN;94;HVHVHV  
+gi|15215093;Fhit protein;Mus musculus;PROTEIN;94;HVHVHV  
+gi|151554847;FHIT protein;Bos taurus;PROTEIN;94;HVHVHI  
+gi|256665365;fragile histidine triad protein;94;HVHIHV 
+gi|11120730;bis(5'-adenosyl)-triphosphatase;Rattus norvegicus;PROTEIN;HVHVHI  
+```
+
+**Use case 5 example:**  
+
+```
+michiel@bin206: java -jar SeqQuery.jar --infile data/fhit_sample.faa --find_regex "H.H.H[VI]"    
+ACCNO;NAME;ORGANISM;TYPE;POSITION;SEQ  
+gi|21595364;FHIT protein;Homo sapiens;PROTEIN;94;HVHVHV  
+gi|15215093;Fhit protein;Mus musculus;PROTEIN;94;HVHVHV  
+gi|151554847;FHIT protein;Bos taurus;PROTEIN;94;HVHVHI  
+gi|256665365;fragile histidine triad protein;94;HVHIHV 
+gi|11120730;bis(5'-adenosyl)-triphosphatase;Rattus norvegicus;PROTEIN;HVHVHI  
+```
+
+**Use case 6 example:**  
+
+```
+michiel@bin206: java -jar SeqQuery.jar --infile data/fhit.faa --find_organism "sulfov"    
+>gi|283850734|ref|ZP_06368021.1| histidine triad (HIT) protein [Desulfovibrio sp. FW1012B]
+MEVLWAPWRMDYILGPKPDACVFCLPENRDEDRDRLVLARGCHTFVIMNKFPYNSGHLMVTPVRHVSCLT
+ELAAAESGELTAGLAYCTRVLKEALRPQGINIGLNLGEAAGAGIAAHLHFQIVPRWNGDSSFMAVFGETR
+IVPQLLLSTYDRLLPFFTDYPATVTS
+>gi|332704143|ref|ZP_08424231.1| histidine triad (HIT) protein [Desulfovibrio africanus str. Walvis Bay]
+MDVLWAPWRMDYILGPKPDECVFCVPSNTAEDEERKILARGRLCYVIMNKYPYNSGHLMVAPYRHVSCLT
+DLTAEERQEVMEYVTRCVSVIKEAMRPQGVNAGLNLGEAAGAGIAAHLHFQLVPRWNGDASFMAVFGETR
+VIPDHLMATYSRLKPYFETSRN
+>gi|317153259|ref|YP_004121307.1| histidine triad (HIT) protein [Desulfovibrio aespoeensis Aspo-2]
+MEVLWAPWRLNYILGPKPDECVFCIPEDQAQDEERCILARGRYCFVIMNKFPYNNGHLMVTPYRHVSSLL
+DLSLEESNDCMLWLRHSTSVLEQAFHPHGINMGLNLGEAAGAGIAQHMHFQIVPRWNGDASFMAVFGETT
+VIPEHLSSTYARLRPLFDAITS
+...30 more matches omitted
+```
+
+**Use case 7 example:**  
+
+```
+michiel@bin206: java -jar SeqQuery.jar --infile data/fhit.faa --find_id "gb|ADE57962.1"    
+>gi|293617808|gb|ADE57962.1| histidine triad (HIT) protein [Aminobacterium colombiense DSM 12261]
+MESIFAPWRMTYIADADKQKTCIFCEFPKKNEDEKNLILHRGTMCFVICNAFPYNPGHLMVAPYRHTAVY
+EELSDEELLEMHRLGGVCLKVLKKVMHPQGFNLGINLGKVGGAGFDGHLHLHIVPRWNGDTNFMPVLAET
+RVIAESLEQTYKRLRDEWPLNDC
+```
+
+**Use case 8 example:**  
+
+```
+michiel@bin206: java -jar SeqQuery.jar --infile data/fhit.faa --find_description "[Hh]istidine"    
+>gi|3243136|gb|AAC23967.1| fragile histidine triad protein [Mus musculus]
+MSFRFGQHLIKPSVVFLKTELSFALVNRKPVVPGHVLVCPLRPVERFRDLHPDEVADLFQVTQRVGTVVE
+KHFQGTSITFSMQDGPEAGQTVKHVHVHVLPRKAGDFPRNDNIYDE
+>gi|9587672|gb|AAF89328.1|AF170064_1 fragile histidine triad protein [Rattus norvegicus]
+MSFKFGQHLIKPSVVFLKTELSFALVNRKPVVPGHVLMCPLRPVERFRDLRPDEVADLFQVTQRVGTVVE
+KHFQGTSITFSMQDGPEAGQTVKHVHVHILPRKSGDFRRNDNIYDELQKHDREEEDSPAFWRSEEEMAAE
+AEVLRAYFQA
+>gi|3264590|gb|AAC24566.1| fragile histidine triad protein [Mus musculus]
+MSFRFGQHLIKPSVVFLKTELSFALVNRKPVVPGHVLVCPLRPVERFRDLHPDEVADLFQVTQRVGTVVE
+KHFQGTSITFSMQDGPEAGQTVKHVHVHVLPRKAGDFPRNDNIYDELQKHDREEEDSPAFWRSEKEMAAE
+AEALRVYFQA
+...710 more matches omitted
 ```

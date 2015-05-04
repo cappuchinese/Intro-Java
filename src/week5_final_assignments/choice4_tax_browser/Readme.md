@@ -7,7 +7,7 @@ The NCBI taxonomy is the most widely used source regarding Taxonomy information.
 It holds the Taxonomic information for all living organisms that have sequence information 
 associated with it. You can browse the Taxonomy Database online at [Taxonomy](http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi)
 The raw data for this database can be downloaded via ftp as a zip file [here](ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdmp.zip).  
-However, for testing purposes, you will need to use the archive provided as download from this project repo, 
+However, for testing purposes, you will need to use the archive provided in the data folder of this project, or as download from this project repo: 
 [here](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads):
 This archive contains nine files, but only three are relevant to this assignment:  
 
@@ -17,7 +17,24 @@ This archive contains nine files, but only three are relevant to this assignment
 
 The readme contains useful information, but the names.dmp and nodes.dmp files contain the core Taxonomy database. 
 You do not need to ectract a zip manually before reading file contents - Java can easily read from zip files.  
-See for an example [here](http://www.thecoderscorner.com/team-blog/java-and-jvm/12-reading-a-zip-file-from-java-using-zipinputstream)).
+
+this shows a code sample you could use for this purpose:
+
+```Java  
+    File zipFile = new File("PATH_TO_ZIP_ARCHIVE");
+    ZipFile archive = new ZipFile(zipFile);
+    ZipEntry nodesFile = archive.getEntry("nodes.dmp");
+    InputStream is = archive.getInputStream(nodesFile);
+    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+    int lineCount = 0;
+    String line;
+    while ((line = br.readLine()) != null) {
+        lineCount++;
+        String[] elements = line.split("\\t+\\|\\t+");
+        //parsing logic here
+    }
+```
+
 You will need to extract these datafields from the archive:  
 
   * tax ID

@@ -1,4 +1,4 @@
-# Final assignment 3: Developing a Taxonomy Browser #
+# Final assignment 4: Developing a Taxonomy Browser #
 
 ## Special challenge of this assignment: tree implementation and traversals (recursion) ##
 
@@ -6,37 +6,53 @@
 The NCBI taxonomy is the most widely used source regarding Taxonomy information.  
 It holds the Taxonomic information for all living organisms that have sequence information 
 associated with it. You can browse the Taxonomy Database online at [Taxonomy](http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi)
-The raw data for this database can be downloaded via ftp as a zip file [here](ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdmp.zip).
+The raw data for this database can be downloaded via ftp as a zip file [here](ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdmp.zip).  
+However, for testing purposes, you will need to use the archive provided as download from this project repo, 
+[here](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads):
 This archive contains nine files, but only three are relevant to this assignment:  
 
   * names.dmp
   * nodes.dmp
   * readme.txt
 
-The readme contains useful information, but the names and nodes files contain the core Taxonomy database. 
-You do not need to ectract a zip - Java can easily read from zip files.  
-See an example [here](http://www.thecoderscorner.com/team-blog/java-and-jvm/12-reading-a-zip-file-from-java-using-zipinputstream)):
+The readme contains useful information, but the names.dmp and nodes.dmp files contain the core Taxonomy database. 
+You do not need to ectract a zip manually before reading file contents - Java can easily read from zip files.  
+See for an example [here](http://www.thecoderscorner.com/team-blog/java-and-jvm/12-reading-a-zip-file-from-java-using-zipinputstream)).
 You will need to extract these datafields from the archive:  
 
   * tax ID
   * parent tax ID
   * scientific name
-  * only the number of subspecies for a species node (RAM may be a problem on older PCs)
   * taxonomic rank (e.g. species, class, order etc)  
 
 It is your job to build an appropriate datamodel and functionality to be able to support the folowing use cases relating to the Taxonomy.
-**PS  use JVM arguments -Xmx and -Xms to increase heap space usage - the taxonomy DB is BIG**
+**PS: Use JVM arguments -Xmx and -Xms to increase heap space usage - the taxonomy DB is BIG**
+**PS: RAM may be a problem on older or more basic PCs**
 
-Finally, create an executable that can be used in these ways:  
-  1. ```java -jar TaxonomyBrowser --help```  
-    shows informative help/usage information 
-  2. ```java -jar TaxonomyBrowser.jar  --infile <INFILE> --tax_id 12345```  
+For instance, this will run the program with initial 512 MB and maximum of 4 GB heap space:  
+```
+java -Xms512m -Xmx4g -jar TaxBrowser.jar  --infile <INFILE> --tax_id 12345
+```
+
+You can also set these JVM arguments within NetBeans under project Properties --> Run --> VM options!  
+
+Now, create an executable that can be used in these ways:  
+
+  1. ```java -jar TaxBrowser.jar --help```  
+    shows informative help/usage information
+  2. ```java -jar TaxBrowser.jar  --archive <TAXDUMP ARCHIVE> --summary```  
+   Creates a textual summary of the Taxonomy archive: download date, number of nodes (see example).  
+  3. ```java -jar TaxBrowser.jar  --archive <TAXDUMP ARCHIVE> --tax_id 12345```  
    This will list all information available for the node with the given taxID: 
-   taxID, parentTaxID, taxonomic rank, scientific name and number of child nodes under this node  
-  3. ```java -jar TaxonomyBrowser.jar  --infile <INFILE> --list 12345 --sort <SORT_TYPE>```
-    This will list (in short format) all nodes residing under this node, using the requested sorting type. 
-    Options for sorting are:  taxID, scientific name, taxonomic rank and number of child nodes.  
-  4. ```java -jar TaxonomyBrowser.jar  --infile <INFILE> --rank <TAXONOMIC RANK> --limit 10```
+   taxID, parentTaxID and name, taxonomic rank, scientific name and number of child nodes under this node (see example).  
+  4. ```java -jar TaxBrowser.jar  --infile <INFILE> --list 12345 --sort <SORT_TYPE> --omit_subspecies```
+    This will list (in short format - see example) all nodes residing under this node, using the requested sorting type and omitting subspecies. 
+    Options for sorting are:  
+    * TAX_ID sorts on taxonomy ID (numeric sort)  
+    * SCI_NAME sors on scientific name (alphabetical sort)  
+    * TAX_RANK sorts on taxonomic rank (using ordering in tree, from root to leaf)  
+    * CHILD_NODES sorts on number of child nodes (numerical sort)   
+  5. ```java -jar TaxBrowser.jar  --infile <INFILE> --rank <TAXONOMIC RANK> --limit 10```
     This will list all nodes with the given taxonomic rank (eg. rank Order) alphabetically, 
     up to the maximum indicated with limit (if no limit is given, list all).
 
@@ -44,93 +60,48 @@ Finally, create an executable that can be used in these ways:
 **Use case 2 example:**  
 
 ```
-michiel@bin206: java -jar SeqQuery.jar --infile data/fhit.fasta --summary  
-file                     fhit.fasta  
-sequence types           PROTEIN  
-number of sequences      22  
-average sequence length  149.0  
+michiel@bin206: java -Xmx2g -jar TaxBrowser.jar --infile data/taxdmp.zip --summary  
+file              taxdmp.zip  
+download date     2015-05-04  
+number of nodes   1280232
 ```
 
 **Use case 3 example:**  
 
 ```
-michiel@bin206: java -jar SeqQuery.jar --infile data/fhit_sample.fasta --to_csv ";"  
-ACCNO;NAME;ORGANISM;TYPE;LENGHT;MOL_WEIGHT  
-gi|21595364;FHIT protein;Homo sapiens;PROTEIN;147;16829.6  
-gi|15215093;Fhit protein;Mus musculus;PROTEIN;150;17206.7  
-gi|151554847;FHIT protein;Bos taurus;PROTEIN;149;16922.6  
-gi|256665365;fragile histidine triad protein;Ovis aries;PROTEIN;149;16858.5  
-gi|11120730;bis(5'-adenosyl)-triphosphatase;Rattus norvegicus;PROTEIN;150;17318.8  
+michiel@bin206: java -Xmx2g -jar TaxBrowser.jar --archive data/taxdmp.zip --tax_id 9606  
+tax ID                  9606
+scientific name         Homo sapiens
+rank                    species
+parent tax ID           9605
+parent scientific name  Homo
+parent rank             genus
+children                2
 ```
-
 
 **Use case 4 example:**  
 
 ```
-michiel@bin206: java -jar SeqQuery.jar --infile data/fhit_sample.faa --find_prosite "H-x-H-x-H-[VI]"    
-ACCNO;NAME;ORGANISM;TYPE;POSITION;SEQ  
-gi|21595364;FHIT protein;Homo sapiens;PROTEIN;94;HVHVHV  
-gi|15215093;Fhit protein;Mus musculus;PROTEIN;94;HVHVHV  
-gi|151554847;FHIT protein;Bos taurus;PROTEIN;94;HVHVHI  
-gi|256665365;fragile histidine triad protein;94;HVHIHV 
-gi|11120730;bis(5'-adenosyl)-triphosphatase;Rattus norvegicus;PROTEIN;HVHVHI  
+michiel@bin206: java -Xmx2g -jar TaxBrowser.jar --archive data/taxdmp.zip --list 12345 --sort TAX_RANK --omit_subspecies   
+TAX_ID;PARENT_TAX_ID;RANK;SCIENTIFIC NAME;CHILD NUMBER  
+9604;314295;family;Hominidae;2
+207598;9604;subfamily;Homininae;3
+607660;9604;subfamily;Ponginae;1
+9592;207598;genus;Gorilla;2
+9596;207598;genus;Pan;2
+9605;207598;genus;Homo;2
+9599;607660;genus;Pongo;4
+9593;9592;species;Gorilla gorilla;3
+499232;9592;species;Gorilla beringei;2
+9597;9596;species;Pan paniscus;0
+...listing continues
 ```
 
 **Use case 5 example:**  
 
 ```
-michiel@bin206: java -jar SeqQuery.jar --infile data/fhit_sample.faa --find_regex "H.H.H[VI]"    
-ACCNO;NAME;ORGANISM;TYPE;POSITION;SEQ  
-gi|21595364;FHIT protein;Homo sapiens;PROTEIN;94;HVHVHV  
-gi|15215093;Fhit protein;Mus musculus;PROTEIN;94;HVHVHV  
-gi|151554847;FHIT protein;Bos taurus;PROTEIN;94;HVHVHI  
-gi|256665365;fragile histidine triad protein;94;HVHIHV 
-gi|11120730;bis(5'-adenosyl)-triphosphatase;Rattus norvegicus;PROTEIN;HVHVHI  
+michiel@bin206: java -Xmx2g -jar TaxBrowser.jar --archive data/taxdmp.zip --rank <TAXONOMIC RANK> --limit 10   
+TAX_ID;PARENT_TAX_ID;RANK;SCIENTIFIC NAME;CHILD NUMBER  
 ```
 
 **Use case 6 example:**  
-
-```
-michiel@bin206: java -jar SeqQuery.jar --infile data/fhit.faa --find_organism "sulfov"    
->gi|283850734|ref|ZP_06368021.1| histidine triad (HIT) protein [Desulfovibrio sp. FW1012B]
-MEVLWAPWRMDYILGPKPDACVFCLPENRDEDRDRLVLARGCHTFVIMNKFPYNSGHLMVTPVRHVSCLT
-ELAAAESGELTAGLAYCTRVLKEALRPQGINIGLNLGEAAGAGIAAHLHFQIVPRWNGDSSFMAVFGETR
-IVPQLLLSTYDRLLPFFTDYPATVTS
->gi|332704143|ref|ZP_08424231.1| histidine triad (HIT) protein [Desulfovibrio africanus str. Walvis Bay]
-MDVLWAPWRMDYILGPKPDECVFCVPSNTAEDEERKILARGRLCYVIMNKYPYNSGHLMVAPYRHVSCLT
-DLTAEERQEVMEYVTRCVSVIKEAMRPQGVNAGLNLGEAAGAGIAAHLHFQLVPRWNGDASFMAVFGETR
-VIPDHLMATYSRLKPYFETSRN
->gi|317153259|ref|YP_004121307.1| histidine triad (HIT) protein [Desulfovibrio aespoeensis Aspo-2]
-MEVLWAPWRLNYILGPKPDECVFCIPEDQAQDEERCILARGRYCFVIMNKFPYNNGHLMVTPYRHVSSLL
-DLSLEESNDCMLWLRHSTSVLEQAFHPHGINMGLNLGEAAGAGIAQHMHFQIVPRWNGDASFMAVFGETT
-VIPEHLSSTYARLRPLFDAITS
-...30 more matches omitted
-```
-
-**Use case 7 example:**  
-
-```
-michiel@bin206: java -jar SeqQuery.jar --infile data/fhit.faa --find_id "gb|ADE57962.1"    
->gi|293617808|gb|ADE57962.1| histidine triad (HIT) protein [Aminobacterium colombiense DSM 12261]
-MESIFAPWRMTYIADADKQKTCIFCEFPKKNEDEKNLILHRGTMCFVICNAFPYNPGHLMVAPYRHTAVY
-EELSDEELLEMHRLGGVCLKVLKKVMHPQGFNLGINLGKVGGAGFDGHLHLHIVPRWNGDTNFMPVLAET
-RVIAESLEQTYKRLRDEWPLNDC
-```
-
-**Use case 8 example:**  
-
-```
-michiel@bin206: java -jar SeqQuery.jar --infile data/fhit.faa --find_description "[Hh]istidine"    
->gi|3243136|gb|AAC23967.1| fragile histidine triad protein [Mus musculus]
-MSFRFGQHLIKPSVVFLKTELSFALVNRKPVVPGHVLVCPLRPVERFRDLHPDEVADLFQVTQRVGTVVE
-KHFQGTSITFSMQDGPEAGQTVKHVHVHVLPRKAGDFPRNDNIYDE
->gi|9587672|gb|AAF89328.1|AF170064_1 fragile histidine triad protein [Rattus norvegicus]
-MSFKFGQHLIKPSVVFLKTELSFALVNRKPVVPGHVLMCPLRPVERFRDLRPDEVADLFQVTQRVGTVVE
-KHFQGTSITFSMQDGPEAGQTVKHVHVHILPRKSGDFRRNDNIYDELQKHDREEEDSPAFWRSEEEMAAE
-AEVLRAYFQA
->gi|3264590|gb|AAC24566.1| fragile histidine triad protein [Mus musculus]
-MSFRFGQHLIKPSVVFLKTELSFALVNRKPVVPGHVLVCPLRPVERFRDLHPDEVADLFQVTQRVGTVVE
-KHFQGTSITFSMQDGPEAGQTVKHVHVHVLPRKAGDFPRNDNIYDELQKHDREEEDSPAFWRSEKEMAAE
-AEALRVYFQA
-...710 more matches omitted
-```

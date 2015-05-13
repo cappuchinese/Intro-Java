@@ -41,6 +41,17 @@ In wizard, click "Create". Name it JUnit4.XX (depending on your version) and add
 (and optionally Sources jars and Javadoc jars to respective tabs).  
 Make sure the test Packages folder of the project does not show error symbols anymore!  
 
+* It is highly recommended to also install the NetBeans Checkstyle plugin. Checkstyle-OK-ed code is a requirement for the final assignments!
+This plugin is available [here](http://www.sickboy.cz/checkstyle/).  
+You can customize checkstyle using an xml configuration file. 
+The [downloads](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads) section of this 
+repo holds a configuration file that is slightly adapted: you should take this as the coding standard. 
+After installing the Checkstyle plugin, download this [checkstyle.xml](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads/checkstyle.xml) 
+file and place it somewhere on your hard drive. In Netbeans, go to Options (Preferences on Mac), 
+go to Miscellaneous --> Tab Checkstyle --> Specify location of configuration file where you saved it.
+For the red line in the editor pane to also go to the 120 column mark (in accordance with Checkstyle) 
+go to Options (Preferences on Mac) --> Editor --> Formatting tab --> set Right Margin. 
+
 * Start working on the assignments, as specified in the per-week java, per-assignment packages under "Source Packages".  
 Make sure you read the contents of each Readme.md Markdown file located within each package, since they outline the details of that particular assignment.  
 There is a plugin that supports Markdown in Netbeans [Markdown Support for NetBeans](https://github.com/madflow/flow-netbeans-markdown).  

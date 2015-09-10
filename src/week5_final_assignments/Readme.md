@@ -11,7 +11,7 @@ You will work on these assignments for the last weeks of the course.
 There are several assignments you can choose from, but all have comparable degrees of difficulty.
 Whatever your choice may be, all solutions should adhere to these general requirements. These are all considered in the grading process!
 
-1. You must work individually on this assignment.
+1. You must work either individually or in couples on this assignment. Note that working in a couple has the extra challenge of cooperating in a version control system
 2. The only library outside the JDK that you may (and must!) use is the Apache CLI library for parsing standards-adhering command-line arguments
 ([link to Apache CLI](http://commons.apache.org/proper/commons-cli/))  
 You should perform exhaustive checks on user-provided command-line arguments (files exist, required parameters have been set and are not conflicting, etc.).

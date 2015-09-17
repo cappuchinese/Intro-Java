@@ -35,7 +35,7 @@ public class AllSubstringsPrinterTest {
 
     @Test
     public void testPrintAllSubstrings_A() {
-        String stringToSubstring = "CGATCC";
+        String stringToSubstring = "GATCG";
         boolean leftTruncated = true;
         boolean leftAligned = true;
         String expectedPrint = 
@@ -50,7 +50,7 @@ public class AllSubstringsPrinterTest {
 
     @Test
     public void testPrintAllSubstrings_B() {
-        String stringToSubstring = "CGATCC";
+        String stringToSubstring = "GATCG";
         boolean leftTruncated = false;
         boolean leftAligned = true;
         String expectedPrint = 

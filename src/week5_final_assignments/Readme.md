@@ -7,7 +7,7 @@
 
 ## Final Assignments details ##
 These assignments are meant to test you complete set of Java skills acquired so far. 
-You will work on these assignments for the last weeks of the course.
+You will work on these assignments for the last weeks of the course. Create a new NetBeans project to work on these assignments -- do **not** use this project for them
 There are several assignments you can choose from, but all have comparable degrees of difficulty.
 Whatever your choice may be, all solutions should adhere to these general requirements. These are all considered in the grading process!
 
@@ -26,9 +26,6 @@ guide for Java [here](https://google-styleguide.googlecode.com/svn/trunk/javagui
     * Classes should adhere to the Single Responsibility Principle (SRP)
     * Be as efficient with memory and resources as possible (always think streaming).
     * Use the Exception mechanism well (especially when dealing with files), and never ever let a user see a stack trace on screen, only non-nerd messages!
-
-Since these assignments are of a higher level, it may not possible to create tests for all requirements. 
-Therefore, keep thinking for yourself and do not be blinded by the red or green bar of the test-runs!
 
 **Important note**: your code will be scanned for duplicates on the internet, in your class and previous classes.
  If any duplicated code is found, you will BOTH fail this course and will be reported to the dean for cheating 

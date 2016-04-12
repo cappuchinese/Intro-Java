@@ -42,7 +42,7 @@ You will need to extract these datafields from the archive:
   * scientific name
   * taxonomic rank (e.g. species, class, order etc)  
 
-It is your job to build an appropriate datamodel and functionality to be able to support the folowing use cases relating to the Taxonomy.
+It is your job to build an appropriate datamodel and functionality to be able to support the following use cases relating to the Taxonomy.
 **PS: Use JVM arguments -Xmx and -Xms to increase heap space usage - the taxonomy DB is BIG**
 **PS: RAM may be a problem on older or more basic PCs**
 

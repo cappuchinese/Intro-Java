@@ -18,8 +18,8 @@ So far for a single isolated reaction.
 
 Taking it up a notch, it is also possible to calculate equilibrium constants of coupled reactions. For instance, this is an example of a coupled reaction:
 
-> `A + B ↔ C + D` &nbsp;&nbsp;Reaction 1
-> > `C + E ↔ F + G` &nbsp;&nbsp;Reaction 2
+> `A + B ↔ C + D` Reaction 1
+> > `C + E ↔ F + G` Reaction 2
 
 When you combine A and B, products C and D will be produced and an equilibrium for reaction 1 will be reached. However, when E is also present, the second reaction will also take place, thereby lowering the concentration of C. The lower concentration of C will cause altered concentrations of A, B and C to restore the first equilibrium.  
 After some time, an equilibrium will arise where all equilibrium constants are satisfied.

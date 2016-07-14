@@ -35,6 +35,9 @@ public class MessagingController {
         if (level.compareTo(VerbosityLevel.STRONG_SILENT_TYPE) > 0) {
             System.out.println("Starting all the good work now");
         }
+        if (level.compareTo(VerbosityLevel.NORMAL) > 0) {
+            System.out.println("still busy doing the good work");
+        }
         //application logic here
         System.out.println("Done");
     }
@@ -48,11 +51,11 @@ public class MessagingController {
         System.out.print("Your age is " + age);
 
         if (age > 40) {
-            System.out.println("wow you are really old!");
+            System.out.println(" - wow you are really old!");
         } else if (age > 25) {
-            System.out.println("still studying hey?");
+            System.out.println(" - still studying hey?");
         } else {
-            System.out.println("nice, a young geek!");
+            System.out.println(" - nice, a young geek!");
         }
     }
 }

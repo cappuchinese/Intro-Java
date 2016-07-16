@@ -47,17 +47,14 @@ public class ApacheCliOptionsProvider implements OptionsProvider {
     private void initialize() {
         buildOptions();
         processCommandLine();
-        checkHelpRequested();
     }
 
     /**
-     * check if help was requested; if so, simply exit.
+     * check if help was requested; if so, return true.
+     * @return helpRequested
      */
-    private void checkHelpRequested() {
-        if (options.hasOption(HELP)) {
-            printHelp();
-            System.exit(0);
-        }
+    public boolean helpRequested() {
+        return this.commandLine.hasOption(HELP);
     }
 
     /**
@@ -66,15 +63,15 @@ public class ApacheCliOptionsProvider implements OptionsProvider {
     private void buildOptions() {
         // create Options object
         this.options = new Options();
-        Option help = new Option("h", HELP, false, "Prints this message");
-        Option name = new Option("n", NAME, true, "User name for this session; defaults to \"JohnDoe\"");
-        Option age = new Option("a", AGE, true, "User age for intelligent feedback; defaults to 42");
-        Option level = new Option("v", VERBOSITY, true, "Verbosity level; choose "
-                        + "\n1: Quiet, or the strong silent type\n2: normal\n3: talk too much\nDefaults to normal");
-        options.addOption(help);
-        options.addOption(name);
-        options.addOption(age);
-        options.addOption(level);
+        Option helpOption = new Option("h", HELP, false, "Prints this message");
+        Option nameOption = new Option("n", NAME, true, "User name for this session; defaults to \"JohnDoe\"");
+        Option ageOption = new Option("a", AGE, true, "User age for dedicated feedback; defaults to 42");
+        Option levelOption = new Option("v", VERBOSITY, true, "Verbosity level; choose "
+                        + "\n1: Quiet (or the strong silent type)\n2: normal\n3: talk too much\nDefaults to normal");
+        options.addOption(helpOption);
+        options.addOption(nameOption);
+        options.addOption(ageOption);
+        options.addOption(levelOption);
     }
 
     /**
@@ -92,23 +89,21 @@ public class ApacheCliOptionsProvider implements OptionsProvider {
                 } catch (NumberFormatException | IndexOutOfBoundsException ex) {
                     this.level = VerbosityLevel.NORMAL;
                 }
+            } else {
+                this.level = VerbosityLevel.NORMAL;
             }
             //check correct age format
             String agestr = this.commandLine.getOptionValue(AGE, "42");
             this.age = Integer.parseInt(agestr);
         } catch (ParseException ex) {
-            System.err.println("Something went wrong while processing your command line \""
-                    + Arrays.toString(clArguments) + "\"");
-            System.err.println("Parsing failed.  Reason: " + ex.getMessage());
-            System.err.println("Correct usage:\n");
-            printHelp();
+            throw new IllegalStateException(ex);
         }
     }
 
     /**
      * prints help.
      */
-    private void printHelp() {
+    public void printHelp() {
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp("MyCoolTool", options);
     }

@@ -63,7 +63,9 @@ public class UserInputOptionsProvider implements OptionsProvider {
         try {
             uAge = scanner.nextInt();
         } catch (InputMismatchException ex) {
-            System.out.println("age could not be parsed; please try again.\nAborting.");
+            System.err.println("age could not be parsed; please try again.\nAborting.");
+            //Yes this System.exit(0) is really bad coding!
+            //Can you improve on this design?
             System.exit(0);
         }
         this.userAge = uAge;

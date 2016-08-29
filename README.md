@@ -5,7 +5,7 @@ Assignments testing project for the course Introduction to programming with Java
 ### What is this repository for? ###
 
 * Project with assignments and assignment stubs, with JUnit tests to check your solutions.
-* Version 0.01
+* Version 0.1
 * (c) copyright Michiel Noback, Hanze University of Applied Science
 
 ### How do I get set up? ###

@@ -8,23 +8,23 @@
 ## Final Assignments details ##
 These assignments are meant to test you complete set of Java skills acquired so far. 
 You will work on these assignments for the last weeks of the course. Create a new NetBeans project to work on these 
-assignments -- do **not** use this project for working on your choice.
+assignments -- **do not use this repo for working on your final project**.
 There are several assignments you can choose from, but all have comparable degrees of difficulty.
 Whatever your choice may be, all solutions should adhere to these general requirements. These are all considered in the grading process!
 
-1. You must work either individually or in couples on this assignment. Note that working in a couple has the extra challenge of cooperating in a version control system
+1. You must work individually on this assignment
 2. The only library outside the JDK that you may (and must!) use is the Apache CLI library for parsing standards-adhering command-line arguments
 ([link to Apache CLI](http://commons.apache.org/proper/commons-cli/))  
-You should perform exhaustive checks on user-provided command-line arguments (files exist, required parameters have been set and are not conflicting, etc.). And **please** read the documentation for this lib, especially [this](https://commons.apache.org/proper/commons-cli/usage.html) page.
+You should perform exhaustive checks on user-provided command-line arguments (files exist, required parameters have been set and are not conflicting, etc.). And please read the documentation for this lib, especially [this](https://commons.apache.org/proper/commons-cli/usage.html) page. **An example usage scenario of Apache CLI can be found in package `nl.bioinf.arguments_provider_demo`**
 3. Adhere to Java naming conventions: see [here](http://www.oracle.com/technetwork/java/codeconventions-135099.html) or 
 [here](http://java.about.com/od/javasyntax/a/nameconventions.htm) 
-4. adhere to Java coding style (as verified by the Netbeans plugin Checkstyle) and these are largely the same as the Google style
+4. Adhere to Java coding style (as verified by the Netbeans plugin Checkstyle) and these are largely the same as the Google style
 guide for Java [here](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html).
 5. Document your code well: both Javadoc annotations and in-code comments are an absolute requirement! See below for a set of Javadoc example comments.
 6. Always implement toString().
 7. Override equals() and hashCode() intelligently when your objects are going to live in collections.
 8. Be sure to follow these design principles:
-    * Classes should adhere to the Single Responsibility Principle (SRP)
+    * All levels of code should adhere to the Single Responsibility Principle (SRP); see my [post](http://michielnoback.nl/single-responsibility-principle/)
     * Be as efficient with memory and resources as possible (always think streaming).
     * Use the Exception mechanism well (especially when dealing with files), and never ever let a user see a stack trace on screen, only non-nerd messages!
 9. Provide sample data (when relevant) and outline how you can use these in your Readme.md document. 

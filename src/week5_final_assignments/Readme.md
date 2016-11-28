@@ -3,12 +3,15 @@
 ## Learning outcomes ##
 * Using apache CLI to parse command-line arguments
 * Creating and implementing a class design for a real-life problem
+* Programming and deploying a real-world Java application
 
 
 ## Final Assignments details ##
 These assignments are meant to test you complete set of Java skills acquired so far. 
-You will work on these assignments for the last weeks of the course. Create a new NetBeans project to work on these 
-assignments -- **do not use this repo for working on your final project**.
+You will work on these assignments for the last weeks of the course. Create a new Maven managed NetBeans project to work on these 
+assignments -- **do not use a clone or fork of this repo for working on your final project!**. 
+
+
 There are several assignments you can choose from, but all have comparable degrees of difficulty.
 Whatever your choice may be, all solutions should adhere to these general requirements. These are all considered in the grading process!
 
@@ -27,7 +30,40 @@ guide for Java [here](https://google-styleguide.googlecode.com/svn/trunk/javagui
     * All levels of code should adhere to the Single Responsibility Principle (SRP); see my [post](http://michielnoback.nl/single-responsibility-principle/)
     * Be as efficient with memory and resources as possible (always think streaming).
     * Use the Exception mechanism well (especially when dealing with files), and never ever let a user see a stack trace on screen, only non-nerd messages!
-9. Provide sample data (when relevant) and outline how you can use these in your Readme.md document. 
+9. Provide sample data (when relevant) and outline how you can use these in your Readme.md document.  
+10. When submitting, make sure there is an executable jar inside the `/target` folder. To do this, follow these steps:  
+    - Open the pom.xml file from 'Project Files'
+    - Copy the XML snippet below inside the `<project></project>` tags and replace `your.main.Class` with the fully qualified name of your main class
+    - Invoke 'Build with Dependencies' from the context menu of your project
+    - Using the terminal, test whether you have a working jar by typing `java -jar MyProject.jar`, replacing MyProject with the name of your project
+    - Make a final git commit and push to remote.
+
+```xml
+<build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>your.main.Class</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>        
+```  
 
 **Important note**: your code will be scanned for duplicates on the internet, in your class and previous classes.
  If any duplicated code is found, you will BOTH fail this course and will be reported to the dean for cheating 

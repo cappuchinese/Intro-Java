@@ -1,3 +1,7 @@
-/nbproject/private/
-/build/
-/dist/
+.idea
+.gradle
+build
+build.xml
+gradlew
+gradlew.bat
+JavaIntroProgrammingAssignments.iml

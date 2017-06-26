@@ -1,0 +1,21 @@
+group 'nl.bioinf.javaintroprogrammingassignments'
+version '1.1-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+jar {
+	baseName = 'JavaIntroPA'
+	version = '1.1.0-SNAPSHOT'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('commons-cli:commons-cli:1.4')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

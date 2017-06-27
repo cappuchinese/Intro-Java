@@ -72,4 +72,20 @@ public class StartingJavaTest {
         assertEquals("Yo!", startingJava.getGreeting(3));
     }
 
+    @Test
+    public void test5_createDuck() throws Exception {
+        int speed = 7;
+        String name = "Shelduck";
+        Duck duck = startingJava.createDuck(speed, name);
+
+        assertEquals(7, duck.swimSpeed);
+        assertEquals(name, duck.name);
+
+        speed = 2;
+        name = "Common Mallard";
+        duck = startingJava.createDuck(speed, name);
+
+        assertEquals(2, duck.swimSpeed);
+        assertEquals(name, duck.name);
+    }
 }

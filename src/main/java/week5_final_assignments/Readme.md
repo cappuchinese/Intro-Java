@@ -26,13 +26,8 @@ And please read the documentation for this lib, especially [this](https://common
 5. Document your code well: both Javadoc annotations and in-code comments are an absolute requirement! See below for a set of Javadoc example comments.
 6. Always implement toString().
 7. Override equals() and hashCode() when your objects are going to live in collections.
-8. Be sure to follow these design principles:
-    * All levels of code should adhere to the Single Responsibility Principle (SRP); see my [post](http://michielnoback.nl/single-responsibility-principle/)
-    * Be as efficient with memory and resources as possible (always think streaming).
-    * Use the Exception mechanism well (especially when dealing with files), and never ever let a user see a stack trace on screen, 
-    only non-nerd messages!
-9. **Provide sample data when relevant and - for simplicity of grading, include these in your repo** and outline how you can use these in your Readme.md document.  
-10. When submitting, make sure there is an executable jar inside the project folder! See [here](https://bitbucket.org/minoba/clidemo) again (exclude the relevant directory from .gitignore of course!)
+8. **Provide sample data when relevant and - for simplicity of grading, include these in your repo** and outline how you can use these in your Readme.md document.  
+9. When submitting, make sure there is an executable jar inside the project folder! See [here](https://bitbucket.org/minoba/clidemo) again (exclude the relevant directory from .gitignore of course!)
 
 **Important note**: your code will be scanned for duplicates on the internet, in your class and previous classes.
  If any duplicated code is found, you will BOTH fail this course and will be reported to the dean for cheating 
@@ -68,14 +63,15 @@ parameters (@ param), return types (@ return) and thrown exceptions (@throws -- 
 
 ```Java
     /**
-     * Returns all supported animals as List, alhabetically ordered, with the given substring to search for.
-     * If the search string is null, all supported animals are returned, else only the animals whose name matches
-     * the given search string (anywhere in the name).
+     * Returns all supported animals as List, alphabetically ordered, with the given substring 
+     * to search for.
+     * If the search string is null or empty, all supported animals are returned, else only the animals 
+     * whose name matches the given search string (anywhere in the name).
      * @param searchString the search string. 
      * @return supportedAnimals the supported animals
-     * @throws IllegalArgumentException ex for an empty search string
-  
-    public List<String> getSupportedAnimals() {
+     * @throws IllegalArgumentException ex for an empty search
+     * /
+    public List<String> getSupportedAnimals(String searchString) {
         //method code
     }
 ```  

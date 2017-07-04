@@ -25,13 +25,9 @@ The fields are these:
      Certain, special attributes are used for grouping and identification (See below). 
      This field is the one important difference between GFF flavors.  
 
-
-For this assignment you will work on parsing this file type and reporting information from its contents.  
-You can find some example files in the "data" folder of this NetBeans project (they all have the extension ".gff3".  
-Do not remove the data from this folder -- this is where the test environment needs the test files!  
+You can find some example files in the "data" folder of this project (they all have the extension ".gff3".  
 Create a filter/parser for files in GFF3 format, and implement the given use cases.
 You may notice that this assignment is all about filtering data in different filter combinations. 
-This is the aspect of this assignment that will weight extra heavily!
 All these selectors and filters should be supported **in any combination**:  
 
   * --fetch_type <TYPE>     Will fetch a certain type of feature (e.g. gene, CDS)
@@ -80,7 +76,7 @@ Some of the possible use cases are listed below and in the example section (for 
   7. ```java -jar GffQuery.jar --infile <INFILE> --fetch_region <COORDINATES> --filter <FILTER>``` 
      Returns a GFF3-type listing of all features that lie completely between the given coordinates, but with the given filter applied.
   8. ```java -jar GffQuery.jar --infile <INFILE> --find_wildcard <WILDCARD STRING>```  
-     Lists all features that have the given wildrcard string (a regex string) in the Name attribute (part of field 9)
+     Lists all features that have the given wildcard string (a regex string) in the Name attribute (part of field 9)
 
 
 Use case 2 example:  

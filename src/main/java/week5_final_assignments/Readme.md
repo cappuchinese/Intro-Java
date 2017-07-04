@@ -11,7 +11,8 @@ These assignments are meant to test your complete set of Java skills acquired so
 You will work on these assignments for the last weeks of the course. **Create a new Gradle managed IntelliJ project to work on these 
 assignments -- do not use a clone or fork of this repo for working on your final project!**. Submit a link to your git repo before the deadline (see course Syllabus).
 
-There are several assignments you can choose from that have comparable degrees of difficulty.
+There are several assignments you can choose from that have comparable degrees of difficulty.  Try to implement all use cases, but prefer 
+a few good features over many bad ones!
 Whatever your choice may be, all solutions should adhere to these general requirements. These are all considered in the grading process!
 
 1. You must work individually on this assignment

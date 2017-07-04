@@ -1,14 +1,13 @@
 # Final assignment 4: Developing a Taxonomy Browser #
 
-## Special challenge of this assignment: tree implementation and traversal (recursion) ##
+## Special challenge of this assignment: algorithm efficiency & tree implementation and traversal (recursion) ##
 
 ## Assignment details ##
 The NCBI taxonomy is the most widely used source regarding Taxonomy information.  
 It holds the Taxonomic information for all living organisms that have sequence information 
 associated with it. You can browse the Taxonomy Database online at [Taxonomy](http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi)
 The raw data for this database can be downloaded via ftp as a zip file [here](ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdmp.zip).  
-However, for testing purposes, you will need to use the archive provided in the data folder of this project, or as download from this project repo: 
-[here](https://bitbucket.org/michiel_noback/javaintroprogrammingassignments/downloads):
+However, for testing purposes, you will need to use the archive provided in download section of this project.
 This archive contains nine files, but only three are relevant to this assignment:  
 
   * names.dmp
@@ -35,7 +34,7 @@ this shows a code sample you could use for this purpose:
     }
 ```
 
-You will need to extract these datafields from the archive:  
+You will need to extract these data fields from the archive:  
 
   * tax ID
   * parent tax ID
@@ -51,7 +50,7 @@ For instance, this will run the program with initial 512 MB and maximum of 4 GB 
 java -Xms512m -Xmx4g -jar TaxBrowser.jar  --infile <INFILE> --tax_id 12345
 ```
 
-You can also set these JVM arguments within NetBeans under project Properties --> Run --> VM options!  
+You can also set these JVM arguments within your IDE (via Run --> Edit configurations)   
 
 Now, create an executable that can be used in these ways:  
 

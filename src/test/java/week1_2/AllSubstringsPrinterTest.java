@@ -4,14 +4,16 @@
  */
 package week1_2;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import org.junit.After;
-import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
+import org.junit.Test;
 import org.junit.runners.MethodSorters;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -66,7 +68,7 @@ public class AllSubstringsPrinterTest {
     @Test
     public void testPrintAllSubstrings_C() {
         String stringToSubstring = "AGCGCT";
-        boolean leftTruncated = true;
+        boolean leftTruncated = false;
         boolean leftAligned = false;
         String expectedPrint = 
                 "AGCGCT" + System.lineSeparator() + 

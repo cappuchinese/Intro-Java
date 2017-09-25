@@ -4,11 +4,13 @@
  */
 package week2_1;
 
-import java.util.Arrays;
-import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.FixMethodOrder;
+import org.junit.Test;
 import org.junit.runners.MethodSorters;
+
+import java.util.Arrays;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  *

@@ -35,5 +35,8 @@ consensus = csc.createConsensus(sequences, false);
 
 **NOTE: this problem can be solved in many ways, some hard and some easy -- so think before you start!**
 
-*Tip: use String.join("+", sequences) to join array elements into a single string (if you think you need this feature)*
+- *Tip 1*: use String.join("+", sequences) to join array elements into a single string (if you think you need this feature)
+- *Tip 2*: use String.split("delimiter") to split a String into separate elements. Leaving the delimiter empty will split on all characters!
+- *Tip 3*: use Arrays.sort() to sort a String[] alphabetically
+- *Tip 4*: you will need to use some kind of nested for-loop to get this done
 

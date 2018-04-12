@@ -1,6 +1,6 @@
 # An within-classroom assignment
 
-We'll deal (start) with this one in class so you know what to expect.
+We'll deal or start with this one in class so you know what to expect.
 
 There are several methods shown in class `StartingJava`.
 

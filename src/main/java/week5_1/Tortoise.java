@@ -3,13 +3,13 @@
  * All rights reserved.
  */
 
-package week3_1;
+package week5_1;
 
 /**
  *
  * @author Michiel Noback [michiel.noback@gmail.com]
  * @version 0.0.1
  */
-public class HouseMouse extends Animal{
+public class Tortoise extends Animal {
 
 }

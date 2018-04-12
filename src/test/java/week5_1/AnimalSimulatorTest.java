@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Michiel Noback [michiel.noback@gmail.com].
  * All rights reserved.
  */
-package week3_1;
+package week5_1;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

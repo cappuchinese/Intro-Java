@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package week4_1;
+package week3_1;
 
 /**
  * Models the GO annotation of a protein.

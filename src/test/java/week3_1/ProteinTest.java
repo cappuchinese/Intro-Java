@@ -2,18 +2,15 @@
  * Copyright (c) 2015 Michiel Noback [michiel.noback@gmail.com].
  * All rights reserved.
  */
-package week4_1;
+package week3_1;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 

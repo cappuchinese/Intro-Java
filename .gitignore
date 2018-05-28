@@ -1,9 +1,10 @@
 .idea
 .gradle
-build
+out/
+build/
+gradle/
 build.xml
 gradlew
 gradlew.bat
 JavaIntroProgrammingAssignments.iml
-gradle
 /build.xml

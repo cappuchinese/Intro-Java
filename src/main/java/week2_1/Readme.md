@@ -16,8 +16,6 @@ With bracket notation, the nucleotides should be ordered alphabetically! So this
 
 IUPAC encoding is explained [here](http://en.wikipedia.org/wiki/Nucleic_acid_notation)
 
-**NB these examples should be viewed on Bitbucket, not within NetBeans!**
-
 See this snippet for an example usage and result:
 
 ```Java

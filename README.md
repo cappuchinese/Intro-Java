@@ -1,45 +1,57 @@
 # Introduction to programming with Java #
 
-Assignments testing project for the course Introduction to programming with Java.
+Assignments project for the course Introduction to programming with Java.
 From September 2017 onwards, we will be using the IDE IntelliJ Idea. 
-You will need a licence for this IDE, but we will provide one to you if you follow the
+You will need a licence for this IDE, but we will provide one for you if you follow the
  bioinformatics curriculum.
 
-### What is this repository for? ###
+### What is this repository for?
 
 * Project with assignments and assignment stubs, with JUnit tests to check your solutions.
 * Version 1.1
 * (c) copyright Michiel Noback, Hanze University of Applied Science 2015-2017
 
-### How do I get set up? ###
+### How do I get set up?
 
-* Fork this repository into your own Bitbucket account (You can find this in the Actions submenu of the Bitbucket repo: the three dots in the left menu left)  
+* **Fork** this repository into your own Bitbucket account (You can find this in the Actions submenu of the Bitbucket repo:
+ the three dots in the left menu left)  
 
-* Clone the forked repository from **your** bitbucket account to your local computer using IntelliJ:  
+* Clone the forked repository from **your** bitbucket account to your local computer using IntelliJ or the command line:  
     - New --> Project from Version Control --> git  
     - Enter the link https://bitbucket.org/<YOUR_BITBUCKET_ACCOUNT_NAME>/javaintroprogrammingassignments.git 
     into the Git Repository URL field
     - You may need to enter your Bitbucket credentials
-    - Follow the wizard: import the build.gradle (follow from step 2 of this [help page](https://www.jetbrains.com/help/idea/importing-a-gradle-project-or-a-gradle-module.html?search=import%20gradle))
+    - Follow the wizard: import the build.gradle (follow from "Importing a project from a Gradle model" of this 
+    [help page](https://www.jetbrains.com/help/idea/importing-a-gradle-project-or-a-gradle-module.html?search=import%20gradle))
 
 * You may need to configure the JDK, via the Project Structure dialog  
     - File --> Project Structure --> SDKs (use /usr/local/jdk1.8.0_121)
+
 * Probably, the IDE will suggest you update the Maven Repo, or you do this manually:  
-    - File --> Settings --> Build, Execution, Deployment --> Build Tools --> Maven --> Repositories 
+    - File --> Settings/Preferences (depending on OS) --> Build, Execution, Deployment --> Build Tools --> Maven --> Repositories 
     --> Choose Update after selecting the https://repo1.maven.org/maven2 URL and click OK
     - This may take a while!
  
-* Start working on the assignments, as specified in the per-week java, per-assignment packages under "src/main/java/".  
-Make sure you read the contents of each Readme.md Markdown file located within each package, since they outline the details of that particular assignment.  
+* Start working on the assignments, as specified in the chronologically organized packages under "src/main/java/".  
+ Make sure you read the contents of each Readme.md Markdown file located within each package, since they outline the 
+ details of that particular assignment.  
 
 * Commit your own code to your forked repo on Bitbucket  
 
-* To start testing a single class: Select a corresponding Test class in 'src/test/java/', right-click and select "Run ..."
+* To start testing a class or a single method: Select the method or class name --> Right click --> Go To --> Test (or simply select
+ the Test class in 'src/test/java/'). In the test class right-click anywhere (or select the class from the project view) 
+ and select "Run ...". Alternatively, you can also run individual test methods by opening the test class in the editor 
+ and selecting single methods.
 
-* You can also run individual test by opening the test class in the editor.
+* To test all your work so far: Select 'src/test/java/', right-click and select "Run 'All Tests'". 
+The Gradle task  `verification/test` will do the same.
 
-* To test all your work so far: Select 'src/test/java/', right-click and select "Run 'All Tests'"
+* The test view will open and all selected tests will run. The orange and red symbols indicate failures while green shows you 
+solved the assignment correctly! Beware, test methods are really precise!  
 
-* The test view will open and all selected tests will run. The orange indicate failures while green indicate you solved the assignment correctly!
+### Keyboard shortcuts
+It will make you much more productive if you try to learn the most important keyboard shortcuts. 
+Check out the keyboard shortcuts for IntelliJ 
+[here](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf))
 
-* Of course you better use keyboard shortcuts! (check out the keyboard shortcuts for IntelliJ [here](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf))
+

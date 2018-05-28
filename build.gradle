@@ -1,49 +1,34 @@
 group 'nl.bioinf.javaintroprogrammingassignments'
-version '1.1-SNAPSHOT'
+version '2.1-SNAPSHOT'
 
-apply plugin: 'java'
-apply plugin: 'idea'
-
-sourceCompatibility = 1.8
-
-jar {
-    description 'creates executable jar without dependencies'
-    baseName = 'JavaIntroPA'
-
-    manifest {
-        attributes 'Main-Class': 'nl.bioinf.arguments_provider_demo.CommandLineArgsRunner'
+buildscript {
+    //this stuff is required for gradle (within intellij)
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.1'
     }
 }
 
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.junit.platform.gradle.plugin'
+
+sourceCompatibility = 1.8
+
+//where to look for the declared project dependencies
 repositories {
     mavenCentral()
 }
 
+//declared dependencies - in this case only for the test environment
 dependencies {
-    compile('commons-cli:commons-cli:1.4')
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-}
-
-//create a single Jar with all dependencies
-// see https://www.mkyong.com/gradle/gradle-create-a-jar-file-with-dependencies/
-task fatJar(type: Jar) {
-    group 'build'
-    description 'fat jar building with dependencies'
-
-    manifest {
-        attributes 'Implementation-Title': 'Gradle Jar File Example',
-                   'Implementation-Version': version,
-                   'Main-Class': 'nl.bioinf.arguments_provider_demo.CommandLineArgsRunner'
-    }
-    baseName = 'JavaIntroPA-all'
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    with jar
-}
-
-task install(type: Copy) {
-    group 'build'
-    dependsOn build
-    from configurations.runtime
-    from jar
-    into "${project.projectDir}/script/lib"
+    testCompile(
+            'org.junit.jupiter:junit-jupiter-api:5.0.1'
+    )
+    testRuntime(
+            'org.junit.jupiter:junit-jupiter-engine:5.0.1',
+            'org.junit.platform:junit-platform-launcher:1.0.1'
+    )
 }

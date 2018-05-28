@@ -1,4 +1,4 @@
-package week1_0;
+package section1_intro.part0_how_it_works;
 
 /**
  * Creation date: Jun 27, 2017

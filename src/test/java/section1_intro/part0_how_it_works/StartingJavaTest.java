@@ -1,15 +1,13 @@
-package week1_0;
+package section1_intro.part0_how_it_works;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /**
  * Creation date: Jun 26, 2017
@@ -17,32 +15,28 @@ import static org.junit.Assert.assertEquals;
  * @version 0.01
  * @autor Michiel Noback (&copy; 2017)
  */
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StartingJavaTest {
-
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private StartingJava startingJava;
 
-    @Before
+    @BeforeEach
     public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
         startingJava = new StartingJava();
     }
 
-    @After
-    public void cleanUpStreams() {
+    @Test
+    public void testPrintHelloWorld() throws Exception {
+        PrintStream sysOut = System.out;
+        System.setOut(new PrintStream(outContent));
+        startingJava.printHelloWorld();
+        String printedResult = outContent.toString();
+        sysOut.print(printedResult);
+        assertEquals("Hello, World", printedResult);
         System.setOut(null);
     }
 
-
     @Test
-    public void test1_printHelloWorld() throws Exception {
-        startingJava.printHelloWorld();
-        assertEquals("Hello, World", outContent.toString());
-    }
-
-    @Test
-    public void test2_addInts() throws Exception {
+    public void testAddInts() throws Exception {
         int x = 2;
         int y = 4;
         int result = x + y;
@@ -55,7 +49,7 @@ public class StartingJavaTest {
     }
 
     @Test
-    public void test3_divideAndRound() throws Exception {
+    public void testDivideAndRound() throws Exception {
         double x = 4.999;
         double y = 1.999;
         long result = 3;
@@ -67,13 +61,13 @@ public class StartingJavaTest {
     }
 
     @Test
-    public void test4_getGreeting() throws Exception {
+    public void testGetGreeting() throws Exception {
         assertEquals("Wazzup", startingJava.getGreeting(2));
         assertEquals("Yo!", startingJava.getGreeting(3));
     }
 
     @Test
-    public void test5_createDuck() throws Exception {
+    public void testCreateDuck() throws Exception {
         int speed = 7;
         String name = "Shelduck";
         Duck duck = startingJava.createDuck(speed, name);

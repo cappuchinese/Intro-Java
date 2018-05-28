@@ -1,4 +1,4 @@
-package week1_0;
+package section1_intro.part0_how_it_works;
 
 /**
  * Creation date: Jun 26, 2017
@@ -20,7 +20,7 @@ public class StartingJava {
      *
      */
     public void printHelloWorld() {
-        //System.out.print("Hello, World");
+        System.out.print("Hello, World");
     }
 
     /**

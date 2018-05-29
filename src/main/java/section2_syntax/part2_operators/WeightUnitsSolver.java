@@ -1,0 +1,41 @@
+/*
+ * Copyright (c) 2015 Michiel Noback [michiel.noback@gmail.com].
+ * All rights reserved.
+ */
+
+package section2_syntax.part2_operators;
+
+/**
+ *
+ * @author Michiel Noback [michiel.noback@gmail.com]
+ * @version 0.0.1
+ */
+public class WeightUnitsSolver {
+    /**
+     * main to be used for testing purposes
+     * @param args 
+     */
+    public static void main(String[] args) {
+        WeightUnitsSolver wus = new WeightUnitsSolver();
+        wus.convertFromGrams(1000);
+    }
+    
+    /**
+     * Returns the number of Pounds, Ounces and Grams represented by this quantity of grams,
+     * encapsulated in a BritishWeightUnits object.
+     * @param grams
+     * @return a BritishWeightUnits instance
+     * @throws IllegalArgumentException when the Grams quantity is 
+     */
+    public BritishWeightUnits convertFromGrams(int grams) {
+        //change this variable to get a correct testing condition
+        final int gramsTest = Integer.MIN_VALUE;
+        if (grams <= gramsTest) {
+            throw new IllegalArgumentException("Error: grams should be above 0. Given: grams=" + grams);
+        }
+
+        //solve the pounds, ounces and grams, create and return a BritishWeightUnits instance
+
+        return null;
+    }
+}

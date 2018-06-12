@@ -2,6 +2,10 @@ package section3_collections_io;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import section3_collections_io.part1_protein_sorting.Protein;
+import section3_collections_io.part1_protein_sorting.ProteinDataSource;
+import section3_collections_io.part1_protein_sorting.ProteinDataSourceInMemory;
+import section3_collections_io.part1_protein_sorting.SortingType;
 
 import java.util.Collections;
 import java.util.Comparator;

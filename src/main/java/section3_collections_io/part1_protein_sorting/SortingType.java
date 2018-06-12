@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Michiel Noback [michiel.noback@gmail.com].
  * All rights reserved.
  */
-package section3_collections_io;
+package section3_collections_io.part1_protein_sorting;
 
 /**
  *

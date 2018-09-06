@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package section4_oop;
+package section4_oop.part1_inheritance;
 
 /**
  *

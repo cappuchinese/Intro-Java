@@ -3,13 +3,13 @@
  * All rights reserved.
  */
 
-package section4_oop;
+package section4_oop.part1_inheritance;
 
 /**
  *
  * @author Michiel Noback [michiel.noback@gmail.com]
  * @version 0.0.1
  */
-public class Horse extends Animal {
+public class HouseMouse extends Animal{
 
 }

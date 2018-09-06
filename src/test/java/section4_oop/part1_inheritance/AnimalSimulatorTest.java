@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Michiel Noback [michiel.noback@gmail.com].
  * All rights reserved.
  */
-package section4_oop;
+package section4_oop.part1_inheritance;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -11,6 +11,7 @@ import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

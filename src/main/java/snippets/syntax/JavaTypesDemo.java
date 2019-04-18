@@ -1,4 +1,6 @@
-package snippets;
+package snippets.syntax;
+
+import snippets.testtube.Cell;
 
 class JavaTypesDemo {
     public static void main(String[] args) {
@@ -87,6 +89,60 @@ class JavaTypesDemo {
         System.out.println("dnaOne starts with \"AGAGGT\" " + dnaOne.startsWith("AGAGGT")); //true
         System.out.println("dnaFour.toCharArray() = " + dnaFour.toCharArray()); //[C@6f3b5d16 but this changes: this is the reference value (the remote control endpoint)
 
+        String dnaFive = new String("AGAGGTCTAGCTGA");
+        String dnaSix = "AGAGGTCTAGCTGA";
+        System.out.println("dnaOne equals dnaFive: " + dnaOne.equals(dnaFive));
+        System.out.println("dnaOne == dnaFive: " + (dnaOne == dnaFive));
+        System.out.println("dnaOne == dnaSix: " + (dnaOne == dnaSix));
+    }
 
+
+    static void primitivePassingDemo() {
+        int x = 42;
+        System.out.println("x = " + x);
+        changePrimitiveVariable(x);
+        System.out.println("x = " + x);
+    }
+
+    static void changePrimitiveVariable(int number) {
+        System.out.println("number = " + number);
+        number = 55;
+        System.out.println("number = " + number);
+    }
+
+    static void referencePassingDemo() {
+        Cell cell = new Cell();
+        System.out.println("cell.diameter = " + cell.diameter);
+        changeReferenceVariable(cell);
+        System.out.println("cell.diameter = " + cell.diameter);
+    }
+
+    static void changeReferenceVariable(Cell theCell) {
+        System.out.println("theCell.diameter = " + theCell.diameter);
+        theCell.diameter = 12;
+        System.out.println("theCell.diameter = " + theCell.diameter);
+    }
+
+
+    static void stringPassingDemo() {
+        String hello = "Hello World";
+        System.out.println("hello = " + hello);
+        changeStringVariable(hello);
+        System.out.println("hello = " + hello);
+
+    }
+
+    static void changeStringVariable(String message) {
+        System.out.println("message = " + message);
+        message = "Bye now!";
+        System.out.println("message = " + message);
+    }
+
+    static void nullValueDemo() {
+        String nullString = null;
+        //prints just fine!
+        System.out.println("nullString = " + nullString);
+        //NullPointerException
+        nullString.charAt(0);
     }
 }

@@ -1,7 +1,7 @@
 /**
  * The package declaration; it defines the namespace of this class
  * */
-package snippets;
+package snippets.syntax;
 
 /**
  * The blueprint for MostBasicApp instances

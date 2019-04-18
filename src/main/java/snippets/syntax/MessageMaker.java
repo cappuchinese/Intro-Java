@@ -1,4 +1,4 @@
-package snippets;
+package snippets.syntax;
 
 public class MessageMaker {
     private final String name;

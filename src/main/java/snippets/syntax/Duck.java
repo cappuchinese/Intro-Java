@@ -1,4 +1,4 @@
-package snippets;
+package snippets.syntax;
 
 /**
  * This is a Javadoc comment for the Duck class.

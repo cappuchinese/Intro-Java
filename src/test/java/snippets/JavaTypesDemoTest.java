@@ -1,8 +1,7 @@
 package snippets;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import snippets.syntax.JavaTypesDemo;
 
 class JavaTypesDemoTest {
 
@@ -15,4 +14,25 @@ class JavaTypesDemoTest {
     void stringDemoTest() {
         JavaTypesDemo.stringDemo();
     }
+
+    @Test
+    void passPrimitiveDemo() {
+        JavaTypesDemo.primitivePassingDemo();
+    }
+
+    @Test
+    void passReferenceDemo() {
+        JavaTypesDemo.referencePassingDemo();
+    }
+
+    @Test
+    void passStringDemo() {
+        JavaTypesDemo.stringPassingDemo();
+    }
+
+    @Test
+    void nullValueDemoTest(){
+        JavaTypesDemo.nullValueDemo();
+    }
+
 }

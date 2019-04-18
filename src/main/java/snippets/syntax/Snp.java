@@ -1,4 +1,4 @@
-package snippets;
+package snippets.syntax;
 
 /**
  * Class Snp models a Single Nucleotide Polymorphism in its simplest form.

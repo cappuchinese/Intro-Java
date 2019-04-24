@@ -2,7 +2,7 @@ package snippets.syntax;
 
 import snippets.testtube.Cell;
 
-class JavaTypesDemo {
+public class JavaTypesDemo {
     public static void main(String[] args) {
         /* INTEGER counts the number of kills */
         int killCount = 42;
@@ -30,7 +30,7 @@ class JavaTypesDemo {
     }
 
 
-    void demoInitDeclare(){
+    public void demoInitDeclare(){
         //LEGAL
         int killCount;
         killCount = 0;
@@ -41,7 +41,7 @@ class JavaTypesDemo {
     }
 
 
-    static void usingPrimitives() {
+    public static void usingPrimitives() {
         int x = 10;
         int y = 20;
         int squareSurface = x * y;
@@ -77,7 +77,7 @@ class JavaTypesDemo {
     }
 
 
-    static void stringDemo(){
+    public static void stringDemo(){
         String dnaOne = "AGAGGTCTAGCTGA";
         String dnaTwo = "GGTCTAGC";
         String dnaThree = "GGtctAGc";
@@ -97,34 +97,34 @@ class JavaTypesDemo {
     }
 
 
-    static void primitivePassingDemo() {
+    public static void primitivePassingDemo() {
         int x = 42;
         System.out.println("x = " + x);
         changePrimitiveVariable(x);
         System.out.println("x = " + x);
     }
 
-    static void changePrimitiveVariable(int number) {
+    public static void changePrimitiveVariable(int number) {
         System.out.println("number = " + number);
         number = 55;
         System.out.println("number = " + number);
     }
 
-    static void referencePassingDemo() {
+    public static void referencePassingDemo() {
         Cell cell = new Cell();
         System.out.println("cell.diameter = " + cell.diameter);
         changeReferenceVariable(cell);
         System.out.println("cell.diameter = " + cell.diameter);
     }
 
-    static void changeReferenceVariable(Cell theCell) {
+    public static void changeReferenceVariable(Cell theCell) {
         System.out.println("theCell.diameter = " + theCell.diameter);
         theCell.diameter = 12;
         System.out.println("theCell.diameter = " + theCell.diameter);
     }
 
 
-    static void stringPassingDemo() {
+    public static void stringPassingDemo() {
         String hello = "Hello World";
         System.out.println("hello = " + hello);
         changeStringVariable(hello);
@@ -132,13 +132,13 @@ class JavaTypesDemo {
 
     }
 
-    static void changeStringVariable(String message) {
+    public static void changeStringVariable(String message) {
         System.out.println("message = " + message);
         message = "Bye now!";
         System.out.println("message = " + message);
     }
 
-    static void nullValueDemo() {
+    public static void nullValueDemo() {
         String nullString = null;
         //prints just fine!
         System.out.println("nullString = " + nullString);

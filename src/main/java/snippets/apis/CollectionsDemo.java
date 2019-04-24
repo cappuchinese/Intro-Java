@@ -2,9 +2,7 @@ package snippets.apis;
 
 import snippets.syntax.Duck;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class CollectionsDemo {
     public static void main(String[] args) {
@@ -62,4 +60,95 @@ public class CollectionsDemo {
             }
         }
     }
+
+    void autoboxingWrappers() {
+        int count = 33;
+
+        //deprecated though legal
+        Integer counter1 = new Integer(count);
+        //OK, be explicit; uses caching
+        Integer counter2 = Integer.valueOf(count);
+        //explicit unwrapping
+        counter2.intValue();
+
+        //autoboxing!
+        Integer counter3 = count;
+        //auto-unboxing
+        int counter4 = counter3;
+    }
+
+    void mapOperations() {
+        Map<Integer, User> users = new HashMap<>();
+        User u1 = new User(15, "Henk");
+        //add to Map
+        users.put(u1.id, u1);
+        User u2 = new User(21, "Dirk");
+        users.put(u2.id, u2);
+        User u3 = new User(9, "Mike");
+        users.put(u3.id, u3);
+
+        //read size
+        System.out.println(users.size());
+        //check for presence of key
+        System.out.println("users.containsKey(15) = " + users.containsKey(15));
+        //check for presence of value
+        System.out.println("users.containsValue() = " + users.containsValue(u1));
+        //is not in map
+        System.out.println("users.containsValue() = " + users.containsValue(new User(6, "Nick")));
+
+        for (User user : users.values()) {
+            //iterate values
+        }
+
+        for (int id : users.keySet()) {
+            //iterate keys
+        }
+
+        for (Map.Entry<Integer, User> entry : users.entrySet()) {
+            //iterate entries
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+
+        //empties map
+        users.clear();
+    }
+
+
+    void equalsAndHashCode() {
+
+        User user1 = new User(15, "Henk");
+        //same, equal?
+        User user2 = user1;
+
+        User user3 = new User(21, "Dirk");
+        //same, or equal User as user3?
+        User user4 = new User(21, "Dirk");
+
+        System.out.println("user1 == user1 -- " + (user1 == user1)); //should be true
+        System.out.println("user1.equals(user1) -- " + user1.equals(user1)); //should be true
+        System.out.println("user1 == user2 -- " + (user1 == user2)); //should be true
+        System.out.println("user1.equals(user2) -- " + user1.equals(user2)); //should be true
+        System.out.println("user1.equals(user3) -- " + user1.equals(user3)); //should be false
+        System.out.println("user3.equals(user4) -- " + user3.equals(user4)); //should be true!
+
+        System.out.println(user1);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

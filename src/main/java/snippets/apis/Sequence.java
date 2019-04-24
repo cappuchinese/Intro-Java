@@ -28,4 +28,6 @@ public class Sequence {
         mutatedSequence.sequence = stringBuilder.toString();
         return mutatedSequence;
     }
+
+
 }

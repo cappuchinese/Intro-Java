@@ -6,6 +6,34 @@ import java.util.*;
 
 public class CollectionsDemo {
     public static void main(String[] args) {
+        setOperations();
+    }
+
+    private static void setOperations() {
+        Set<Integer> setA = setOf(1,2,3,4);
+        Set<Integer> setB = setOf(2,4,6,8,9);
+
+        //Intersection
+        Set<Integer> intersectSet = new HashSet<>(setA);
+        intersectSet.retainAll(setB);
+        System.out.println("intersectSet = " + intersectSet);
+
+        //Union
+        Set<Integer> unionSet = new HashSet<>(setA);
+        unionSet.addAll(setB);
+        System.out.println("unionSet = " + unionSet);
+
+        //Relative complement
+        Set<Integer> differenceSet = new HashSet<>(setA);
+        differenceSet.removeAll(setB);
+        System.out.println("differenceSet = " + differenceSet);
+    }
+
+    private static <T> Set<T> setOf(T... values) {
+        return new HashSet<T>(Arrays.asList(values));
+    }
+
+    void listOperations() {
         //typed collection
 //        ArrayList<String> words = new ArrayList<>();
 
@@ -59,13 +87,23 @@ public class CollectionsDemo {
                 System.out.println("skipped non-String element of type " + element.getClass().getSimpleName());
             }
         }
+
+        String[] wordsArr = {"Lord", "of", "the", "Rings"};
+        //create immutable List from Array
+        List<String> immutableStrings = Arrays.asList(wordsArr);
+        //immutable: UnsupportedOperationException!
+        //immutableStrings.add("!");
+        //make mutable copy
+        List<String> mutableString = new ArrayList<>();
+        //no problem
+        mutableString.add("!");
     }
 
     void autoboxingWrappers() {
         int count = 33;
 
         //deprecated though legal
-        Integer counter1 = new Integer(count);
+        //Integer counter1 = new Integer(count);
         //OK, be explicit; uses caching
         Integer counter2 = Integer.valueOf(count);
         //explicit unwrapping
@@ -132,7 +170,14 @@ public class CollectionsDemo {
         System.out.println("user3.equals(user4) -- " + user3.equals(user4)); //should be true!
 
         System.out.println(user1);
+
+        System.out.println("user1.getClass().getSimpleName() = " + user1.getClass().getSimpleName());
+        System.out.println("user1.getClass().getCanonicalName() = " + user1.getClass().getCanonicalName());
+        System.out.println("user1.getClass().getName() = " + user1.getClass().getName());
+        System.out.println("user1.getClass().getPackageName() = " + user1.getClass().getPackageName());
+        System.out.println("user1.getClass().getClass().getName() = " + user1.getClass().getClass().getName());
     }
+
 }
 
 

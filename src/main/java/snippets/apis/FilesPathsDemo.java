@@ -17,6 +17,7 @@ public class FilesPathsDemo {
         parseEmployees();
     }
 
+
     private static List<Employee> parseEmployees() {
         String fileName = "/Users/michiel/IdeaProjects/JavaIntroProgrammingAssignments/data/empl_data.csv";
         Path path = Paths.get(fileName);

@@ -10,6 +10,6 @@ public class Cell {
     public void grow() {
         //grow by 1 micrometer
         this.diameter += growthIncrement;
-        System.out.println("I am a Cell. My size is " + this.diameter);
+        System.out.println("I am a Bacterium. My size is " + this.diameter);
     }
 }

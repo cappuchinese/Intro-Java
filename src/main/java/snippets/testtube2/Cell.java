@@ -7,8 +7,9 @@ public class Cell {
     /**
      * Construct with diameter and growth increment, in micrometers.
      *
-     * @param diameterInMicrometers diameter between 1 and 40
-     * @param growthIncrementInMicrometers growth increment between 1 and 5
+     * @param diameterInMicrometers diameter between 1 and 40 micrometers
+     * @param growthIncrementInMicrometers growth increment between 1 and 5 micrometers
+     * @throws IllegalArgumentException ex if one of the arguments is out of range
      */
     public Cell(int diameterInMicrometers, int growthIncrementInMicrometers) {
         if (diameterInMicrometers < 1
@@ -16,7 +17,7 @@ public class Cell {
             || growthIncrementInMicrometers < 1
             || growthIncrementInMicrometers > 6
         ) {
-            throw new IllegalArgumentException("Cell size must start between 0 and 40 " +
+            throw new IllegalArgumentException("Bacterium size must start between 0 and 40 " +
                     "and growth increment between 0 and 5");
         }
         this.diameterInMicrometers = diameterInMicrometers;

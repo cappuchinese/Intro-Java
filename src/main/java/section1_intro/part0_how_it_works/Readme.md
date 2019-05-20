@@ -1,10 +1,11 @@
-# An within-classroom assignment
+# How it works
 
-We'll deal with (or start) this one in class so you know what to expect.
 
 There are several methods shown in class `StartingJava`.
 
-Study the Javadoc and the signature of each method and then implement the method body.
+Study the Javadoc and follow the instructions; usually this means you 
+ must implement the method body.
+
 Verify the correctness of your solution by running the corresponding test method 
-(to be found in `/src/test/java/week1_0/StartingJava.java`)
+(to be found in `/src/test/java/section1_intro/part0_how_it_works/StartingJavaTest.java`)
 

@@ -26,37 +26,42 @@ class LanguageBasicsTest {
     }
 
     @Test
-    void distanceTo() {
-        LanguageBasics.PointInSpace p1 = new LanguageBasics.PointInSpace();
+    void distanceToIsZero() {
+        PointInSpace p1 = new PointInSpace();
         p1.x = 0;
         p1.y = 0;
 
-        LanguageBasics.PointInSpace p2 = new LanguageBasics.PointInSpace();
+        PointInSpace p2 = new PointInSpace();
         p2.x = 0;
         p2.y = 0;
 
-        assertEquals(0, p1.distanceTo(p2));
+        assertEquals(0, p2.euclideanDistanceTo(p1));
+    }
 
+    @Test
+    void distanceToIsNonZero() {
+        PointInSpace p1 = new PointInSpace();
         p1.x = 2;
         p1.y = 2;
 
+        PointInSpace p2 = new PointInSpace();
         p2.x = 4;
         p2.y = 4;
 
-        assertEquals(Math.sqrt(8), p1.distanceTo(p2));
+        assertEquals(Math.sqrt(8), p2.euclideanDistanceTo(p1));
     }
 
     @Test
     void surface() {
-        LanguageBasics.PointInSpace p1 = new LanguageBasics.PointInSpace();
+        PointInSpace p1 = new PointInSpace();
         p1.x = 2;
         p1.y = 8;
 
-        LanguageBasics.PointInSpace p2 = new LanguageBasics.PointInSpace();
+        PointInSpace p2 = new PointInSpace();
         p2.x = 10;
         p2.y = 3;
 
-        LanguageBasics.SquareInSpace square = new LanguageBasics.SquareInSpace();
+        SquareInSpace square = new SquareInSpace();
         square.upperLeft = p1;
         square.lowerRight = p2;
 

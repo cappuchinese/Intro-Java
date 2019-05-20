@@ -3,8 +3,27 @@ package section1_intro.part1_language_basics;
 public class LanguageBasics {
 
     /**
+     * This method should return "number" to the power of "powerUp", where the absolute value (or modulus) is
+     * taken of "powerUp".
+     * Next, create your own JUnit tests in class LanguageBasicsTest:
+     *  1: a correct result with getThePowerAbsolute(5, 3)
+     *  2: a correct result with getThePowerAbsolute(5, -3)
+     *  3: an incorrect result with getThePowerAbsolute(4, -2)
+     * @param number
+     * @param powerUp
+     * @return number^absolute(powerUp)
+     */
+    public double getThePowerAbsolute(int number, int powerUp) {
+        return 0;
+    }
+
+    /***************************THIS ONLY SERVES AS SEPARATOR TO THE NEXT ASSIGNMENT****************************/
+
+
+    /**
      * In this method, four variables are declared and initialized.
-     * Return the one that is correctly named (the value of the variable is iirelevant!).
+     * Only one is named according to Java naming style rules.
+     * Return the one that is correctly named (the value of the variable is irrelevant!).
      * @return correctVariable
      */
     public String returnCorrectlyNamedVariable() {
@@ -18,8 +37,11 @@ public class LanguageBasics {
     }
 
     /**
-     * Below this method, you will find four methods returning an int. Call the method that is correctly named and
-     * return its return value.
+     * Below this method, you will find five methods returning an int.
+     * One of them, thisisnotthecorrectone() is certainly not correctly named, but this is the one called
+     * from within callCorrectlyNamedMethod().
+     * Identify the method that is correctly named and replace it for the call to thisisnotthecorrectone().
+     *
      * @return theCorrectInt
      */
     public int callCorrectlyNamedMethod() {
@@ -31,37 +53,6 @@ public class LanguageBasics {
     int getCurrentStatus() {return 2;}
     int returnCurrentStatus() {return 3;}
     int status() {return 4;}
-
-    /***************************THIS ONLY SERVES AS SEPARATOR TO THE NEXT ASSIGNMENT****************************/
-
-    /*
-    * Below, you will find two classes that were shown in the presentations (simplified a bit).
-    * They are not completely implemented so this is the time to do that.
-    * You may want to check out the the Math class, and the definition of Euclidean distance.
-    */
-
-    public static class PointInSpace {
-        int x, y;
-        double distanceTo(PointInSpace otherPoint) {
-            //calculate distance
-            return 0;
-        }
-    }
-
-    public static class SquareInSpace{
-        PointInSpace upperLeft;
-        PointInSpace lowerRight;
-
-        /**
-         * returns the surface defined by the rectangle with the given upper left and lower right corners.
-         * It assumes two corners have been created already!
-         * @return
-         */
-        int surface(){
-            //calculate surface
-            return 0;
-        }
-    }
 
 
 }

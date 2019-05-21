@@ -27,11 +27,11 @@ class LanguageBasicsTest {
 
     @Test
     void distanceToIsZero() {
-        PointInSpace p1 = new PointInSpace();
+        Point p1 = new Point();
         p1.x = 0;
         p1.y = 0;
 
-        PointInSpace p2 = new PointInSpace();
+        Point p2 = new Point();
         p2.x = 0;
         p2.y = 0;
 
@@ -40,11 +40,11 @@ class LanguageBasicsTest {
 
     @Test
     void distanceToIsNonZero() {
-        PointInSpace p1 = new PointInSpace();
+        Point p1 = new Point();
         p1.x = 2;
         p1.y = 2;
 
-        PointInSpace p2 = new PointInSpace();
+        Point p2 = new Point();
         p2.x = 4;
         p2.y = 4;
 
@@ -53,15 +53,15 @@ class LanguageBasicsTest {
 
     @Test
     void surface() {
-        PointInSpace p1 = new PointInSpace();
+        Point p1 = new Point();
         p1.x = 2;
         p1.y = 8;
 
-        PointInSpace p2 = new PointInSpace();
+        Point p2 = new Point();
         p2.x = 10;
         p2.y = 3;
 
-        SquareInSpace square = new SquareInSpace();
+        Square square = new Square();
         square.upperLeft = p1;
         square.lowerRight = p2;
 

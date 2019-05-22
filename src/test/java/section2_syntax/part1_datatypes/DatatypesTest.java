@@ -1,4 +1,4 @@
-package section2_syntax.part1_datatypes.Readme;
+package section2_syntax.part1_datatypes;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -86,4 +86,23 @@ class DatatypesTest {
 
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    void cubeAll1() {
+        int[] input = {0, 1, 2, 3};
+        int[] expected = {0, 1, 8, 27};
+        int[] observed = datatypes.cubeAll(input);
+
+        assertArrayEquals(expected, observed);
+    }
+
+    @Test
+    void cubeAll2() {
+        int[] input = {2, 3, 5};
+        int[] expected = {8, 27, 125};
+        int[] observed = datatypes.cubeAll(input);
+
+        assertArrayEquals(expected, observed);
+    }
+
 }

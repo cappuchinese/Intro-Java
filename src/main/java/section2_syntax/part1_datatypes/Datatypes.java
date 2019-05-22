@@ -1,4 +1,4 @@
-package section2_syntax.part1_datatypes.Readme;
+package section2_syntax.part1_datatypes;
 
 /**
  * Creation date: May 28, 2018
@@ -99,12 +99,35 @@ public class Datatypes {
 
     /**
      * The method below should return a String array of length 2, with the first and last element
-     * of the input array in it, converted to Strings.
-     * Hint: look at the methods available to type Object
+     * of the input array in it, converted to String representations.
+     * Hint: look at the methods available to class Object (GIYF)
      */
     String[] getFirstAndLast(Object[] input) {
-        String[] result = new String[]{input[0].toString(), input[input.length - 1].toString()};
-        return result;
+        return null;
+    }
+
+
+    /**
+     * This method should return a new int array where all integers from the input have been cubed (power of 3).
+     * For convenience, the skeleton of a for loop is already provided.
+     * @param input
+     * @return cubedInput
+     */
+    int[] cubeAll(int[] input) {
+        int arrayLength = 0; //get the correct value
+        for(int i = 0; i < arrayLength; i++) {
+            //do your thing
+        }
+        return null;
+    }
+
+    /**
+     * This method should return the cumulative product of all numbers in the input array.
+     * @param input
+     * @return cumProd the cumulative product
+     */
+    int cumulativeProduct(int[] input) {
+        return 0;
     }
 
 }

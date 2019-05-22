@@ -3,9 +3,7 @@
  * All rights reserved.
  */
 
-package section2_syntax.part4_extras;
-
-import java.util.Arrays;
+package section2_syntax.part4_methods;
 
 /**
  *

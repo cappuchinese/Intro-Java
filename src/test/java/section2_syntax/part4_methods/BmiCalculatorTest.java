@@ -1,4 +1,4 @@
-package section2_syntax.part4_extras;
+package section2_syntax.part4_methods;
 
 import org.junit.jupiter.api.Test;
 

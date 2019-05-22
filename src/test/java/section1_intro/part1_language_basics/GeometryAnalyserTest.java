@@ -59,6 +59,17 @@ class GeometryAnalyserTest {
 
     @Test
     void mainDistanceTest2() {
+        String[] commandLineArgs = {"2", "5", "6", "2", "dist"};
+        GeometryAnalyser.main(commandLineArgs);
+        String expectedOutput1 = "5" + System.lineSeparator();
+        String expectedOutput2 = "5.0" + System.lineSeparator();
+        String expectedOutput3 = "5,0" + System.lineSeparator();
+        String observedOutput = outContent.toString();
+        assertThat(observedOutput, anyOf(org.hamcrest.Matchers.is(expectedOutput1), is(expectedOutput2), is(expectedOutput3)));
+    }
+
+    @Test
+    void mainDistanceTest3() {
         String[] commandLineArgs = {"1", "8", "5", "12", "dist"};
         GeometryAnalyser.main(commandLineArgs);
         String expectedOutput1 = "5,7" + System.lineSeparator();

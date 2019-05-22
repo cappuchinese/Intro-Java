@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Michiel Noback [michiel.noback@gmail.com].
  * All rights reserved.
  */
-package section2_syntax.part4_extras;
+package section2_syntax.part4_methods;
 
 import java.util.Scanner;
 

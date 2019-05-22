@@ -1,4 +1,4 @@
-package section3_collections_io.part1_protein_sorting;
+package section3_apis.part3_protein_sorting;
 
 import java.util.List;
 

@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package section3_collections_io.part1_protein_sorting;
+package section3_apis.part3_protein_sorting;
 
 /**
  * Models the GO annotation of a protein.

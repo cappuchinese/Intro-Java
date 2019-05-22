@@ -14,8 +14,6 @@ The given method stub takes as arguments
     * a boolean indicating whether the String should be left-truncated or right-truncated
     * a boolean indicating whether the String should be left-aligned or right-aligned
 
-**NB these examples should be viewed on Bitbucket, not within NetBeans!**
-
 For example, this method call:
 
 ```Java

@@ -11,7 +11,7 @@
 ## Assignments 
 
 1. In class `LanguageBasics`, work your way through the methods and implement them according to the instructions 
-stated within the methods' Javadoc and/or in the method body 
+stated within the methods' Javadoc and/or in the method body. 
 
 2. Class `Point` has a method that is not implemented: `double euclideanDistanceTo(Point otherPoint)`. 
 This is your task. Again, the Math class may come in handy. 

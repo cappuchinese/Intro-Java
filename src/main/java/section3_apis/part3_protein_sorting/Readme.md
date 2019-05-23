@@ -22,7 +22,7 @@ For amino acid weights you should use the weights listed on [WebQC](http://www.w
 The "By name" sorting type should be the default implementation for protein objects. 
 The others should be provided/supported by implementing the static method `getSorter()` defined in class `Protein`:
 
-```Java
+```java
 /**
  * provides a range of possible sorters, based on the type that is requested.
  * @param type

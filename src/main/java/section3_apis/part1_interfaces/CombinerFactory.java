@@ -4,7 +4,7 @@ public class CombinerFactory {
     /**
      * This method returns a StringCombiner that will surround the given arguments with double quotes,
      * separated by spaces and the result surrounded by single quotes.
-     * For example, this call quotedCombiner.combine("one", "two") will return '"one" "two"'
+     * For example, this call combiner.combine("one", "two") will return '"one" "two"'
      * @return quotedCombiner
      */
     static StringCombiner getQuotedCombiner() {
@@ -14,7 +14,7 @@ public class CombinerFactory {
     /**
      * This method returns a StringCombiner that will return the given arguments combined reversed and original,
      * concatenated with a space in between.
-     * For example, reversedCombiner.combine("one", "two") will return "oneeno twoowt" (the quotes are not included
+     * For example, combiner.combine("one", "two") will return "oneeno twoowt" (the quotes are not included
      * in the return value).
      * @return reversedCombiner
      */
@@ -28,11 +28,18 @@ public class CombinerFactory {
      * arguments are converted to their ASCII values and then the summed. These numbers are combined with a space
      * in between and returned.
      *
-     * For example, reversedCombiner.combine("one", "two") will return "322 346" (111 + 110 + 101 and 116 + 119 + 111).
+     * For example, combiner.combine("one", "two") will return "322 346" (111 + 110 + 101 and 116 + 119 + 111).
      * @return reversedCombiner
      */
     static StringCombiner getAsciiSumCombiner() {
-        return null;
+        return new StringCombiner() {
+            @Override
+            public String combine(String first, String second) {
+                final int sumFirst = first.chars().sum();
+                final int sumSecond = second.chars().sum();
+                return sumFirst + " " + sumSecond;
+            }
+        };
     }
 
 

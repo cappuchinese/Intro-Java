@@ -17,7 +17,7 @@ GGATAGCCGGgTATCC
 >>>>>>>><<*<<<<<
 ```
 
-So, matching characters should be uppercase with an gretaer than or less than symbol below, 
+So, matching characters should be uppercase with an greater than or less than symbol below, 
 while mismatching characters should be lowercase with an asterisk below them.
 
 Take care of your these aspects:  

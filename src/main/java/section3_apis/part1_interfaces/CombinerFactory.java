@@ -32,14 +32,7 @@ public class CombinerFactory {
      * @return reversedCombiner
      */
     static StringCombiner getAsciiSumCombiner() {
-        return new StringCombiner() {
-            @Override
-            public String combine(String first, String second) {
-                final int sumFirst = first.chars().sum();
-                final int sumSecond = second.chars().sum();
-                return sumFirst + " " + sumSecond;
-            }
-        };
+        return null;
     }
 
 

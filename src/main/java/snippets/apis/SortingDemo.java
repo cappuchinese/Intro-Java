@@ -7,6 +7,46 @@ import java.util.List;
 
 public class SortingDemo {
     public static void main(String[] args) {
+
+
+
+
+
+
+
+
+
+
+        List<String> names = new ArrayList<>();
+        names.addAll(List.of("Jordan", "Wanda", "James", "rose", "Aaron"));
+
+        System.out.println("names before sort: " + names);
+
+        Collections.sort(names);
+
+        System.out.println("names after natural sort: " + names);
+
+        names.sort(Comparator.naturalOrder());
+
+        System.out.println("names after sort on List " + names);
+
+        names.sort(String.CASE_INSENSITIVE_ORDER);
+        System.out.println("names case insensitive sort " + names);
+
+
+
+        names.sort(Comparator.reverseOrder());
+
+        System.out.println("names after reverse sort " + names);
+
+
+
+        names.sort(null);
+        System.out.println("names after null sort " + names);
+
+
+        System.exit(0);
+
         List<Bird> birds = new ArrayList<>();
 
         birds.add(new Bird("Buzzard", 1.3, 29));
@@ -47,7 +87,8 @@ public class SortingDemo {
 
         //using Java8+ feature
         //birds.sort(Comparator.comparingDouble(bird -> bird.wingSpan));
-
+        birds.sort(new BirdNameComparator());
 
     }
+
 }

@@ -20,5 +20,6 @@ There are several equally valid implementation possibilities: regular classes, a
 The JUnit tests will tell you if the solutions are OK.
 
 ## Assignment 2
-This package also holds an interface `EncryptionEngine` with two declared methods: encrypt and decrypt. Create your own (set of) encryption engines where decrypt reverses the encrypt method result. Start with the Caesar cypher (see [wikiedia](https://en.wikipedia.org/wiki/Caesar_cipher))
+
+This package also holds an interface `EncryptionEngine` with two declared methods: `encrypt()` and `decrypt()`. Create your own (set of) encryption engines where decrypt reverses the encrypt method result. Start with the Caesar cypher (see [wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher))
 

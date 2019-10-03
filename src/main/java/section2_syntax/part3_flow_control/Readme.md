@@ -16,7 +16,7 @@ The given method stub takes as arguments
 
 For example, this method call:
 
-```Java
+```java
 AllSubstringsPrinter asp = new AllSubstringsPrinter();
 asp.printAllSubstrings("GATCG", true, true); //should print left truncated, left aligned
 ``` 

@@ -49,15 +49,6 @@ class GeometryAnalyserTest {
     }
 
     @Test
-    void mainDistanceTest1() {
-        String[] commandLineArgs = {"2", "5", "6", "2", "dist"};
-        GeometryAnalyser.main(commandLineArgs);
-        String expectedOutput = "5" + System.lineSeparator();
-        String observedOutput = outContent.toString();
-        assertEquals(expectedOutput, observedOutput);
-    }
-
-    @Test
     void mainDistanceTest2() {
         String[] commandLineArgs = {"2", "5", "6", "2", "dist"};
         GeometryAnalyser.main(commandLineArgs);

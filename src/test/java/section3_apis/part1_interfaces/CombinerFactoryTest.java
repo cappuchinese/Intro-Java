@@ -14,6 +14,7 @@ class CombinerFactoryTest {
         assertEquals(expected, actual);
     }
 
+    @Test
     void getQuotedCombiner2() {
         final StringCombiner quotedCombiner = CombinerFactory.getQuotedCombiner();
         final String actual = quotedCombiner.combine("how", "dy");

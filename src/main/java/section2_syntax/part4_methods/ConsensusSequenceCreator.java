@@ -47,7 +47,10 @@ public class ConsensusSequenceCreator {
         this.sequences = sequences;
         this.iupac = iupac;
         this.ambiguities = new String[sequences[0].length()];
+        //in this first step, all possibilities for each position are collected
         buildAmbiguities();
+        //in this step, variants for each position are translated into either
+        //[x/y] notation or IUPAC notation
         buildConsensus();
         return this.consensus;
     }

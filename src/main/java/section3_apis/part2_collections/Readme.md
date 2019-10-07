@@ -15,14 +15,18 @@ class. The Javadoc above the method will describe what should be returned.
 The first case is already implemented so you get the gist.
 The JUnit tests will tell you if the solutions are OK.
 
-2. In the `data` folder you will find the two data files `students.txt` and `courses.csv`. 
+2. In the `data` folder at the root of this project you will find the two data files `students.txt` and `courses.csv`. 
 These represent the students and their course results for three courses. 
-In this current package four classes are already present: `Student`, `Course`, `StudentAdmin` and `StudentAdminDataReader`. 
-Class `Student` is completely implemented. Class `Course` needs additional code to store the grades. 
-Class `StudentAdmin` only publishes its public API through method stubs, without any implementation. 
-Finally, class `StudentAdminDataReader` contains the basic file reader functionality. Note the use of a dedicated 
-interface to abstract away all common code in this class.    
+In the current package four classes are already present: `Student`, `Course`, `StudentAdmin` and `StudentAdminDataReader`.  
+ 
+- Class `Student` is completely implemented; you do not need to do anything there.   
+- Class `Course` needs additional code to store the grades.  
+- Class `StudentAdmin` only publishes its public API through method stubs, without any implementation. You will need to devise a data storage, and also supply method for adding stuff into it. 
+- Finally, class `StudentAdminDataReader` contains the basic file reader functionality. Note the use of a dedicated interface to abstract away all common code in this class. Here, you will need to do some work as well.
+    
 **It is your task to implement all necessary code to support the public API correctly, using the correct collection types.**
+
+Think carefully in which class you will start your coding endeavours.
 
 To protect your data, it is never allowed to simply return the reference to a collection type via a getter. The concept is called **_encapsulation_** and violating it looks like this:
 
@@ -62,5 +66,6 @@ public class StudentCollection {
 ```
 
 For largely this same reason, class `Student` has been implemented **_immutable_**.
+Encapsulation is dealt with in more detail in a later post.
 
 The JUnit tests will tell you when you are finished.

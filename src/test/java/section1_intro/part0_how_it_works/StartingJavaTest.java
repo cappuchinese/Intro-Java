@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -25,7 +26,7 @@ public class StartingJavaTest {
     }
 
     @Test
-    public void testPrintHelloWorld() throws Exception {
+    public void testPrintHelloWorld() {
         PrintStream sysOut = System.out;
         System.setOut(new PrintStream(outContent));
         startingJava.printHelloWorld();
@@ -36,7 +37,7 @@ public class StartingJavaTest {
     }
 
     @Test
-    public void testAddInts() throws Exception {
+    public void testAddInts() {
         int x = 2;
         int y = 4;
         int result = x + y;
@@ -49,7 +50,16 @@ public class StartingJavaTest {
     }
 
     @Test
-    public void testDivideAndRound() throws Exception {
+    public void testCalculateSpeed() {
+        //using AssertJ assertions
+        assertThat(startingJava.calculateSpeed(1000, 120))
+                .isEqualTo(30.0);
+        assertThat(startingJava.calculateSpeed(100000, 3600))
+                .isEqualTo(100.0);
+    }
+
+    @Test
+    public void testDivideAndRound() {
         double x = 4.999;
         double y = 1.999;
         long result = 3;
@@ -61,13 +71,13 @@ public class StartingJavaTest {
     }
 
     @Test
-    public void testGetGreeting() throws Exception {
+    public void testGetGreeting() {
         assertEquals("Wazzup", startingJava.getGreeting(2));
         assertEquals("Yo!", startingJava.getGreeting(3));
     }
 
     @Test
-    public void testCreateDuck() throws Exception {
+    public void testCreateDuck() {
         int speed = 7;
         String name = "Shelduck";
         Duck duck = startingJava.createDuck(speed, name);

@@ -7,16 +7,6 @@ package section1_intro.part0_how_it_works;
  * @author Michiel Noback (&copy; 2017)
  */
 public class StartingJava {
-    /**
-     * this is a constant - a String array used for getGreeting()
-     */
-    public static final String[] GREETINGS = new String[]{
-            "Hallo",
-            "Moi",
-            "Wazzup",
-            "Yo!",
-            "Hey"
-    };
 
     /**
      * This method simply prints "Hello, World" to the console.
@@ -36,29 +26,62 @@ public class StartingJava {
      * @return theSum
      */
     public int addInts(int x, int y) {
+        /*PUT YOUR CODE HERE
+         and replace the zero in the return statement (return 0;)
+         with your own value.*/
+        return 0;
+    }
+
+    /**
+     * Given a distance in meters and a passed time in seconds, calculate the
+     * speed in km/h.
+     *
+     * @param distanceInMeters
+     * @param timeInSeconds
+     * @return speed
+     */
+    public double calculateSpeed(double distanceInMeters, double timeInSeconds) {
+        //YOUR CODE HERE
         return 0;
     }
 
     /**
      * This method divides x by y and returns the rounded value (rounded to nearest integer).
-     * Use the Math class to get your implementation right.
+     * Use the Math class to get your implementation right. Start by typing 'Math.' within
+     * the method body (without the quotes of course)
+     * and select a method you are interested in. Pressing 'F1' (or ctrl + q) shows the Javadoc
+     * info on the selected method.
      * @param x
      * @param y
      * @return dividedAndRounded
      */
     public long divideAndRound(double x, double y) {
+        //YOUR CODE
         return 0;
     }
 
     /**
      * Returns the String found at the corresponding position of GREETINGS.
-     * Note (a) that Java works with zero-based indexing.
+     * The array GREETINGS is declared just below this method.
+     * Note that Java works with zero-based indexing, using square brackets.
      * @param index of the greeting
      * @return greeting
      */
     public String getGreeting(int index) {
+        //YOUR CODE
         return "";
     }
+
+    /**
+     * this is a constant - a String array used for getGreeting()
+     */
+    public static final String[] GREETINGS = new String[]{
+            "Hallo",
+            "Moi",
+            "Wazzup",
+            "Yo!",
+            "Hey"
+    };
 
 
     /**
@@ -69,6 +92,7 @@ public class StartingJava {
      * @return duck a Duck instance
      */
     public Duck createDuck(int swimSpeed, String nameOfDuck) {
+        //YOUR CODE
         return null;
     }
 

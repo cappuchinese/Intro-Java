@@ -5,11 +5,12 @@ public class Square {
     Point lowerRight;
 
     /**
-     * returns the surface defined by the rectangle with the given upper left and lower right corners.
-     * It assumes two corners have been created already!
-     * @return
+     * This method returns the surface defined by the rectangle with the given Point objects at the upper left and
+     * lower right corners.
+     * The method assumes two corners have been set already (are not null).
+     * @return surface
      */
-    int surface(){
+    int getSurface(){
         //calculate surface - can you implement this?
         return 0;
     }

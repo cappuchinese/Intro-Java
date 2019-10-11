@@ -4,25 +4,19 @@ public class LanguageBasics {
 
     /**
      * This method should return "number" to the power of "powerUp", where the absolute value (or modulus) is
-     * taken of "powerUp".
-     * Next, create your own JUnit tests in class LanguageBasicsTest:
-     *  1: a correct result with getThePowerAbsolute(5, 3)
-     *  2: a correct result with getThePowerAbsolute(5, -3)
-     *  3: an incorrect result with getThePowerAbsolute(4, -2)
+     * taken of "powerUp". Again, the Math class may come in handy.
      * @param number
      * @param powerUp
      * @return number^absolute(powerUp)
      */
-    public double getThePowerAbsolute(int number, int powerUp) {
+    public double getTheAbsolutePower(int number, int powerUp) {
+        //YOUR CODE HERE
         return 0;
     }
 
-    /***************************THIS ONLY SERVES AS SEPARATOR TO THE NEXT ASSIGNMENT****************************/
-
-
     /**
      * In this method, four variables are declared and initialized.
-     * Only one is named according to Java naming style rules.
+     * Only one of the variables is named according to Java naming style rules.
      * Return the one that is correctly named (the value of the variable is irrelevant!).
      * @return correctVariable
      */
@@ -36,11 +30,13 @@ public class LanguageBasics {
         return null;
     }
 
+    /***************************THIS SERVES AS SEPARATOR TO THE NEXT ASSIGNMENT****************************/
+
     /**
-     * Below this method, you will find five methods returning an int.
-     * One of them, thisisnotthecorrectone() is certainly not correctly named, but this is the one called
+     * Below the method "callCorrectlyNamedMethod()" you will find five methods returning an int.
+     * One of them, thisisnotthecorrectone() is certainly not correctly named, but this one is called
      * from within callCorrectlyNamedMethod().
-     * Identify the method that is correctly named and replace it for the call to thisisnotthecorrectone().
+     * Which of the other 4 methods is correctly named? Replace it for the call to thisisnotthecorrectone().
      *
      * @return theCorrectInt
      */

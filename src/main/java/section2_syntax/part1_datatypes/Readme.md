@@ -9,21 +9,41 @@
 ## Assignments
 
 1. In class `Datatypes`, work your way through the methods and implement them according to the instructions 
-stated within the methods' Javadoc and/or in the method body.
+stated within the methods' Javadoc and/or in the method body. The tests are in class `DatatypesTest` and have the same name 
+as the ones they test.
 
-2. \[This assignment does not have JUnit tests\] Create a Java program within this package that reads 
-command-line arguments describing animals to include in a zoo. Each commandline argument represents two properties of
- an animal: species name and age. The commandline call of your program will have this form:
- `chimpanzee:14 giraffe:20 lion:4 lion:18 chimpanzee:11`
- After processing the commandline, you should  
- 
-     (a) print the number of animals in the zoo   
-     (b) print the average age of the animals    
-     (c) print each animal (properties) by calling a method that you created for this purpose.   
-      
-While creating this app you should pay attention to
- 
- - create the correct classes with the correct names
- - define the correct instance variables (properties) with well chosen names
+2. This assignment is partly for you to implement and learn about types and partly as a demonstration of 
+Object Oriented Programming in Java.
 
+This package has a two-class program that can be used to process zoo information and print a zoo summary. 
+
+There are two classes involved: `ZooApp` and `ZooSpecies`. Class `ZooSpecies` has been completely implemented. 
+You only task there is to study its code and figure out what is happening. This class demonstrated quite a few 
+coding patterns that are common in Java - don't skip that!
+
+The second class is `ZooApp`. It is the **_controller_** of the application, and it is the "main class" as well: it has the 
+`main()` method that is required to be an executable application. Within this class there are a few (parts of) methods
+that you should implement. Just follow the steps below.
+
+1. The `main()` method receives from the command line and array: `String[] args`. The array should have this structure: 
+`Bonobo Giraffe Lion Lion Chimpanzee Giraffe`. Create such a **_run configuration_**.
+
+2. The `main()` method creates and instance of `ZooApp` and passes the args array to the method `processZooData()`. 
+Within this method you should process the command line arguments. Note that class ZooSpecies does most of the work!
+
+3. Method `printZooSummary()` is already partly implemented. It should print a species summary that looks like this:
+
+```
+The zoo has 4 species.
+These are the species counts:
+	Bonobo: 1
+	Chimpanzee: 1
+	Lion: 2
+	Giraffe: 2
+```
+
+There is only a test for `processZooData()`.
+
+Hint: To find out which methods are available on an object, type the variable and a dot and IntelliJ will give suggestions.
+Hint: To find out which method are available on a class, type the class name and a dot and IntelliJ will give suggestions.
 Hint: have a look at the String class on how to split strings into elements.

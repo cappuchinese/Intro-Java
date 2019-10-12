@@ -8,8 +8,8 @@ package section2_syntax.part1_datatypes;
  */
 public class Datatypes {
     /*
-    * For the following couple of methods, simply return the name of the datatype that best suits
-    * the given use case, as efficiently as possible.
+    * For the following couple of methods, simply return the name of the datatype that best supports
+    * the given usage.
     * Choose from
     *   - boolean
     *   - char
@@ -25,51 +25,48 @@ public class Datatypes {
     */
 
     String correctDataType0() {
-        //USE CASE / USAGE:
-        //Number of days within a year
+        //USAGE: the number of days within a year
         return "short";
     }
 
     String correctDataType1() {
-        //USE CASE / USAGE:
-        //Age of the universe in whole years
+        //USAGE: the age of the universe in whole years
         return null;
     }
 
     String correctDataType2() {
-        //USE CASE / USAGE:
-        //Turnover of ATP in a cell, in Molar per minute
+        //USAGE: the turnover of ATP in a cell, in Molar per minute
         return null;
     }
 
     String correctDataType3() {
-        //USE CASE / USAGE:
-        //Molecular weight of a protein, in Daltons
+        //USAGE: the molecular weight of a protein, in Daltons
         return null;
     }
 
     String correctDataType4() {
-        //USE CASE / USAGE
-        // the live/death status of a test animal
+        //USAGE: the alive/death status of a test animal
         return null;
     }
 
     String correctDataType5() {
-        //USE CASE / USAGE
-        // the name of an app user
-        return null;
-    }
-    String correctDataType6() {
-        //USE CASE / USAGE
-        // encoding of human gender (Male, Female, Undefined)
+        //USAGE: the name of an app user
         return null;
     }
 
+    String correctDataType6() {
+        //USAGE: encoding of human gender (Male, Female, Undefined)
+        return null;
+    }
+
+    /* NEW SECTION OF ASSIGNMENTS */
+
     /**
      * The method below is supposed to calculate the G+C fraction of a DNA sequence.
-     * It should do so case insensitive.
-     * After uncommenting the method body (select the blok and press Ctrl + /), there are 3 problems and one error
-     * in this method you should find and fix before the tests will pass.
+     * It should do so case insensitive - have a look at the methods in class `String`.
+     * Start by uncommenting the method body (select the block and press "Ctrl + /").
+     * Identify and solve the three problems and one error in this method.
+     * Only then the test with the same name will pass (in class DatatypesTest)
      */
     double determineGCfraction(String theDNA) {
 //        int gcCount;
@@ -84,28 +81,32 @@ public class Datatypes {
     }
 
     /**
-     * The method below creates a string and calls on another method to change it.
-     * Something goes wrong - can you fix it?
+     * The method below creates a string and calls another method -replaceWord()- to change it.
+     * Something goes wrong - it should return "where can I find the sodamachine in this building?"
+     *
+     * Can you fix it?
      */
     String modifyString() {
-        String input = "Waar kan ik de koffiemachine vinden in dit gebouw?";
-        replaceWord(input, "koffie", "soda");
+        String input = "where can I find the coffeemachine in this building?";
+        replaceWord(input, "coffee", "soda");
         return input;
     }
 
+    /**
+     * This method is linked to the method above as a single assignment.
+     */
     String replaceWord(String input, String replace, String replaceWith) {
         return input.replace(replace, replaceWith);
     }
 
     /**
-     * The method below should return a String array of length 2, with the first and last element
-     * of the input array in it, converted to String representations.
+     * This method should return a String array of length 2 with the first and last element
+     * of the input array in it, converted to their String representations.
      * Hint: look at the methods available to class Object (GIYF)
      */
-    String[] getFirstAndLast(Object[] input) {
+    String[] getFirstAndLastAsStringRepresentation(Object[] input) {
         return null;
     }
-
 
     /**
      * This method should return a new int array where all integers from the input have been cubed (power of 3).
@@ -114,17 +115,17 @@ public class Datatypes {
      * @return cubedInput
      */
     int[] cubeAll(int[] input) {
-        int arrayLength = 0; //get the correct value
+        int arrayLength = 0; //YOU SHOULD GET THE CORRECT ARRAY LENGTH FIRST
         for(int i = 0; i < arrayLength; i++) {
-            //do your thing
+            //YOUR ITERATION CODE HERE
         }
         return null;
     }
 
     /**
      * This method should return the cumulative product of all numbers in the input array.
-     * @param input
-     * @return cumProd the cumulative product
+     * @param input the inpt number array
+     * @return the cumulative product
      */
     int cumulativeProduct(int[] input) {
         return 0;

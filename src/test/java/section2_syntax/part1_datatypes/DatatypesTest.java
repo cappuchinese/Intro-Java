@@ -3,6 +3,7 @@ package section2_syntax.part1_datatypes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -52,7 +53,7 @@ class DatatypesTest {
 
     @Test
     void correctDataType6() {
-        assertEquals("char", datatypes.correctDataType6(), "Three genders can be specified by single...");
+        assertEquals("char", datatypes.correctDataType6(), "Three genders can be specified by single letters...");
     }
 
     @Test
@@ -65,7 +66,7 @@ class DatatypesTest {
     @Test
     void modifyString() {
         String result = datatypes.modifyString();
-        assertEquals("Waar kan ik de sodamachine vinden in dit gebouw?", result);
+        assertEquals("where can I find the sodamachine in this building?", result);
     }
 
     @Test
@@ -74,7 +75,7 @@ class DatatypesTest {
         input[0] = 42;
         input[3] = 24;
         String[] expected = new String[]{"42", "24"};
-        String[] actual = datatypes.getFirstAndLast(input);
+        String[] actual = datatypes.getFirstAndLastAsStringRepresentation(input);
 
         assertArrayEquals(expected, actual);
 
@@ -82,7 +83,7 @@ class DatatypesTest {
         input2[0] = 2.71;
         input2[2] = 3.14;
         expected = new String[]{"2.71", "3.14"};
-        actual = datatypes.getFirstAndLast(input2);
+        actual = datatypes.getFirstAndLastAsStringRepresentation(input2);
 
         assertArrayEquals(expected, actual);
     }
@@ -105,4 +106,12 @@ class DatatypesTest {
         assertArrayEquals(expected, observed);
     }
 
+    @Test
+    void cumulativeProduct() {
+        int[] input = {0, 1, 2, 3};
+        assertThat(datatypes.cumulativeProduct(input)).isEqualTo(0);
+
+        input = new int[]{2, 3, 5};
+        assertThat(datatypes.cumulativeProduct(input)).isEqualTo(30);
+    }
 }

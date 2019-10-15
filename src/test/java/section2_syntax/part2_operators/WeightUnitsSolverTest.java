@@ -1,45 +1,28 @@
 package section2_syntax.part2_operators;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class WeightUnitsSolverTest {
 
-    @Test
-    public void testConvertFromGrams_A() {
-        int grams = 1;
+    @DisplayName("Conversion test with multiple inputs")
+    @ParameterizedTest(name = "{0} should give {1} pounds, {2} ounces, {3} grams")
+    @CsvSource({"1,0,0,1", "1000,2,3,8", "25369,55,14,7"})
+    void convertFromGrams(int inputGrams, int pounds, int ounces, int grams) {
         WeightUnitsSolver instance = new WeightUnitsSolver();
-        BritishWeightUnits expResult = new BritishWeightUnits(0, 0, 1);
-        BritishWeightUnits result = instance.convertFromGrams(grams);
-        assertEquals(expResult.getPounds(), result.getPounds());
-        assertEquals(expResult.getOunces(), result.getOunces());
-        assertEquals(expResult.getGrams(), result.getGrams());
+        BritishWeightUnits observed = instance.convertFromGrams(grams);
+        assertThat(observed.getPounds()).isEqualTo(pounds);
+        assertThat(observed.getOunces()).isEqualTo(ounces);
+        assertThat(observed.getGrams()).isEqualTo(grams);
     }
 
     @Test
-    public void testConvertFromGrams_B() {
-        int grams = 1000;
-        WeightUnitsSolver instance = new WeightUnitsSolver();
-        BritishWeightUnits expResult = new BritishWeightUnits(2, 3, 8);
-        BritishWeightUnits result = instance.convertFromGrams(grams);
-        assertEquals(expResult.getPounds(), result.getPounds());
-        assertEquals(expResult.getOunces(), result.getOunces());
-        assertEquals(expResult.getGrams(), result.getGrams());
-    }
-
-    @Test
-    public void testConvertFromGrams_C() {
-        int grams = 25369;
-        WeightUnitsSolver instance = new WeightUnitsSolver();
-        BritishWeightUnits expResult = new BritishWeightUnits(55, 14, 7);
-        BritishWeightUnits result = instance.convertFromGrams(grams);
-        assertEquals(expResult.getPounds(), result.getPounds());
-        assertEquals(expResult.getOunces(), result.getOunces());
-        assertEquals(expResult.getGrams(), result.getGrams());
-    }
-
-    @Test//(expected=IllegalArgumentException.class)
+    @DisplayName("Test conversion with illegal argument")
     public void testConvertFromGrams_D() {
         int grams = -1;
         WeightUnitsSolver instance = new WeightUnitsSolver();

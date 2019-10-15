@@ -16,7 +16,7 @@ public class BritishWeightUnits {
     private final int grams;
 
     /**
-     * constructs with relevant coins
+     * Constructs with relevant quantities.
      * @param pounds
      * @param ounces
      * @param grams 
@@ -27,33 +27,25 @@ public class BritishWeightUnits {
         this.grams = grams;
     }
 
-    /**
-     * returns the pounds
-     * @return pounds
-     */
     public int getPounds() {
         return pounds;
     }
 
-    /**
-     * returns the ounces
-     * @return ounces
-     */
     public int getOunces() {
         return ounces;
     }
 
-    /**
-     * returns the grams
-     * @return grams
-     */
     public int getGrams() {
         return grams;
     }
 
+    /**
+     * This method generates a string representation of instances of this class.
+     * You get its output when you print them.
+     * @return
+     */
     @Override
     public String toString() {
         return "BritishUnitsCoins{" + "pounds=" + pounds + ", ounces=" + ounces + ", grams=" + grams + '}';
     }
-
 }

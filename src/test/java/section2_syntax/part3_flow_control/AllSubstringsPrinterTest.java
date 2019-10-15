@@ -2,6 +2,7 @@ package section2_syntax.part3_flow_control;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -14,18 +15,35 @@ class AllSubstringsPrinterTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final AllSubstringsPrinter asp = new AllSubstringsPrinter();
 
-    @BeforeEach
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-    }
-
-    @AfterEach
-    public void cleanUpStreams() {
-        System.setOut(null);
+    @Test
+    void printSubstringsLeftAlignedLeftTruncatedA() {
+        String stringToSubstring = "GATCG";
+        String expectedPrint =
+                "GATCG" + System.lineSeparator() +
+                        "ATCG" + System.lineSeparator() +
+                        "TCG" + System.lineSeparator() +
+                        "CG" + System.lineSeparator() +
+                        "G" + System.lineSeparator();
+        asp.printSubstringsLeftAlignedLeftTruncated(stringToSubstring);
+        assertEquals(expectedPrint, outContent.toString());
     }
 
     @Test
-    public void testPrintAllSubstrings_A() {
+    void printSubstringsLeftAlignedLeftTruncatedB() {
+        String stringToSubstring = "cagtc";
+        String expectedPrint =
+                "cagtc" + System.lineSeparator() +
+                        "cagt" + System.lineSeparator() +
+                        "cag" + System.lineSeparator() +
+                        "ca" + System.lineSeparator() +
+                        "c" + System.lineSeparator();
+        asp.printSubstringsLeftAlignedLeftTruncated(stringToSubstring);
+        assertEquals(expectedPrint, outContent.toString());
+    }
+
+    @Test
+    @DisplayName("Test substring printing left aligned left truncated")
+    public void printAllSubstrings_A() {
         String stringToSubstring = "GATCG";
         boolean leftTruncated = true;
         boolean leftAligned = true;
@@ -40,7 +58,8 @@ class AllSubstringsPrinterTest {
     }
 
     @Test
-    public void testPrintAllSubstrings_B() {
+    @DisplayName("Test substring printing left aligned right truncated")
+    public void printAllSubstrings_B() {
         String stringToSubstring = "GATCG";
         boolean leftTruncated = false;
         boolean leftAligned = true;
@@ -55,7 +74,8 @@ class AllSubstringsPrinterTest {
     }
 
     @Test
-    public void testPrintAllSubstrings_C() {
+    @DisplayName("Test substring printing right aligned right truncated")
+    public void printAllSubstrings_C() {
         String stringToSubstring = "AGCGCT";
         boolean leftTruncated = false;
         boolean leftAligned = false;
@@ -71,7 +91,8 @@ class AllSubstringsPrinterTest {
     }
 
     @Test
-    public void testPrintAllSubstrings_D() {
+    @DisplayName("Test substring printing right aligned left truncated")
+    public void printAllSubstrings_D() {
         String stringToSubstring = "AGCGCT";
         boolean leftTruncated = true;
         boolean leftAligned = false;
@@ -84,5 +105,15 @@ class AllSubstringsPrinterTest {
                 "     T" + System.lineSeparator();
         asp.printAllSubstrings(stringToSubstring, leftTruncated, leftAligned);
         assertEquals(expectedPrint, outContent.toString());
+    }
+
+    @BeforeEach
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+    }
+
+    @AfterEach
+    public void cleanUpStreams() {
+        System.setOut(null);
     }
 }

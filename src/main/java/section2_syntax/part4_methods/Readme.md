@@ -1,4 +1,4 @@
-# Exercises combining all the stuff
+# Exercises combining previous lesson material
 
 ## Learning outcomes
 * getting to know Java syntax and types, in particular Array

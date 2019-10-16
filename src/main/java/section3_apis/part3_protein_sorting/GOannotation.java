@@ -19,9 +19,9 @@ public class GOannotation {
     /**
      * constructs with all three GO components.
      * @param ID the GO identifyer.
-     * @param cellularComponent
-     * @param molecularFunction
-     * @param biologicalProcess 
+     * @param cellularComponent the cellular component
+     * @param molecularFunction the molecular function
+     * @param biologicalProcess the biological process
      */
     public GOannotation(int ID, String cellularComponent, String molecularFunction, String biologicalProcess) {
         this.ID = ID;

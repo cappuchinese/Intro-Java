@@ -8,8 +8,8 @@ public class ZooSpecies {
     private int individualCount;
 
     /**
-     * serves the speces name.
-     * @return
+     * serves the species name.
+     * @return species name
      */
     public String getSpeciesName() {
         return this.speciesName;
@@ -17,7 +17,7 @@ public class ZooSpecies {
 
     /**
      * serves the individual count for the species.
-     * @return
+     * @return count
      */
     public int getIndividualCount() {
         return this.individualCount;
@@ -33,8 +33,7 @@ public class ZooSpecies {
 
     /**
      * This is a static (i.e. class-level) factory method that registers ZooAnimal instances.
-     * @param speciesName
-     * @return
+     * @param speciesName the species name
      */
     public static void registerSpeciesFromString(String speciesName) {
         if(!zooAnimals.containsKey(speciesName)) {
@@ -47,7 +46,7 @@ public class ZooSpecies {
 
     /**
      * Serves all registered species in this Zoo.
-     * @return
+     * @return allSpecies
      */
     public static List<ZooSpecies> getAllSpecies() {
         List<ZooSpecies> species = new ArrayList<>();

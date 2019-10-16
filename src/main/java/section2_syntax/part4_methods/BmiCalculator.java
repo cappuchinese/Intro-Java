@@ -26,7 +26,7 @@ public class BmiCalculator {
     /**
      * starting point of your application.
      *
-     * @param args
+     * @param args the CL args
      */
     public static void main(String[] args) {
         //implement top-level logic such as fetching user input and creating a feedback message to user

@@ -14,7 +14,6 @@ public class TestTube {
      * @param numberOfLifeCyclesToRun a number between 1 and 100
      * @param initialCellCount a number between 1 and 1000
      * @param cellType the cell type ["
-     * @return testtube a TestTube instance
      */
     public TestTube (int numberOfLifeCyclesToRun, int initialCellCount, String cellType) {
         //check code omitted

@@ -27,7 +27,7 @@ public class Cell {
 
     /**
      * Serves the read-only property diameter.
-     * @return
+     * @return diameter in micrometers
      */
     public int getDiameterInMicrometers() {
         return diameterInMicrometers;

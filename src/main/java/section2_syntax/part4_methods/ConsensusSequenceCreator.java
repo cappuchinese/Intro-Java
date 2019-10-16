@@ -18,7 +18,7 @@ public class ConsensusSequenceCreator {
 
     /**
      * testing main.
-     * @param args 
+     * @param args  the CL args
      */
     public static void main(String[] args) {
         String[] sequences = new String[4];

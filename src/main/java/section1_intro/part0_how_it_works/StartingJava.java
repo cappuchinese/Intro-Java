@@ -21,8 +21,8 @@ public class StartingJava {
 
     /**
      * This method should return the sum of x and y
-     * @param x
-     * @param y
+     * @param x the x value
+     * @param y the y value
      * @return theSum
      */
     public int addInts(int x, int y) {
@@ -36,8 +36,8 @@ public class StartingJava {
      * Given a distance in meters and a passed time in seconds, calculate the
      * speed in km/h.
      *
-     * @param distanceInMeters
-     * @param timeInSeconds
+     * @param distanceInMeters the distance
+     * @param timeInSeconds the elapsed time
      * @return speed
      */
     public double calculateSpeed(double distanceInMeters, double timeInSeconds) {
@@ -51,8 +51,8 @@ public class StartingJava {
      * the method body (without the quotes of course)
      * and select a method you are interested in. Pressing 'F1' (or ctrl + q) shows the Javadoc
      * info on the selected method.
-     * @param x
-     * @param y
+     * @param x the x value
+     * @param y the y value
      * @return dividedAndRounded
      */
     public long divideAndRound(double x, double y) {

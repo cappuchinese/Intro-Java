@@ -1,7 +1,9 @@
 .idea
 .gradle
 out/
-build/
+build/classes
+build/tmp
+build/libs
 gradle/
 build.xml
 gradlew

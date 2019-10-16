@@ -14,7 +14,6 @@ public class TestTube {
      * Constructs with the two essential parameters
      * @param numberOfLifeCyclesToRun a number between 1 and 100
      * @param initialCellCount a number between 1 and 1000
-     * @return testtube a TestTube instance
      */
     public TestTube (int numberOfLifeCyclesToRun, int initialCellCount) {
         if (numberOfLifeCyclesToRun < 1
@@ -30,7 +29,7 @@ public class TestTube {
 
     /**
      * sets the initial diameter of instantiated cells.
-     * @param defaultCellDiameter
+     * @param defaultCellDiameter the cell default diameter in micrometers
      */
     public void setDefaultCellDiameter(int defaultCellDiameter) {
         this.defaultCellDiameter = defaultCellDiameter;
@@ -38,7 +37,7 @@ public class TestTube {
 
     /**
      * Sets the size increment for cell growth
-     * @param defaultSizeIncrement
+     * @param defaultSizeIncrement the cell size increment in micrometers
      */
     public void setDefaultSizeIncrement(int defaultSizeIncrement) {
         this.defaultSizeIncrement = defaultSizeIncrement;

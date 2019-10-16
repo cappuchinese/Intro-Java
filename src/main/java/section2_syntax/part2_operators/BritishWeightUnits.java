@@ -17,9 +17,9 @@ public class BritishWeightUnits {
 
     /**
      * Constructs with relevant quantities.
-     * @param pounds
-     * @param ounces
-     * @param grams 
+     * @param pounds the pounds quantity
+     * @param ounces the ounces quantity
+     * @param grams the grams quantity
      */
     public BritishWeightUnits(int pounds, int ounces, int grams) {
         this.pounds = pounds;
@@ -42,7 +42,7 @@ public class BritishWeightUnits {
     /**
      * This method generates a string representation of instances of this class.
      * You get its output when you print them.
-     * @return
+     * @return string representation
      */
     @Override
     public String toString() {

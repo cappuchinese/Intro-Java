@@ -15,7 +15,7 @@ public class WeightUnitsSolver {
     /**
      * Returns the number of Pounds, Ounces and Grams represented by this quantity of grams,
      * encapsulated in a BritishWeightUnits object.
-     * @param grams
+     * @param grams the grams quantity
      * @return a BritishWeightUnits instance
      * @throws IllegalArgumentException when the Grams quantity is 
      */

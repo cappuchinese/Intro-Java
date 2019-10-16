@@ -5,8 +5,8 @@ public class LanguageBasics {
     /**
      * This method should return "number" to the power of "powerUp", where the absolute value (or modulus) is
      * taken of "powerUp". Again, the Math class may come in handy.
-     * @param number
-     * @param powerUp
+     * @param number the number to power up
+     * @param powerUp the power up value
      * @return number^absolute(powerUp)
      */
     public double getTheAbsolutePower(int number, int powerUp) {

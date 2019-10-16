@@ -16,7 +16,7 @@ import java.util.List;
 public class ProteinSortingApp {
     /**
      * main method solely for testing purposes
-     * @param args 
+     * @param args the CL args
      */
     public static void main(String[] args) {
         ProteinDataSource proteinDataSource = new ProteinDataSourceInMemory();

@@ -6,8 +6,8 @@ public class MessageMaker {
 
     /**
      * Constructor makes it mandatory to instantiate with name and age arguments.
-     * @param name
-     * @param age
+     * @param name the name
+     * @param age the age
      */
     public MessageMaker(String name, int age) {
         this.name = name;

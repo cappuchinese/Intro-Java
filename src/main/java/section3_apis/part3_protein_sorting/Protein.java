@@ -20,9 +20,9 @@ public class Protein implements Comparable<Protein> {
 
     /**
      * constructs without GO annotation;
-     * @param name
-     * @param accession
-     * @param aminoAcidSequence 
+     * @param name the protein name
+     * @param accession the accession number
+     * @param aminoAcidSequence the proteins amino acid sequence
      */
     public Protein(String name, String accession, String aminoAcidSequence) {
         this.name = name;
@@ -31,11 +31,11 @@ public class Protein implements Comparable<Protein> {
     }
 
     /**
-     * construicts with main properties.
-     * @param name
-     * @param accession
-     * @param aminoAcidSequence
-     * @param goAnnotation 
+     * constructs with main properties.
+     * @param name the protein name
+     * @param accession the accession number
+     * @param aminoAcidSequence the proteins amino acid sequence
+     * @param goAnnotation the GO annotation
      */
     public Protein(String name, String accession, String aminoAcidSequence, GOannotation goAnnotation) {
         this.name = name;
@@ -51,7 +51,7 @@ public class Protein implements Comparable<Protein> {
     
     /**
      * provides a range of possible sorters, based on the type that is requested.
-     * @param type
+     * @param type the sorting type that is required
      * @return proteinSorter
      */
     public static Comparator<Protein> getSorter(SortingType type) {

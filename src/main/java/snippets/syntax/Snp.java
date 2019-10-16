@@ -44,11 +44,16 @@ public class Snp {
 
     /**
      * same here
+     * @return reference
      */
     public char getReferenceNucleotide() {
         return referenceNucleotide;
     }
 
+    /**
+     *
+     * @return alternative nuc
+     */
     public char getAlternativeNucleotide() {
         return alternativeNucleotide;
     }

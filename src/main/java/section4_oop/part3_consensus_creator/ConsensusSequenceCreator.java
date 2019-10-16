@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package section2_syntax.part4_methods;
+package section4_oop.part3_consensus_creator;
 
 /**
  *

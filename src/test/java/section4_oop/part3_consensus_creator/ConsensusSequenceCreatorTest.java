@@ -1,8 +1,8 @@
-package section2_syntax.part4_methods;
+package section4_oop.part3_consensus_creator;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ConsensusSequenceCreatorTest {
     @Test

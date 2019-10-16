@@ -35,7 +35,8 @@ public class BmiCalculator {
         double userWeight = bc.getUserWeight();
         double userBMI = bc.calculateBMI(userWeight, userHeigth);
         String label = bc.getMessage(userBMI);
-        
+
+        //YOUR CODE HERE
         //generate output to user
         
     }
@@ -62,14 +63,15 @@ public class BmiCalculator {
      * @return height the height in meters
      */
     public double getUserWeight() {
-        return 0;
+        //YOUR CODE HERE
+        throw new UnsupportedOperationException("Not implemented yet");
     }
     
     /**
      * Returns the BMI given a weight in kilograms and a height in meters.
      *
      * @param weight the weight in kilograms
-     * @param height the length in kilograms
+     * @param height the height in meters
      * @return bmi the body mass index
      * @throws IllegalArgumentException when illegal (zero or below) values are
      * provided for weight and/or length
@@ -79,8 +81,9 @@ public class BmiCalculator {
             throw new IllegalArgumentException("Error: both weight and height should be above 0. Given: weight=" 
                     + weight + ", height=" + height);
         }
+        //YOUR CODE HERE
         //Gewicht in kilogram / (Lengte in meter * Lengte in meter)
-        return 0;
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
@@ -96,6 +99,7 @@ public class BmiCalculator {
      * is provided
      */
     public String getMessage(double bmi) {
-        return null;
+        //YOUR CODE HERE
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 }

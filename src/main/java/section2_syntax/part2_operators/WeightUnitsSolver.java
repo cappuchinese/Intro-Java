@@ -27,9 +27,8 @@ public class WeightUnitsSolver {
             throw new IllegalArgumentException("Error: grams should be above 0. Given: grams=" + grams);
         }
 
-        //YOUR CODE HERE
         //solve the pounds, ounces and grams, create and return a BritishWeightUnits instance
-
-        return null;
+        //YOUR CODE HERE
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 }

@@ -5,17 +5,15 @@
 * Processing and coupling data
 * First encounter of encapsulation
 
-
-
 ## Assignment 
 
 1. In this package you will find class `FindTheRightCollection`. 
 It has a few methods that should all return a class - the class of the correct 
-class. The Javadoc above the method will describe what should be returned.
-The first case is already implemented so you get the gist.
-The JUnit tests will tell you if the solutions are OK.
+collection type. The Javadoc above the method describes what kind of usage should be best supported.
+The first case is already implemented so you get the idea.
+As usual, the JUnit tests will tell you if the solutions are OK.
 
-2. In the `data` folder at the root of this project you will find the two data files `students.txt` and `courses.csv`. 
+2. In the `data` folder at the root of this project there are two data files: `students.txt` and `courses.csv`. 
 These represent the students and their course results for three courses. 
 In the current package four classes are already present: `Student`, `Course`, `StudentAdmin` and `StudentAdminDataReader`.  
  
@@ -25,6 +23,7 @@ In the current package four classes are already present: `Student`, `Course`, `S
 - Finally, class `StudentAdminDataReader` contains the basic file reader functionality. Note the use of a dedicated interface to abstract away all common code in this class. Here, you will need to do some work as well.
     
 **It is your task to implement all necessary code to support the public API correctly, using the correct collection types.**
+You will need to implement a few methods in these three classes in order to achieve this.
 
 Think carefully in which class you will start your coding endeavours.
 
@@ -65,7 +64,7 @@ public class StudentCollection {
 }
 ```
 
-For largely this same reason, class `Student` has been implemented **_immutable_**.
-Encapsulation is dealt with in more detail in a later post.
+For largely this same reason, class `Student` has been implemented **_immutable_**. Have a look at this class and 
+try to figure out the design aspects enforcing immutability.
 
 The JUnit tests will tell you when you are finished.

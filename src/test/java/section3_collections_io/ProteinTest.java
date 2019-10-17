@@ -122,18 +122,18 @@ class ProteinTest {
 
     @Test
     public void testGetSorter_D() {
-        SortingType type = SortingType.PROTEIN_WEIGHT;
-        Comparator<Protein> sorter = Protein.getSorter(type);
-        String[] expAccnos = new String[]{
-            "Syvn1",
-            "Fut8",
-            "Stt3a",
-            "Tusc3",
-            "man1b1a"};
-        //sort the list
-        Collections.sort(this.proteins, sorter);
-        checkOrderOfAccessionNumbers(type, expAccnos);
-
+//        SortingType type = SortingType.PROTEIN_WEIGHT;
+//        Comparator<Protein> sorter = Protein.getSorter(type);
+//        String[] expAccnos = new String[]{
+//            "Syvn1",
+//            "Fut8",
+//            "Stt3a",
+//            "Tusc3",
+//            "man1b1a"};
+//        //sort the list
+//        Collections.sort(this.proteins, sorter);
+//        checkOrderOfAccessionNumbers(type, expAccnos);
+        fail("Test not implemented yet");
         /*
          Protein{name=synovial apoptosis inhibitor 1, synoviolin, accession=Syvn1, aminoAcidSequence=MTYIILLVCDERT} //1569.89
          Protein{name=fucosyltransferase 8 (alpha (1,6) fucosyltransferase), accession=Fut8, aminoAcidSequence=MGTHIILVLM} //1127.47
@@ -145,18 +145,19 @@ class ProteinTest {
 
     @Test
     public void testGetSorter_E() {
-        SortingType type = SortingType.GO_ANNOTATION;
-        //first on biological process (3), then on cellular component (1) and last on molecular function (2)
-        Comparator<Protein> sorter = Protein.getSorter(type);
-        String[] expAccnos = new String[]{
-            "Syvn1",
-            "Tusc3",
-            "man1b1a",
-            "Fut8",
-            "Stt3a"};
-        //sort the list
-        Collections.sort(this.proteins, sorter);
-        checkOrderOfAccessionNumbers(type, expAccnos);
+//        SortingType type = SortingType.GO_ANNOTATION;
+//        //first on biological process (3), then on cellular component (1) and last on molecular function (2)
+//        Comparator<Protein> sorter = Protein.getSorter(type);
+//        String[] expAccnos = new String[]{
+//            "Syvn1",
+//            "Tusc3",
+//            "man1b1a",
+//            "Fut8",
+//            "Stt3a"};
+//        //sort the list
+//        Collections.sort(this.proteins, sorter);
+//        checkOrderOfAccessionNumbers(type, expAccnos);
+        fail("Test not implemented yet");
 
         /*
 Protein{name=synovial apoptosis inhibitor 1, synoviolin, accession=Syvn1, aminoAcidSequence=MTYIILLVCDERT}

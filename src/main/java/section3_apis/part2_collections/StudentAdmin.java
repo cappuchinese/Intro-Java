@@ -3,6 +3,11 @@ package section3_apis.part2_collections;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * YOUR CHALLENGE:
+ * This class only contains a so-called public API. There is no underlying code that supports the API.
+ * It is your task to implement this logic. Using the right collection type(s).
+ */
 public class StudentAdmin {
 
     /**

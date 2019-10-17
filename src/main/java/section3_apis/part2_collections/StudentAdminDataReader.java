@@ -8,6 +8,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
+/**
+ * This class has all basic file reader functionality.
+ * There are two methods you need to implement:
+ * The processLine() method of both LineHandlers.
+ */
 public class StudentAdminDataReader {
 
     private StudentAdmin studentAdmin;
@@ -38,7 +43,6 @@ public class StudentAdminDataReader {
             while ((line = reader.readLine()) != null) {
                 lineCount++;
                 if (lineCount == 1) continue;
-                //System.out.println("line = " + line);
                 lineHandler.processLine(line);
             }
         } catch (IOException e) {

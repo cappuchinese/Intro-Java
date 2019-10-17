@@ -63,7 +63,7 @@ public class BmiCalculator {
      * @return height the height in meters
      */
     public double getUserWeight() {
-        //YOUR CODE HERE
+        //YOUR CODE HERE (and remove the throw statement)
         throw new UnsupportedOperationException("Not implemented yet");
     }
     
@@ -81,7 +81,7 @@ public class BmiCalculator {
             throw new IllegalArgumentException("Error: both weight and height should be above 0. Given: weight=" 
                     + weight + ", height=" + height);
         }
-        //YOUR CODE HERE
+        //YOUR CODE HERE (and remove the throw statement)
         //Gewicht in kilogram / (Lengte in meter * Lengte in meter)
         throw new UnsupportedOperationException("Not implemented yet");
     }
@@ -99,7 +99,7 @@ public class BmiCalculator {
      * is provided
      */
     public String getMessage(double bmi) {
-        //YOUR CODE HERE
+        //YOUR CODE HERE (and remove the throw statement)
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }

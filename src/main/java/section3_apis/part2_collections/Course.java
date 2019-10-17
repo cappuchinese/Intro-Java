@@ -2,6 +2,10 @@ package section3_apis.part2_collections;
 
 import java.util.Objects;
 
+/**
+ * YOUR CHALLENGE:
+ * Class Course models a teaching course. How are you going to store the students grades in here?
+ */
 public class Course {
     private String courseId;
 

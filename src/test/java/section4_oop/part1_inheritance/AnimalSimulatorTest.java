@@ -4,14 +4,14 @@
  */
 package section4_oop.part1_inheritance;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.Arrays;
-import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -37,7 +37,7 @@ public class AnimalSimulatorTest {
      * tests empty argument array
      */
     @Test
-    public void atestMain_A() {
+    public void testMain_A() {
         String[] args = new String[]{};
         String expectedPrint
                 = "Usage: java AnimalSimulator <Species age Species age ...>" + System.lineSeparator()
@@ -54,7 +54,7 @@ public class AnimalSimulatorTest {
      * tests argument array with only element "help"
      */
     @Test
-    public void atestMain_B() {
+    public void testMain_B() {
         String[] args = new String[]{"help"};
         String expectedPrint
                 = "Usage: java AnimalSimulator <Species age Species age ...>" + System.lineSeparator()
@@ -72,7 +72,7 @@ public class AnimalSimulatorTest {
      * A Horse of age 21 moving in gallop at 73.1 km/h
      */
     @Test
-    public void atestMain_C() {
+    public void testMain_C() {
         String[] args = new String[]{"Horse", "21"};
         String expectedPrint
                 = "A Horse of age 21 moving in gallop at 73.1 km/h" + System.lineSeparator();
@@ -84,7 +84,7 @@ public class AnimalSimulatorTest {
      * tests argument array with "Horse 21 Elephant 2"
      */
     @Test
-    public void atestMain_D() {
+    public void testMain_D() {
         String[] args = new String[]{"Horse", "21", "Elephant", "2"};
         String expectedPrint
                 = "A Horse of age 21 moving in gallop at 73.1 km/h" + System.lineSeparator()
@@ -97,7 +97,7 @@ public class AnimalSimulatorTest {
      * tests argument array with "Mouse 12"
      */
     @Test
-    public void atestMain_E() {
+    public void testMain_E() {
         String[] args = new String[]{"Mouse", "12"};
         String expectedPrint
                 = "A Mouse of age 12 moving in scurry at 11.3 km/h" + System.lineSeparator();
@@ -109,7 +109,7 @@ public class AnimalSimulatorTest {
      * tests argument array with "Pouse 11"
      */
     @Test
-    public void atestMain_F() {
+    public void testMain_F() {
         String[] args = new String[]{"Pouse", "11"};
         String expectedPrint
                 = "Error: animal species Pouse is not known. run with single parameter \"help\" to get a listing of available species. Please give new values" + System.lineSeparator();
@@ -121,7 +121,7 @@ public class AnimalSimulatorTest {
      * tests argument array with "Mouse 18"
      */
     @Test
-    public void atestMain_G() {
+    public void testMain_G() {
         String[] args = new String[]{"Mouse", "18"};
         String expectedPrint
                 = "Error: maximum age of Mouse is 13 years. Please give new values" + System.lineSeparator();

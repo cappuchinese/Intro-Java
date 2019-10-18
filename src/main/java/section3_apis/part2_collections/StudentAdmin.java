@@ -18,8 +18,8 @@ public class StudentAdmin {
      * @return students
      */
     public List<Student> getStudents(String searchString) {
-        return null;
-    }
+        //YOUR CODE HERE (and remove the throw statement)
+        throw new UnsupportedOperationException("Not implemented yet");    }
 
     /**
      * Returns the grade of a student for the given course
@@ -28,7 +28,8 @@ public class StudentAdmin {
      * @return grade
      */
     public double getGrade(Student student, Course course) {
-        return 0;
+        //YOUR CODE HERE (and remove the throw statement)
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
@@ -37,7 +38,8 @@ public class StudentAdmin {
      * @return grades
      */
     public Map<String, Double> getGradesForStudent(Student student) {
-        return null;
+        //YOUR CODE HERE (and remove the throw statement)
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
@@ -46,6 +48,7 @@ public class StudentAdmin {
      * @return grades
      */
     public Map<Student, Double> getGradesForCourse(Course course) {
-        return null;
+        //YOUR CODE HERE (and remove the throw statement)
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 }

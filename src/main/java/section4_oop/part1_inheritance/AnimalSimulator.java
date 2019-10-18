@@ -20,14 +20,17 @@ public class AnimalSimulator {
 
     
     private void start(String[] args) {
-        //start processing command line arguments
+        //YOUR CODE HERE (and remove the throw statement)
+        //start processing command line arguments and run the "simulation"
+        throw new UnsupportedOperationException("Not implemented yet");
     }
     
     /**
-     * returns all supported animals as List, alhabetically ordered
+     * returns all supported animals as List, alphabetically ordered
      * @return supportedAnimals the supported animals
      */
     public List<String> getSupportedAnimals() {
-        return null;
+        //YOUR CODE HERE (and remove the throw statement)
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 }

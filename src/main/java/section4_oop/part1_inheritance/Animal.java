@@ -18,7 +18,8 @@ public class Animal {
      * @return name the species name
      */
     public String getName() {
-        return null;
+        //YOUR CODE HERE (and remove the throw statement)
+        throw new UnsupportedOperationException("Not implemented yet");
     }
     
     /**
@@ -26,7 +27,8 @@ public class Animal {
      * @return movementType the way the animal moves
      */
     public String getMovementType() {
-        return null;
+        //YOUR CODE HERE (and remove the throw statement)
+        throw new UnsupportedOperationException("Not implemented yet");
     }
     
     /**
@@ -34,7 +36,8 @@ public class Animal {
      * @return speed the speed of this animal
      */
     public double getSpeed() {
-        return 0;
+        //YOUR CODE HERE (and remove the throw statement)
+        throw new UnsupportedOperationException("Not implemented yet");
     }
     
 }

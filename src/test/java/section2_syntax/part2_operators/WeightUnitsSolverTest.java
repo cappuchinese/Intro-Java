@@ -15,7 +15,7 @@ class WeightUnitsSolverTest {
     @CsvSource({"1,0,0,1", "1000,2,3,8", "25369,55,14,7"})
     void convertFromGrams(int inputGrams, int pounds, int ounces, int grams) {
         WeightUnitsSolver instance = new WeightUnitsSolver();
-        BritishWeightUnits observed = instance.convertFromGrams(grams);
+        BritishWeightUnits observed = instance.convertFromGrams(inputGrams);
         assertThat(observed.getPounds()).isEqualTo(pounds);
         assertThat(observed.getOunces()).isEqualTo(ounces);
         assertThat(observed.getGrams()).isEqualTo(grams);

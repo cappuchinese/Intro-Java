@@ -7,7 +7,7 @@ public class Square {
     /**
      * This method returns the surface defined by the rectangle with the given Point objects at the upper left and
      * lower right corners.
-     * The method assumes two corners have been set already (are not null).
+     * The method assumes two corners have been set already (and are not null).
      * @return surface
      */
     int getSurface(){

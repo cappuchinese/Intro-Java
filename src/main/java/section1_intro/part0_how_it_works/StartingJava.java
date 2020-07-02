@@ -93,7 +93,7 @@ public class StartingJava {
 
     /**
      * Returns a Duck object with the given swim speed and name.
-     * The Duck class is already present in this same package.
+     * The Duck class is already present in this package.
      * @param swimSpeed the swim speed
      * @param nameOfDuck the name of the Duck
      * @return duck a Duck instance

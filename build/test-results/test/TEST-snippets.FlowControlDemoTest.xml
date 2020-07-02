@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="snippets.FlowControlDemoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-10-16T11:27:27" hostname="Michiels-MBP.local" time="0.05">
+  <properties/>
+  <testcase name="errorMessageTest()" classname="snippets.FlowControlDemoTest" time="0.005"/>
+  <testcase name="potjeMetVetTest()" classname="snippets.FlowControlDemoTest" time="0.042"/>
+  <testcase name="switchCase()" classname="snippets.FlowControlDemoTest" time="0.001"/>
+  <system-out><![CDATA[You are trying to do something that is not allowed
+Some exotic error occurred. Try again later
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 1ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 2de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 3de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 4de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 5de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 6de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 7de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 8ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 9de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 10de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 11de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 12de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 13de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 14de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 15de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 16de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 17de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 18de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 19de couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 20ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 21ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 22ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 23ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 24ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 25ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 26ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 27ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 28ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 29ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 30ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 31ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 32ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 33ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 34ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 35ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 36ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 37ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 38ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 39ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 40ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 41ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 42ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 43ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 44ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 45ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 46ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 47ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 48ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 49ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 50ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 51ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 52ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 53ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 54ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 55ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 56ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 57ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 58ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 59ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 60ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 61ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 62ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 63ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 64ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 65ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 66ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 67ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 68ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 69ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 70ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 71ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 72ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 73ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 74ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 75ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 76ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 77ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 78ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 79ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 80ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 81ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 82ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 83ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 84ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 85ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 86ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 87ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 88ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 89ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 90ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 91ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 92ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 93ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 94ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 95ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 96ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 97ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 98ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 99ste couplet.
+Ik heb een potje met vet, al op de tafel gezet, ik heb een potje potje potje potje veeeeheeet al op de tafel gezet
+Dit was het 100ste couplet.
+Some weather, huh?
+It is Belgian fries!
+Have a beer?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

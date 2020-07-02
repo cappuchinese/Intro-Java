@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="snippets.testtube.CellTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-16T11:27:27" hostname="Michiels-MBP.local" time="0.002">
+  <properties/>
+  <testcase name="grow()" classname="snippets.testtube.CellTest" time="0.002"/>
+  <system-out><![CDATA[I am a Bacterium. My size is 6
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

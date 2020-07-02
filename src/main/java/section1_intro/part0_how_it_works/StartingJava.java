@@ -12,7 +12,7 @@ public class StartingJava {
      * This method simply prints "Hello, World" to the console.
      * 1. Run the test method called testPrintHelloWorld() that you can find
      * in the test class located at /src/test/java/section1_intro/part0_how_it_works/StartingJavaTest
-     * 2. Change the output of this method and run the test again (where are the "buttons" to re-run tests?). What happens?
+     * 2. Change the output of this method and run the test again. What happens?
      * 3. Correct the introduced "error" and make sure the test passes again.
      */
     public void printHelloWorld() {
@@ -20,10 +20,19 @@ public class StartingJava {
     }
 
     /**
+     * The test method of this one fails. Find out why by studying the test output in the panel below and then correct
+     * it.
+     */
+    public void printHelloUser() {
+        String user = System.getProperty("user.name");
+        System.out.print("Hello, " + user);
+    }
+
+    /**
      * This method should return the sum of x and y
      * @param x the x value
      * @param y the y value
-     * @return theSum
+     * @return sum the sum of x and y
      */
     public int addInts(int x, int y) {
         /*PUT YOUR CODE HERE
@@ -46,11 +55,11 @@ public class StartingJava {
     }
 
     /**
-     * This method divides x by y and returns the rounded value (rounded to nearest integer).
+     * Divides x by y and returns the rounded value (rounded to nearest integer).
      * Use the Math class to get your implementation right. Start by typing 'Math.' within
-     * the method body (without the quotes of course)
-     * and select a method you are interested in. Pressing 'F1' (or ctrl + q) shows the Javadoc
-     * info on the selected method.
+     * the method body -without the quotes of course- and select a method you are interested in (scroll way down -
+     * Math is a fat class!).
+     * Pressing 'F1' (or ctrl + q) shows the Javadoc (help) of the selected method.
      * @param x the x value
      * @param y the y value
      * @return dividedAndRounded
@@ -62,7 +71,7 @@ public class StartingJava {
 
     /**
      * Returns the String found at the corresponding position of GREETINGS.
-     * The array GREETINGS is declared just below this method.
+     * The array GREETINGS is declared just below this method. An array is similar to R's vectors.
      * Note that Java works with zero-based indexing, using square brackets.
      * @param index of the greeting
      * @return greeting
@@ -72,9 +81,7 @@ public class StartingJava {
         return "";
     }
 
-    /**
-     * this is a constant - a String array used for getGreeting()
-     */
+    //This is a constant - an array of Strings used for the getGreeting() method
     public static final String[] GREETINGS = new String[]{
             "Hallo",
             "Moi",

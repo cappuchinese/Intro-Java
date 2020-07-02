@@ -33,7 +33,19 @@ public class StartingJavaTest {
         String printedResult = outContent.toString();
         sysOut.print(printedResult);
         assertEquals("Hello, World", printedResult);
-        System.setOut(null);
+        System.setOut(sysOut);
+    }
+
+    @Test
+    public void testPrintHelloUser() {
+        PrintStream sysOut = System.out;
+        System.setOut(new PrintStream(outContent));
+        startingJava.printHelloUser();
+        String printedResult = outContent.toString();
+        sysOut.print(printedResult);
+        String expectedResult = "Hello, " + System.getProperty("user.name") + "!";
+        assertEquals(expectedResult, printedResult);
+        System.setOut(sysOut);
     }
 
     @Test

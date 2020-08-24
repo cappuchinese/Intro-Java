@@ -30,7 +30,8 @@ public class Datatypes {
     }
 
     String correctDataType1() {
-        //USAGE: the age of the universe in whole years
+        //USAGE: the age of the universe in whole years. Change the return value -null- to a correct value
+        //- the name of the data type that is correct here
         return null;
     }
 
@@ -40,7 +41,7 @@ public class Datatypes {
     }
 
     String correctDataType3() {
-        //USAGE: the molecular weight of a protein, in Daltons
+        //USAßGE: the molecular weight of a protein, in Daltons
         return null;
     }
 
@@ -102,7 +103,7 @@ public class Datatypes {
     /**
      * This method should return a String array of length 2 with the first and last element
      * of the input array in it, converted to their String representations.
-     * Hint: look at the methods available to class Object (GIYF)
+     * For any Java object you can use object.toString() to get this string representation
      */
     String[] getFirstAndLastAsStringRepresentation(Object[] input) {
         return null;
@@ -124,7 +125,7 @@ public class Datatypes {
 
     /**
      * This method should return the cumulative product of all numbers in the input array.
-     * @param input the inpt number array
+     * @param input the input number array
      * @return the cumulative product
      */
     int cumulativeProduct(int[] input) {

@@ -6,9 +6,8 @@
 package section2_syntax.part2_operators;
 
 /**
- *
- * @author Michiel Noback [michiel.noback@gmail.com]
- * @version 0.0.1
+ * This class represents British Weight units as a combination of pounds, ounces and grams.
+ * It is an _immutable_ class because after initialization its fields cannot be modified anymore externally.
  */
 public class BritishWeightUnits {
     private final int pounds;

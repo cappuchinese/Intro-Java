@@ -5,11 +5,6 @@
 
 package section2_syntax.part2_operators;
 
-/**
- *
- * @author Michiel Noback [michiel.noback@gmail.com]
- * @version 0.0.1
- */
 public class WeightUnitsSolver {
 
     /**
@@ -23,6 +18,7 @@ public class WeightUnitsSolver {
         //YOUR CODE HERE
         //change this variable to get a correct testing condition
         final int gramsTest = Integer.MIN_VALUE;
+
         if (grams <= gramsTest) {
             throw new IllegalArgumentException("Error: grams should be above 0. Given: grams=" + grams);
         }

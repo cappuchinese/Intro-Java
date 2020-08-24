@@ -1,11 +1,10 @@
-package section2_syntax.part1_datatypes;
+package section2_syntax.part5_zoo;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class ZooAppTest {
 

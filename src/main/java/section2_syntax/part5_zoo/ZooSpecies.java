@@ -1,4 +1,4 @@
-package section2_syntax.part1_datatypes;
+package section2_syntax.part5_zoo;
 
 import java.util.*;
 
@@ -6,6 +6,14 @@ public class ZooSpecies {
     private static Map<String, ZooSpecies> zooAnimals = new HashMap<>();
     private final String speciesName;
     private int individualCount;
+
+    /**
+     * A private constructor; instances will only be created within the factory method "registerSpeciesFromString".
+     * @param speciesName
+     */
+    private ZooSpecies(String speciesName) {
+        this.speciesName = speciesName;
+    }
 
     /**
      * serves the species name.
@@ -24,23 +32,20 @@ public class ZooSpecies {
     }
 
     /**
-     * A private constructor; instances can only be obtained through the factory method.
-     * @param speciesName
-     */
-    private ZooSpecies(String speciesName) {
-        this.speciesName = speciesName;
-    }
-
-    /**
-     * This is a static (i.e. class-level) factory method that registers ZooAnimal instances.
+     * This is a static factory method that registers ZooAnimal instances.
+     * The keyword `static` marks a variable or method to be class-level.
+     * This means it is not associated with an object (instance) but with the class: all instances of the class share
+     * the same datafield. If one of them changes it, all instances share that changed field.
      * @param speciesName the species name
      */
     public static void registerSpeciesFromString(String speciesName) {
-        if(!zooAnimals.containsKey(speciesName)) {
-            ZooSpecies zooSpecies = new ZooSpecies(speciesName);
+        ZooSpecies zooSpecies;
+        if (! zooAnimals.containsKey(speciesName)) { // it is not registered yet
+            zooSpecies = new ZooSpecies(speciesName);
             zooAnimals.put(speciesName, zooSpecies);
+        } else { // already know species
+            zooSpecies = zooAnimals.get(speciesName);
         }
-        ZooSpecies zooSpecies = zooAnimals.get(speciesName);
         zooSpecies.individualCount++;
     }
 

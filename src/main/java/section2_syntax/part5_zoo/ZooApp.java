@@ -1,4 +1,4 @@
-package section2_syntax.part1_datatypes;
+package section2_syntax.part5_zoo;
 
 import java.util.List;
 
@@ -15,14 +15,14 @@ public class ZooApp {
      * @param args
      */
     void processZooData(String[] args) {
-        //YOUR CODE HERE
+        //YOUR CODE HERE; pass zoo animals to ZooSpecies
     }
 
     /**
      * Prints a summary of the zoo.
      */
     void printZooSummary() {
-        final List<ZooSpecies> allSpecies = null; //YOUR CODE HERE
+        final List<ZooSpecies> allSpecies = null; //YOUR CODE HERE; fetch all species
         //YOUR CODE HERE
         for (ZooSpecies species : allSpecies) {
             //YOUR CODE HERE

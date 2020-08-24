@@ -56,6 +56,7 @@ public class AllSubstringsPrinter {
 
     /**
      * THIS IS AN EXAMPLE OF HOW NOT TO DO IT!!
+     * String concatenation in for-loops is *evil*
      * @param length
      * @return spacer
      */

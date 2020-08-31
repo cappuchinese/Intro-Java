@@ -82,7 +82,7 @@ public class StartingJava {
     }
 
     //This is a constant - an array of Strings used for the getGreeting() method
-    public static final String[] GREETINGS = new String[]{
+    public static final String[] GREETINGS = {
             "Hallo",
             "Moi",
             "Wazzup",

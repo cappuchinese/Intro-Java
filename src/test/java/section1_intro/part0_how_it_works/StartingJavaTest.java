@@ -14,11 +14,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Creation date: Jun 26, 2017
  *
  * @version 0.01
- * @autor Michiel Noback (&copy; 2017)
+ * @author Michiel Noback (&copy; 2017)
  */
 public class StartingJavaTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private StartingJava startingJava;
+    private StartingJava startingJava = null;
 
     @BeforeEach
     public void setUpStreams() {

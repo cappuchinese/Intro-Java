@@ -3,7 +3,8 @@ package section1_intro.part1_language_basics;
 public class LanguageBasics {
 
     /**
-     * A method that determines whether x is a multiple of y
+     * A method that determines whether x is a multiple of y.
+     * The modulo operator '%' is excellent for this job.
      * @param x
      * @param y
      * @return multiple
@@ -34,6 +35,7 @@ public class LanguageBasics {
      */
     public int getCumulativeSum(int n) {
         //WHAT VALUE DOES i NEED TO HAVE AT THE START?
+        //for sure not Integer.MAX_VALUE
         for (int i = Integer.MAX_VALUE; i < n; i++) {
             //YOUR CODE HERE
 

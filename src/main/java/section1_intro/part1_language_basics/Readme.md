@@ -38,7 +38,7 @@ configurations in IntelliJ, and to pass arguments to `main()`.
 
 Some technical tips:   
 
-- To perform String comparisons, use `stringOne.compareTo("stringTwo")`.
+- To perform String comparisons, use `stringOne.equals("stringTwo")`.
 - To convert a String to an Integer, use `Integer.parseInt(String)`. Command-line arguments are in a String array, so any numeric values will need to be converted.
 - To round a number, use `NumberFormat`. Here is an example:  
     

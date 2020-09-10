@@ -62,7 +62,7 @@ class LanguageBasicsTest {
 
     @Test
     void returnCorrectlyNamedVariable_3() {
-        String value = this.languageBasics.returnCorrectlyNamedVariable_2();
+        String value = this.languageBasics.returnCorrectlyNamedVariable_3();
         assertThat(value).isEqualTo("B");
     }
 

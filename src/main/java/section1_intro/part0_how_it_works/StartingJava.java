@@ -25,7 +25,7 @@ public class StartingJava {
      */
     public void printHelloUser() {
         String user = System.getProperty("user.name");
-        System.out.print("Hello, " + user);
+        System.out.print("Hello, " + user + "!");
     }
 
     /**

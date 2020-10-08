@@ -11,7 +11,8 @@ public class CombinerFactory {
      * @return quotedCombiner
      */
     static StringCombiner getQuotedCombiner() {
-        return new QuotedCombiner();
+        //YOUR CODE HERE (and remove the throw statement)
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**

@@ -1,6 +1,6 @@
 package section1_intro.part1_language_basics;
 
-public class Square {
+public class Rectangle {
     Point upperLeft;
     Point lowerRight;
 

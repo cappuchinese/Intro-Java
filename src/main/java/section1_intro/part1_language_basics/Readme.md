@@ -20,7 +20,7 @@ Again, if you want to run a method yourself, you can add a `main()` method.
 
 4. Create a `main()` method demonstrating the use of class Point and its methods. (No JUnit test available)
 
-5. Class `Square` has a method that is not implemented: `int getSurface()`. This is your task. Test class `SquareTest` can verify your solution.
+5. Class `Rectangle` has a method that is not implemented: `int getSurface()`. This is your task. Test class `RectangleTest` can verify your solution.
 
 6. Class `GeometryAnalyser` already has a `main()` method but without any code in it. 
 You need to give it an implementation so that it can deal with command-line arguments.
@@ -28,7 +28,7 @@ Command-line arguments will be passed to the `main()` method as the `String[] ar
 Assume you will receive a series of four numbers; two pairs, each representing the `x` and `y` value of a `Point` instance.  
 The fifth and last argument should be either "dist" or "surf", indicating the desired operation. 
 For example, if the application is run with `2 5 6 2 surf` it means the user wants the 
-surface of the square formed by `Point(2, 5)` (upperleft) and `Point(6, 2)` (lowerright) and the program output should simply state "12" (without the quotes). 
+surface of the rectangle formed by `Point(2, 5)` (upperleft) and `Point(6, 2)` (lowerright) and the program output should simply state "12" (without the quotes). 
 The option "dist" should work in a similar fashion: give the distance between the two points, but also round the result to 1 decimal.
 Note that the "real" functionality has already been implemented in the previous assignments - don't repeat or copy that!
 Class `GeometryAnalyserTest` will tell you if you're right.
@@ -38,7 +38,7 @@ configurations in IntelliJ, and to pass arguments to `main()`.
 
 Some technical tips:   
 
-- To perform String comparisons, use `stringOne.compareTo("stringTwo")`.
+- To perform String comparisons, use `stringOne.equals("stringTwo")`.
 - To convert a String to an Integer, use `Integer.parseInt(String)`. Command-line arguments are in a String array, so any numeric values will need to be converted.
 - To round a number, use `NumberFormat`. Here is an example:  
     

@@ -28,18 +28,18 @@ class AllSubstringsPrinterTest {
         assertEquals(expectedPrint, outContent.toString());
     }
 
-    @Test
-    void printSubstringsLeftAlignedLeftTruncatedB() {
-        String stringToSubstring = "cagtc";
-        String expectedPrint =
-                "cagtc" + System.lineSeparator() +
-                        "cagt" + System.lineSeparator() +
-                        "cag" + System.lineSeparator() +
-                        "ca" + System.lineSeparator() +
-                        "c" + System.lineSeparator();
-        asp.printSubstringsLeftAlignedLeftTruncated(stringToSubstring);
-        assertEquals(expectedPrint, outContent.toString());
-    }
+//    @Test
+//    void printSubstringsLeftAlignedLeftTruncatedB() {
+//        String stringToSubstring = "cagtc";
+//        String expectedPrint =
+//                "cagtc" + System.lineSeparator() +
+//                        "cagt" + System.lineSeparator() +
+//                        "cag" + System.lineSeparator() +
+//                        "ca" + System.lineSeparator() +
+//                        "c" + System.lineSeparator();
+//        asp.printSubstringsLeftAlignedLeftTruncated(stringToSubstring);
+//        assertEquals(expectedPrint, outContent.toString());
+//    }
 
     @Test
     @DisplayName("Test substring printing left aligned left truncated")

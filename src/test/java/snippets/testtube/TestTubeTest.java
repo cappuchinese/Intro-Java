@@ -11,4 +11,9 @@ class TestTubeTest {
         TestTube testTube = new TestTube(10);
         assertTrue(testTube.cells.length == 10);
     }
+
+    @Test
+    void growCells_withZeroInput() {
+        assertThrows(IllegalArgumentException.class, () -> new TestTube(0));
+    }
 }

@@ -25,7 +25,13 @@ In the current package four classes are already present: `Student`, `Course`, `S
 **It is your task to implement all necessary code to support the public API correctly, using the correct collection types.**
 You will need to implement a few methods in these three classes in order to achieve this.
 
-Think carefully in which class you will start your coding endeavours.
+I suggest these series of steps (although other routes are possible):
+
+1. Implement `processLine()` in the inner class `StudentLineHandler` of `StudentAdminDataReader` to create a student.
+2. Pass this student to class `StudentAdmin`, to a method that you need to create
+3. In class `StudentAdmin`, create an appropriate datastructure (Set, List, Map) to hold `Student` instances.
+
+
 
 To protect your data, it is never allowed to simply return the reference to a collection type via a getter. The concept is called **_encapsulation_** and violating it looks like this:
 

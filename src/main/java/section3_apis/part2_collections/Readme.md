@@ -27,9 +27,14 @@ You will need to implement a few methods in these three classes in order to achi
 
 I suggest these series of steps (although other routes are possible):
 
-1. Implement `processLine()` in the inner class `StudentLineHandler` of `StudentAdminDataReader` to create a student.
-2. Pass this student to class `StudentAdmin`, to a method that you need to create
-3. In class `StudentAdmin`, create an appropriate datastructure (Set, List, Map) to hold `Student` instances.
+1. Implement `processLine()` in the inner class `StudentLineHandler` of `StudentAdminDataReader` to parse a student instance.
+2. In class `StudentAdmin`, create an appropriate datastructure (Set, List, Map) to hold `Student` instances.
+3. Pass the student instance from `StudentAdminDataReader` to class `StudentAdmin`, to a method that you will need to create (think which access modifier to use) and store it.
+4. In class `StudentAdmin`, create an appropriate datastructure (Set, List, Map) to hold `Course` instances.
+5. Implement `processLine()` in the inner class `CoursesLineHandler` of `StudentAdminDataReader` to parse a grade instance for each line. Pass this data to class `StudentAdmin`, to a method that you will need to create.
+6. Modify class `Course` so it can store grades for students.
+7. Within class `StudentAdmin`, process the course data. Create a new Course instance when required.
+8. Now, finally, implement the public API (public methods) of class `StudentAdmin`.
 
 
 

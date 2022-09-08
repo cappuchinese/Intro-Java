@@ -11,8 +11,11 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'idea'
 
-sourceCompatibility = JavaVersion.VERSION_1_10
-
+//idea {
+//    project {
+//        languageLevel = '17'
+//    }
+//}
 //where to look for the declared project dependencies
 repositories {
     mavenCentral()
@@ -21,11 +24,12 @@ repositories {
 //declared dependencies - in this case only for the test environment
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
     testImplementation('org.hamcrest:hamcrest-library:2.1')
-    testCompile("org.assertj:assertj-core:3.11.1")
-    testCompile("org.junit.jupiter:junit-jupiter-params:5.5.2")
+    testImplementation("org.assertj:assertj-core:3.11.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.5.2")
 }
+
 
 test {
     useJUnitPlatform()

@@ -13,7 +13,10 @@ public class Point {
      * @return inverse Point
      */
     Point createInversePoint() {
-        return null;
+        Point inverse = new Point();
+        inverse.x = x * -1;
+        inverse.y = y * -1;
+        return inverse;
     }
 
     /**
@@ -23,7 +26,20 @@ public class Point {
      * @return euclidean distance
      */
     double euclideanDistanceTo(Point otherPoint) {
-        //YOUR CODE HERE
-        return 0;
+        double lengthX = Math.abs(otherPoint.x - x);
+        double lengthY = Math.abs(otherPoint.y - y);
+        return Math.hypot(lengthX, lengthY);
+    }
+
+    public static void main(String[] args) {
+        Point current = new Point();
+        current.x = 5;
+        current.y = -3;
+        Point z = current.createInversePoint();
+        System.out.printf("Inverse point: (%d,%d)%n", z.x, z.y);
+        Point other = new Point();
+        other.x = 2;
+        other.y = 9;
+        System.out.printf("Distance: %,.2f", current.euclideanDistanceTo(other));
     }
 }

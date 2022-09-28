@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="snippets.testtube.TestTubeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-16T11:27:27" hostname="Michiels-MBP.local" time="0.015">
-  <properties/>
-  <testcase name="growCells()" classname="snippets.testtube.TestTubeTest" time="0.015"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

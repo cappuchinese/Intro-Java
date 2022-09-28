@@ -11,7 +11,8 @@ public class Rectangle {
      * @return surface
      */
     int getSurface(){
-        //calculate surface - can you implement this?
-        return 0;
+        int lengthX = Math.abs(lowerRight.x - upperLeft.x);
+        int lengthY = Math.abs(lowerRight.y - upperLeft.y);
+        return lengthX * lengthY;
     }
 }

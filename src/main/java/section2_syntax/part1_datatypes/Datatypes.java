@@ -1,5 +1,7 @@
 package section2_syntax.part1_datatypes;
 
+import java.util.Arrays;
+
 /**
  * Creation date: May 28, 2018
  *
@@ -106,8 +108,7 @@ public class Datatypes {
      * For any Java object you can use object.toString() to get this string representation
      */
     String[] getFirstAndLastAsStringRepresentation(Object[] input) {
-        
-        return null;
+        return new String[]{input[0].toString(), input[input.length - 1].toString()};
     }
 
     /**
@@ -117,11 +118,12 @@ public class Datatypes {
      * @return cubedInput
      */
     int[] cubeAll(int[] input) {
-        int arrayLength = 0; //YOU SHOULD GET THE CORRECT ARRAY LENGTH FIRST
+        int arrayLength = input.length; //YOU SHOULD GET THE CORRECT ARRAY LENGTH FIRST
+        int[] out = new int[arrayLength];
         for(int i = 0; i < arrayLength; i++) {
-            //YOUR ITERATION CODE HERE
+            out[i] = (int) Math.pow(input[i], 3);
         }
-        return null;
+        return out;
     }
 
     /**
@@ -130,7 +132,11 @@ public class Datatypes {
      * @return the cumulative product
      */
     int cumulativeProduct(int[] input) {
-        return 0;
+        int prod = input[0];
+        for (int i = 1; i < input.length; i++) {
+            prod *= input[i];
+        }
+        return prod;
     }
 
 }

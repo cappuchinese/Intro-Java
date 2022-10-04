@@ -25,7 +25,9 @@ public class AllSubstringsPrinter {
      * @param stringToSubstring the string to substring
      */
     public void printSubstringsLeftAlignedLeftTruncated(String stringToSubstring) {
-        //YOUR CODE
+        for (int i = 0; i < stringToSubstring.length(); i++) {
+            System.out.println(stringToSubstring.substring(i));
+        }
     }
 
     /**
@@ -35,7 +37,23 @@ public class AllSubstringsPrinter {
      * @param leftAligned flag to indicate whether the substrings should be printed left-aligned (or right-aligned)
      */
     public void printAllSubstrings(String stringToSubstring, boolean leftTruncated, boolean leftAligned) {
-        //YOUR CODE
+        if (leftAligned & leftTruncated) {
+            printSubstringsLeftAlignedLeftTruncated(stringToSubstring);
+        } else if (leftAligned & !leftTruncated) {
+            for (int i = stringToSubstring.length(); i > 0; i--) {
+                System.out.println(stringToSubstring.substring(0, i));
+            }
+        } else if (!leftTruncated) {
+            for (int i = stringToSubstring.length(); i > 0; i--) {
+                String spacer = createSpacer(stringToSubstring.length() - i);
+                System.out.println(spacer + stringToSubstring.substring(0, i));
+            }
+        } else {
+            for (int i = 0; i < stringToSubstring.length(); i++) {
+                String spacer = createSpacer(i);
+                System.out.println(spacer + stringToSubstring.substring(i));
+            }
+        }
     }
 
     /**
@@ -46,12 +64,9 @@ public class AllSubstringsPrinter {
      * @return spacer
      */
     public String createSpacer(int length) {
-//        String spacer = "";
         StringBuilder sb = new StringBuilder("");
         for (int i = 0; i < length; i++) {
             sb.append(" ");
-//            spacer += " ";
-//            spacer = spacer + " ";
         }
 //        return spacer;
         return sb.toString();
